@@ -1,0 +1,83 @@
+WIDTH  
+(int)(screenSizeWidth/)
+5 --> (int)(screenSizeWidth/273.2)
+10 --> (int)(screenSizeWidth/136.6)
+20 -->(int)(screenSizeWidth/68.3)
+30--> (int)(screenSizeWidth/45.53333333333333)
+40 -->(int)(screenSizeWidth/34.15) 
+42 --> (int)(screenSizeWidth/ 32.523809523809526)
+45 -->  (int)(screenSizeWidth/ 30.355555555555554)
+50 --> (int)(screenSizeWidth/27.32)
+70 -->  (int)(screenSizeWidth/19.514285714285716)
+80 --> (int)(screenSizeWidth/ 17.075)
+100 --> (int) (screenSizeWidth / 13.66)
+120 -->(int)(screenSizeWidth/ 11.383333333333333)
+125--> (int)(screenSizeWidth /10.928)
+130 -->  (int)(screenSizeWidth /10.507692307692308)
+137 --> (int)(screenSizeWidth/9.97080291970803)	
+150-->(int)(screenSizeWidth/9.106666666666667)
+175 --> (int)(screenSizeWidth/7.805714285714286)
+180 --> (int)(screenSizeWidth/7.588888888888889)
+200-->(int)(screenSizeWidth/ 6.83)
+220 --> (int)(screenSizeWidth/6.209090909090909)
+250 -->  (int)(screenSizeWidth/5.464)
+275 --> (int)(screenSizeWidth/4.967272727272727)
+300 --> (int) (screenSizeWidth/4.553333333333334)
+350 --> (int) (screenSizeWidth/3.902857142857143)
+400-->(int)(screenSizeWidth/3.415)
+450 -->(int)(screenSizeWidth/3.0355555555555553)
+500 --> (int)(screenSizeWidth/2.732)
+550 -->(int)(screenSizeWidth/ 2.4836363636363634)
+515 -->(int)(screenSizeWidth/2.652427184466019)
+650 -->(int)(screenSizeWidth/ 2.134375)
+650 -->(int)(screenSizeWidth/ 2.1015384615384614)
+680 --> (int)(screenSizeWidth/2.0088235294117647)
+700 --> (int)(screenSizeWidth/1.9514285714285715)
+750 --> (int)(screenSizeWidth/1.8213333333333332)
+760 -->(int)(screenSizeWidth/ 1.7973684210526315)
+800 -->(int)(screenSizeWidth/ 1.6070588235294119)
+850 --> (int)(screenSizeWidth/ 1.6070588235294119)
+
+ 
+HEIGHT
+(int)(screenSizeHeight)
+ 
+5 --> (int)(screenSizeHeight/153.6)
+10 --> (int) (screenSizeHeight / 76.8)
+15 --> (int)(screenSizeHeight/51.2)
+20 --> (int)(screenSizeHeight/38.4)
+25 --> (int)(screenSizeHeight/30.72)
+30 -->  (int)(screenSizeHeight/25.6)
+35 --> (int)(screenSizeHeight/21.942857142857143)
+40-->(int) (screenSizeHeight /19.2)
+50-->(int) (screenSizeHeight / 15.36)
+60 --> (int)(screenSizeHeight/12.8)
+70 -->  (int)(screenSizeHeight/10.971428571428572)
+90 --> (int)(screenSizeHeight/8.533333333333333)
+100-->(int) (screenSizeHeight /7.68)
+125 --> (int)(screenSizeHeight/6.144)
+130 --> (int)(screenSizeHeight/5.907692307692308 )
+150 --> (int)(screenSizeHeight/5.12)	
+180 -->(int)(screenSizeHeight/ 4.266666666666667)	
+200-->(int) (screenSizeHeight /3.84)
+250 --> (int)(screenSizeHeight/3.072)
+270 -->  (int)(screenSizeHeight/2.8444444444444446)
+300 --> (int)(screenSizeHeight/ 2.56)
+350 --> (int)(screenSizeHeight/2.1942857142857144)
+370 -->  (int)(screenSizeHeight/ 2.075675675675676)
+400 --> (int)(screenSizeHeight/1.92)
+450 --> (int)(screenSizeHeight/1.7066666666666668)
+470 --> (int)(screenSizeHeight/ 1.6340425531914893)
+900 --> (int)(screenSizeHeight/0.8533333333333334)
+
+
+FONT 
+13-->(int) screenSizeWidth / 105.07 
+14 --> (int) screenSizeWidth / 97
+15--> (int)screenSizeWidth / 91
+17 --> (int) screenSizeWidth / 80
+18 --> (int) screenSizeWidth / 75.88
+19 --> (int) ((int) screenSizeWidth /71)
+20 -->(int) ((int) screenSizeWidth / 68.3)
+22 --> (int) screenSizeWidth / 62.09
+25 --> (int) screenSizeWidth / 54.64
