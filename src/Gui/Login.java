@@ -94,7 +94,7 @@ public class Login extends JPanel {
 
     public JFrame getJf() {
         if (jf == null) {
-            jf = new JFrame("GİRİŞ SAYFASI");
+            jf = new JFrame("LOGIN PAGE");
 
          //   Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
@@ -112,8 +112,8 @@ public class Login extends JPanel {
 
     public JLabel getLblusername() {
         if (lblusername == null) {
-            lblusername = new JLabel("Kullanıcı adı  : ");
-            lblusername.setBounds(screenSizeWidth / 10, (int) (screenSizeHeight / 3.2), screenSizeWidth / 6, screenSizeHeight / 19);
+            lblusername = new JLabel("Username  : ");
+            lblusername.setBounds(screenSizeWidth / 7, (int) (screenSizeHeight / 3.2), screenSizeWidth / 6, screenSizeHeight / 19);
 
             lblusername.setFont(lblFont);
 
@@ -127,8 +127,8 @@ public class Login extends JPanel {
 
     public JLabel getLblPass() {
         if (lblPass == null) {
-            lblPass = new JLabel("Parola         : ");
-            lblPass.setBounds(screenSizeWidth / 10, (int) (screenSizeHeight / 2.7), screenSizeWidth / 6, screenSizeHeight / 19);
+            lblPass = new JLabel("Password  : ");
+            lblPass.setBounds(screenSizeWidth / 7, (int) (screenSizeHeight / 2.7), screenSizeWidth / 6, screenSizeHeight / 19);
 
             lblPass.setFont(lblFont);
 
@@ -142,7 +142,7 @@ public class Login extends JPanel {
 
     public JLabel getLblTitle() {
         if (lblTitle == null) {
-            lblTitle = new JLabel("OF TEKNOLOJİ FAKÜLTESİ KÜTÜPHANESİ");
+            lblTitle = new JLabel("KTU'S OF TECHNICAL FACULTY LIBRARY");
             lblTitle.setBounds((int) (screenSizeWidth / 6), (int) (screenSizeHeight / 7.5), screenSizeWidth / 3, screenSizeHeight / 19);
 
             lblTitle.setFont(new Font("", Font.BOLD, (int) (screenSizeWidth / 70)));
@@ -187,7 +187,7 @@ public class Login extends JPanel {
 
     public JButton getSignIn() {
         if (signIn == null) {
-            signIn = new JButton("Oturum aç");
+            signIn = new JButton("Sing in ");
             signIn.setBounds((screenSizeWidth / 3) - (screenSizeWidth / 70), (int) (screenSizeHeight / 2.2),
                     screenSizeWidth / 9 + (screenSizeWidth / 50), screenSizeHeight / 19);
 

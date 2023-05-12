@@ -70,7 +70,7 @@ public class StudentUpdateGui extends JPanel {
     public StudentUpdateGui(MainGui mg) {
         this.mg = mg;
         this.jf = mg.getJf();
-        getJf().setTitle("ÖĞRENCİ GÜNCELLE");
+        getJf().setTitle("UPDATE & DELETE STUDENT PAGE");
         this.setBounds(getJf().getBounds());
         this.setBackground(new Color(75, 153, 23));
         this.setLayout(null);
@@ -132,7 +132,7 @@ public class StudentUpdateGui extends JPanel {
 
     public JLabel getLblno() {
         if (lblno == null) {
-            lblno = new JLabel("Öğrenci Numarası");
+            lblno = new JLabel("Student No");
             lblno.setBounds(leftSpace, (int) (screenSizeHeight / 51.2), lblWidth, lblHeight);
             lblno.setForeground(Color.white);
             lblno.setFont(lblFont);
@@ -146,7 +146,7 @@ public class StudentUpdateGui extends JPanel {
 
     public JLabel getLblNewNo() {
         if (lblNewNo == null) {
-            lblNewNo = new JLabel("Yeni Öğrenci Numarası");
+            lblNewNo = new JLabel("New Student No");
             lblNewNo.setBounds(leftSpace, lblTopSpace + (lblHeight + txtHeight) * lblPushUnderCounter, lblWidth, lblHeight);
             lblNewNo.setForeground(Color.WHITE);
             lblNewNo.setFont(lblFont);
@@ -162,7 +162,7 @@ public class StudentUpdateGui extends JPanel {
     public JLabel getLblNewName() {
 
         if (lblNewName == null) {
-            lblNewName = new JLabel("Yeni Öğrenci Adı");
+            lblNewName = new JLabel("New Student Name");
             lblNewName.setBounds(leftSpace, lblTopSpace + (lblHeight + txtHeight + (int) (screenSizeHeight / 25.6)) * lblPushUnderCounter, lblWidth, lblHeight);
             lblNewName.setForeground(Color.WHITE);
             lblNewName.setFont(lblFont);
@@ -177,8 +177,8 @@ public class StudentUpdateGui extends JPanel {
 
     public JLabel getLblNewSurname() {
         if (lblNewSurname == null) {
-            lblNewSurname = new JLabel("Yeni Öğrenci Soyadı");
-            lblNewSurname.setBounds(leftSpace + txtWidth + (int) (screenSizeHeight / 15.36), lblTopSpace + (lblHeight + txtHeight + (int) (screenSizeHeight / 25.6)) * lblPushUnderCounter, lblWidth, lblHeight);
+            lblNewSurname = new JLabel("New Student Surname");
+            lblNewSurname.setBounds(leftSpace + txtWidth + (int) (screenSizeHeight / 12), lblTopSpace + (lblHeight + txtHeight + (int) (screenSizeHeight / 25.6)) * lblPushUnderCounter, lblWidth, lblHeight);
             lblNewSurname.setForeground(Color.WHITE);
             lblNewSurname.setFont(lblFont);
             lblPushUnderCounter++;
@@ -192,7 +192,7 @@ public class StudentUpdateGui extends JPanel {
 
     public JLabel getLblNewEmail() {
         if (lblNewEmail == null) {
-            lblNewEmail = new JLabel("Yeni Öğrenci Email");
+            lblNewEmail = new JLabel("New Student Email");
             lblNewEmail.setBounds(leftSpace, lblTopSpace + (lblHeight + txtHeight + (int) (screenSizeHeight / 25.6)) * lblPushUnderCounter, lblWidth, lblHeight);
             lblNewEmail.setForeground(Color.WHITE);
             lblNewEmail.setFont(lblFont);
@@ -208,8 +208,8 @@ public class StudentUpdateGui extends JPanel {
 
     public JLabel getLblPhoneNo() {
         if (lblPhoneNo == null) {
-            lblPhoneNo = new JLabel("Yeni Öğrenci Telefon No");
-            lblPhoneNo.setBounds(leftSpace + txtWidth + (int) (screenSizeHeight / 15.36),
+            lblPhoneNo = new JLabel("New Student Phone No");
+            lblPhoneNo.setBounds(leftSpace + txtWidth + (int) (screenSizeHeight / 12),
                     lblTopSpace + (lblHeight + txtHeight + (int) (screenSizeHeight / 25.6)) * lblPushUnderCounter,
                     lblWidth, lblHeight);
 
@@ -226,9 +226,10 @@ public class StudentUpdateGui extends JPanel {
 
     public JLabel getLblResult() {
         if (lblResult == null) {
-            lblResult = new JLabel("Sonuç");
-            lblResult.setBounds(leftSpace + lblWidth + (int) (screenSizeWidth / 32.523809523809526),
+            lblResult = new JLabel("RESULT");
+            lblResult.setBounds(leftSpace/2 + txtWidth + (int) (screenSizeWidth / 17),
                     (int) (screenSizeHeight / 51.2), lblWidth, lblHeight);
+
             lblResult.setForeground(Color.WHITE);
             lblResult.setFont(lblFont);
         }
@@ -242,7 +243,7 @@ public class StudentUpdateGui extends JPanel {
     public JTextField getTxtno() {
         if (txtno == null) {
             txtno = new JTextField();
-            txtno.setBounds(leftSpace, (int) (screenSizeWidth / 27.32), txtWidth, txtHeight);
+            txtno.setBounds(leftSpace, (int) (screenSizeHeight / 15.36), txtWidth, txtHeight);
             txtno.setFont(txtFont);
 
         }
@@ -337,7 +338,7 @@ public class StudentUpdateGui extends JPanel {
             ToolTipManager ttm = ToolTipManager.sharedInstance();
             ttm.setInitialDelay(100);
             ttm.setDismissDelay(1000);
-            txtResult.setToolTipText("Buraya Erişemezsiniz");
+            txtResult.setToolTipText("Not allowed to acces here");
 
         }
         return txtResult;
@@ -349,7 +350,7 @@ public class StudentUpdateGui extends JPanel {
 
     public JButton getBtnComeBack() {
         if (btnComeBack == null) {
-            btnComeBack = new JButton("Geri dön");
+            btnComeBack = new JButton("Back");
             btnComeBack.setFont(lblFont);
             btnComeBack.setBounds(leftSpace, (int) (screenSizeHeight / 1.7066666666666668), (int) (screenSizeWidth / 6.83), (int) (screenSizeHeight / 25.6));
             btnComeBack.setCursor(new Cursor(12));
@@ -364,7 +365,7 @@ public class StudentUpdateGui extends JPanel {
 
     public JButton getBtnUpdate() {
         if (btnUpdate == null) {
-            btnUpdate = new JButton("Öğrenci Güncelle");
+            btnUpdate = new JButton("Update Student");
             btnUpdate.setFont(lblFont);
             btnUpdate.setBounds(leftSpace + (int) (screenSizeWidth / 2.4836363636363634),
                     (int) (screenSizeHeight / 1.7066666666666668), (int) (screenSizeWidth / 6.83), (int) (screenSizeHeight / 25.6));
@@ -379,7 +380,7 @@ public class StudentUpdateGui extends JPanel {
 
     public JButton getBtnDelete() {
         if (btnDelete == null) {
-            btnDelete = new JButton("Öğrenci Sil");
+            btnDelete = new JButton("Delete Student");
             btnDelete.setFont(lblFont);
             btnDelete.setBounds(leftSpace + (int) (screenSizeWidth / 4.967272727272727), (int) (screenSizeHeight / 1.7066666666666668),
                     (int) (screenSizeWidth / 6.83), (int) (screenSizeHeight / 25.6));

@@ -70,7 +70,7 @@ public class BookUpdateRemoveGui extends JPanel {
         this.setBounds(getJf().getBounds());
         this.setBackground(new Color(50, 150, 150));
         this.setLayout(null);
-        getMg().getJf().setTitle("KİTAP GÜNCELLEME & SİLME");
+        getMg().getJf().setTitle("UPDATE &DELETE BOOK");
 
         setJf(mg.getJf());
         mg.getJp().setVisible(false);
@@ -129,7 +129,7 @@ public class BookUpdateRemoveGui extends JPanel {
 
     public JLabel getLblToBeChangedBarcodeNo() {
         if (lblToBeChangedBarcodeNo == null) {
-            lblToBeChangedBarcodeNo = new JLabel("Güncellenecek kitap Barkod Numarası");
+            lblToBeChangedBarcodeNo = new JLabel("Book Barcode No");
             lblToBeChangedBarcodeNo.setBounds(leftSpace, (int) (screenSizeHeight / 51.2), lblWidth, lblHeight);
             lblToBeChangedBarcodeNo.setForeground(Color.white);
             lblToBeChangedBarcodeNo.setFont(lblFont);
@@ -145,7 +145,7 @@ public class BookUpdateRemoveGui extends JPanel {
     public JLabel getLblNewBarcodeNo() {
 
         if (lblNewBarcodeNo == null) {
-            lblNewBarcodeNo = new JLabel("Yeni Barkod Numarası");
+            lblNewBarcodeNo = new JLabel("New Barcode No");
             lblNewBarcodeNo.setBounds(leftSpace,
                     lblTopSpace + (lblHeight + txtHeight) * lblPushUnderCounter, lblWidth, lblHeight);
             lblNewBarcodeNo.setForeground(Color.WHITE);
@@ -162,7 +162,7 @@ public class BookUpdateRemoveGui extends JPanel {
 
     public JLabel getLblNewCategory() {
         if (lblNewCategory == null) {
-            lblNewCategory = new JLabel("Yeni Kategori Adı");
+            lblNewCategory = new JLabel("New Category Name");
             lblNewCategory.setBounds(leftSpace + txtWidth + (int) (screenSizeWidth / 27.32),
                     lblTopSpace + (lblHeight + txtHeight) * lblPushUnderCounter, lblWidth, lblHeight);
             lblNewCategory.setForeground(Color.WHITE);
@@ -179,7 +179,7 @@ public class BookUpdateRemoveGui extends JPanel {
     public JLabel getLblNewBookName() {
 
         if (lblNewBookName == null) {
-            lblNewBookName = new JLabel("Yeni Kitap İsmi ");
+            lblNewBookName = new JLabel("New Book Name");
             lblNewBookName.setBounds(leftSpace,
                     lblTopSpace + (lblHeight + txtHeight + (int) (screenSizeHeight / 25.6)) * lblPushUnderCounter, lblWidth, lblHeight);
             lblNewBookName.setForeground(Color.WHITE);
@@ -196,7 +196,7 @@ public class BookUpdateRemoveGui extends JPanel {
 
     public JLabel getLblNewAuthorName() {
         if (lblNewAuthorName == null) {
-            lblNewAuthorName = new JLabel("Yeni Yazar İsmi");
+            lblNewAuthorName = new JLabel("New Author Name");
             lblNewAuthorName.setBounds(leftSpace,
                     lblTopSpace + (lblHeight + txtHeight + (int) (screenSizeHeight / 25.6)) * lblPushUnderCounter, lblWidth, lblHeight);
             lblNewAuthorName.setForeground(Color.WHITE);
@@ -212,9 +212,9 @@ public class BookUpdateRemoveGui extends JPanel {
 
     public JLabel getLblResult() {
         if (lblResult == null) {
-            lblResult = new JLabel("SONUÇ");
+            lblResult = new JLabel("RESULT");
 
-            lblResult.setBounds(leftSpace + lblWidth + (int) (screenSizeWidth / 32.523809523809526),
+            lblResult.setBounds(leftSpace  + (int) (screenSizeWidth / 3.415),
                     (int) (screenSizeHeight / 51.2), lblWidth, lblHeight);
             lblResult.setForeground(Color.WHITE);
             lblResult.setFont(lblFont);
@@ -316,7 +316,7 @@ public class BookUpdateRemoveGui extends JPanel {
             ToolTipManager ttm = ToolTipManager.sharedInstance();
             ttm.setInitialDelay(100);
             ttm.setDismissDelay(1000);
-            txtResult.setToolTipText("Buraya erişemezsiniz");
+            txtResult.setToolTipText("Not allowed to acces here");
 
             txtPushUnderCounter++;
         }
@@ -329,7 +329,7 @@ public class BookUpdateRemoveGui extends JPanel {
 
     public JButton getBtnComeBack() {
         if (btnComeBack == null) {
-            btnComeBack = new JButton("Geri Dön");
+            btnComeBack = new JButton("Back");
             btnComeBack.setFont(lblFont);
             btnComeBack.setBounds(leftSpace,
                     txtTopSpace + (txtPushSpaceUnder * txtPushUnderCounter), txtWidth, txtHeight);
@@ -344,7 +344,7 @@ public class BookUpdateRemoveGui extends JPanel {
 
     public JButton getBtnUpdate() {
         if (btnUpdate == null) {
-            btnUpdate = new JButton("Güncelle");
+            btnUpdate = new JButton("Update");
             btnUpdate.setFont(lblFont);
             btnUpdate.setBounds(leftSpace + txtWidth + (int) (screenSizeWidth / 27.32),
                     txtTopSpace + (txtPushSpaceUnder * txtPushUnderCounter) - (int) (screenSizeHeight / 8.533333333333333),
@@ -357,14 +357,14 @@ public class BookUpdateRemoveGui extends JPanel {
         return btnUpdate;
     }
 
-    public void setBtnUpdate(JButton btnUpdate) {
+    public void setBtnUpd1ate(JButton btnUpdate) {
         this.btnUpdate = btnUpdate;
     }
 
     public JButton getBtnDelete() {
         if (btnDelete == null) {
             btnDelete = new JButton();
-            btnDelete = new JButton("Sil");
+            btnDelete = new JButton("Delete");
             btnDelete.setFont(lblFont);
             btnDelete.setBounds(leftSpace + txtWidth + (int) (screenSizeWidth / 27.32),
                     txtTopSpace + (txtPushSpaceUnder * txtPushUnderCounter) - (int) (screenSizeHeight / 8.533333333333333),

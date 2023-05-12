@@ -64,7 +64,7 @@ public class BookReturnGui {
 
         setMg(mg);
         setJf(mg.getJf());
-        getMg().getJf().setTitle("KİTAP İADE ");
+        getMg().getJf().setTitle("BOOK RETURN PAGE");
         getJf().add(getJp());
         getJp().add(getLblBarcodeNo());
         getJp().add(getLblStudentNo());
@@ -117,7 +117,7 @@ public class BookReturnGui {
 
     public JLabel getLblBarcodeNo() {
         if (lblBarcodeNo == null) {
-            lblBarcodeNo = new JLabel("Kitap Barkod No");
+            lblBarcodeNo = new JLabel("Book Barcode No");
             lblBarcodeNo.setBounds(lblLeftSpace + (lblPushSpaceRight * lblPushRightCounter),
                     lblTopSpace + lblPushUnderCounter * lblPushSpaceUnder, lblWidth, lblHeight);
             lblBarcodeNo.setForeground(Color.white);
@@ -134,7 +134,7 @@ public class BookReturnGui {
 
     public JLabel getLblStudentNo() {
         if (lblStudentNo == null) {
-            lblStudentNo = new JLabel("Öğrenci Numarası");
+            lblStudentNo = new JLabel("Student No");
             lblStudentNo.setBounds(lblLeftSpace + (lblPushSpaceRight * lblPushRightCounter),
                     lblTopSpace + lblPushSpaceUnder * lblPushUnderCounter, lblWidth, lblHeight);
             lblStudentNo.setForeground(Color.white);
@@ -157,7 +157,7 @@ public class BookReturnGui {
     public JLabel getLblBookName() {
         if (lblBookName == null) {
 
-            lblBookName = new JLabel("Kitap Adı");
+            lblBookName = new JLabel("Book Name");
             lblBookName.setBounds(lblLeftSpace + (lblPushSpaceRight * lblPushRightCounter),
                     lblTopSpace + lblPushSpaceUnder * lblPushUnderCounter, lblWidth, lblHeight);
             lblBookName.setForeground(Color.white);
@@ -176,7 +176,7 @@ public class BookReturnGui {
     public JLabel getLblAuthorName() {
         if (lblAuthorName == null) {
 
-            lblAuthorName = new JLabel("Kitap Yazarı");
+            lblAuthorName = new JLabel("Book's Author Name");
             lblAuthorName.setBounds(lblLeftSpace + (lblPushSpaceRight * lblPushRightCounter),
                     lblTopSpace + lblPushSpaceUnder * lblPushUnderCounter, lblWidth, lblHeight);
             lblAuthorName.setForeground(Color.white);
@@ -199,7 +199,7 @@ public class BookReturnGui {
     public JLabel getLblStudentName() {
         if (lblStudentName == null) {
 
-            lblStudentName = new JLabel("Öğrenci Adı");
+            lblStudentName = new JLabel("Student Name");
             lblStudentName.setBounds(lblLeftSpace + (lblPushSpaceRight * lblPushRightCounter),
                     lblTopSpace + lblPushSpaceUnder * lblPushUnderCounter, lblWidth, lblHeight);
             lblStudentName.setForeground(Color.white);
@@ -223,7 +223,7 @@ public class BookReturnGui {
     public JLabel getLblResult() {
         if (lblResult == null) {
 
-            lblResult = new JLabel("Sonuç ");
+            lblResult = new JLabel("RESULT");
             lblResult.setBounds(lblLeftSpace + (lblPushSpaceRight * lblPushRightCounter),
                     lblTopSpace + lblPushSpaceUnder * lblPushUnderCounter, lblWidth, lblHeight);
             lblResult.setForeground(Color.white);
@@ -400,7 +400,7 @@ public class BookReturnGui {
 
     public JButton getBtnComeBack() {
         if (btnComeBack == null) {
-            btnComeBack = new JButton("Geri dön");
+            btnComeBack = new JButton("Back");
             btnComeBack.setBounds((int) (screenSizeWidth / 27.32), (int) (screenSizeHeight / 1.7066666666666668),
                     (int) (screenSizeWidth / 9.106666666666667), (int) (screenSizeHeight / 15.36));
 

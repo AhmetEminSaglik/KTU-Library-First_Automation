@@ -40,7 +40,7 @@ public final class TimeControlExtraTimeGui extends JPanel {
     final double screenSizeWidth = screenSize.getWidth();
     final double screenSizeHeight = screenSize.getHeight();
 
-    public String HeaderOfTable[] = {"", "Öğrenci No", "Öğrenci Adı Soyadı", "Kitap Barkod No", "Kalan gün sayısı ", "Kitap adı"};
+    public String HeaderOfTable[] = {"", "Student No", "Student Name-Surname", "Book Barcode No", "Remained Days", "Book Name"};
     public String DataForTable[][] = {};
 
     JButton btnExtendTime;
@@ -70,7 +70,7 @@ public final class TimeControlExtraTimeGui extends JPanel {
 
         setMg(mg);
         setJf(mg.getJf());
-        getJf().setTitle("SÜRE KONTROL & UZATMA ");
+        getJf().setTitle("TIME CONTROL & EXTENSION PAGE");
 
         this.setLayout(null);
         this.setBackground(new Color(99, 110, 114));
@@ -134,7 +134,7 @@ public final class TimeControlExtraTimeGui extends JPanel {
 
     public JLabel getLblBookBarcodeNoToExtendTime() {
         if (lblBookBarcodeNoToExtendTime == null) {
-            lblBookBarcodeNoToExtendTime = new JLabel("Kitap Barkod No");
+            lblBookBarcodeNoToExtendTime = new JLabel("Book Barcode No");
             lblBookBarcodeNoToExtendTime.setBounds(leftSpace, (lblPushUnder * pushUnderCounter) + lblTopSpace, lblWidth, lblHeight);
             lblBookBarcodeNoToExtendTime.setForeground(new Color(9, 132, 227));
             lblBookBarcodeNoToExtendTime.setFont(font_lbl);
@@ -149,7 +149,7 @@ public final class TimeControlExtraTimeGui extends JPanel {
 
     public JLabel getLblResult() {
         if (lblResult == null) {
-            lblResult = new JLabel("Sonuç");
+            lblResult = new JLabel("RESULT");
             lblResult.setBounds(leftSpace + lblWidth * 2, (lblPushUnder * pushUnderCounter) + lblTopSpace, lblWidth, lblHeight);
             lblResult.setForeground(new Color(9, 132, 227));
             lblResult.setFont(font_lbl);
@@ -164,7 +164,7 @@ public final class TimeControlExtraTimeGui extends JPanel {
 
     public JLabel getLblBookNameToExtendTime() {
         if (lblBookNameToExtendTime == null) {
-            lblBookNameToExtendTime = new JLabel("Kitap Adı");
+            lblBookNameToExtendTime = new JLabel("Book Name");
             lblBookNameToExtendTime.setBounds(leftSpace, (lblPushUnder * pushUnderCounter) + lblTopSpace, lblWidth, lblHeight);
             lblBookNameToExtendTime.setForeground(new Color(9, 132, 227));
             lblBookNameToExtendTime.setFont(font_lbl);
@@ -179,7 +179,7 @@ public final class TimeControlExtraTimeGui extends JPanel {
 
     public JLabel getLblSearchStudentNo() {
         if (lblSearchStudentNo == null) {
-            lblSearchStudentNo = new JLabel("Öğrenci No");
+            lblSearchStudentNo = new JLabel("Student No");
             lblSearchStudentNo.setBounds(leftSpace, lblTopSpace + (pushUnderCounter * lblPushUnder), lblWidth, lblHeight);
             lblSearchStudentNo.setForeground(new Color(9, 132, 227));
             lblSearchStudentNo.setFont(font_lbl);
@@ -193,7 +193,7 @@ public final class TimeControlExtraTimeGui extends JPanel {
 
     public JLabel getLblSearchBookBarcodeNo() {
         if (lblSearchBookBarcodeNo == null) {
-            lblSearchBookBarcodeNo = new JLabel("Kitap Barkod No");
+            lblSearchBookBarcodeNo = new JLabel("Book Barcode No");
             lblSearchBookBarcodeNo.setBounds(leftSpace + lblWidth * 2, lblTopSpace + (pushUnderCounter * lblPushUnder), lblWidth, lblHeight);
 
             lblSearchBookBarcodeNo.setForeground(new Color(9, 132, 227));
@@ -218,7 +218,7 @@ public final class TimeControlExtraTimeGui extends JPanel {
             ToolTipManager ttm = ToolTipManager.sharedInstance();
             ttm.setInitialDelay(100);
             ttm.setDismissDelay(1000);
-            txtBookBarcodeNoToExtendTime.setToolTipText("Buraya Erişemezsiniz");
+            txtBookBarcodeNoToExtendTime.setToolTipText("Not allowed to acces here");
 
         }
         return txtBookBarcodeNoToExtendTime;
@@ -238,7 +238,7 @@ public final class TimeControlExtraTimeGui extends JPanel {
             ToolTipManager ttm = ToolTipManager.sharedInstance();
             ttm.setInitialDelay(100);
             ttm.setDismissDelay(1000);
-            txtResult.setToolTipText("Buraya Erişemezsiniz");
+            txtResult.setToolTipText("Not allowed to acces here");
 
         }
 
@@ -259,7 +259,7 @@ public final class TimeControlExtraTimeGui extends JPanel {
             ToolTipManager ttm = ToolTipManager.sharedInstance();
             ttm.setInitialDelay(100);
             ttm.setDismissDelay(1000);
-            txtBookNameToExtendTime.setToolTipText("Buraya Erişemezsiniz");
+            txtBookNameToExtendTime.setToolTipText("Not allowed to acces here");
 
         }
         return txtBookNameToExtendTime;
@@ -271,7 +271,7 @@ public final class TimeControlExtraTimeGui extends JPanel {
 
     public JTextField getTxtSearchStudentNo() {
         if (txtSearchStudentNo == null) {
-            txtSearchStudentNo = new JTextField("Öğrenci No");
+            txtSearchStudentNo = new JTextField("Student No");
             txtSearchStudentNo.setBounds(leftSpace, txtTopSpace + (pushUnderCounter * lblPushUnder), lblWidth, lblHeight);
             txtSearchStudentNo.setForeground(Color.GRAY);
             txtSearchStudentNo.setFont(fontPlaceHolder);
@@ -285,7 +285,7 @@ public final class TimeControlExtraTimeGui extends JPanel {
 
     public JTextField getTxtSearchBookBarcodeNo() {
         if (txtSearchBookBarcodeNo == null) {
-            txtSearchBookBarcodeNo = new JTextField("Kitap Barkod No");
+            txtSearchBookBarcodeNo = new JTextField("Book Barcode No");
             txtSearchBookBarcodeNo.setBounds(leftSpace + lblWidth * 2, txtTopSpace + (pushUnderCounter * lblPushUnder), lblWidth, lblHeight);
             txtSearchBookBarcodeNo.setForeground(Color.GRAY);
             txtSearchBookBarcodeNo.setFont(fontPlaceHolder);
@@ -360,7 +360,7 @@ public final class TimeControlExtraTimeGui extends JPanel {
 
     public JButton getBtnExtendTime() {
         if (btnExtendTime == null) {
-            btnExtendTime = new JButton("Süreyi uzat");
+            btnExtendTime = new JButton("Extend Time");
             btnExtendTime.setFont(font_txt);
             btnExtendTime.setBounds(leftSpace + txtWidth * 5 / 4, txtTopSpace, lblWidth / 2, txtHeight);
             btnExtendTime.setCursor(new Cursor(12));
@@ -374,7 +374,7 @@ public final class TimeControlExtraTimeGui extends JPanel {
 
     public JButton getBtnComeBack() {
         if (btnComeBack == null) {
-            btnComeBack = new JButton("Geri Dön");
+            btnComeBack = new JButton("Back");
             btnComeBack.setFont(font_txt);
             btnComeBack.setBounds(leftSpace, (int) (screenSizeHeight / 1.6340425531914893),
                     (int) (screenSizeWidth / 9.106666666666667), (int) (screenSizeHeight / 25.6));
@@ -389,7 +389,7 @@ public final class TimeControlExtraTimeGui extends JPanel {
 
     public JButton getBtnSearch() {
         if (btnSearch == null) {
-            btnSearch = new JButton("Ara");
+            btnSearch = new JButton("Search");
             btnSearch.setFont(font_txt);
             btnSearch.setBounds(leftSpace + txtWidth * 5 / 4, txtTopSpace + (lblPushUnder * pushUnderCounter), lblWidth / 2, txtHeight);
             btnSearch.setCursor(new Cursor(12));

@@ -45,7 +45,7 @@ public class BookAddGui {
 
         this.mg = mg;
         setJf(mg.getJf());
-        getJf().setTitle("KİTAP EKLE");
+        getJf().setTitle("ADD BOOK PAGE");
 
         addAllThingsONPanel();
         getBtnComeBack().addActionListener(bookaction);
@@ -111,7 +111,7 @@ public class BookAddGui {
 
     public JLabel getLblBookBarcodeNo() {
         if (lblBookBarcodeNo == null) {
-            lblBookBarcodeNo = new JLabel("Kitap Barkod Numarası ");
+            lblBookBarcodeNo = new JLabel("Book Barcode No");
             lblBookBarcodeNo.setBounds(leftSpace, 0, (int) (screenSizeWidth / 3.0355555555555553),
                     (int) (screenSizeHeight / 15.36));
 
@@ -129,7 +129,7 @@ public class BookAddGui {
 
     public JLabel getLblBookName() {
         if (lblBookName == null) {
-            lblBookName = new JLabel("Kitap Adı");
+            lblBookName = new JLabel("Book Name");
             lblBookName.setBounds(leftSpace, (int) (screenSizeHeight / 7.68),
                     (int) (screenSizeWidth / 3.0355555555555553), (int) (screenSizeHeight / 15.36));
 
@@ -146,7 +146,7 @@ public class BookAddGui {
 
     public JLabel getLblAuthorName() {
         if (lblAuthorName == null) {
-            lblAuthorName = new JLabel("Yazar Adı");
+            lblAuthorName = new JLabel("Author Name");
             lblAuthorName.setBounds(leftSpace, (int) (screenSizeHeight / 3.84),
                     (int) (screenSizeWidth / 3.0355555555555553), (int) (screenSizeHeight / 15.36));
 
@@ -162,7 +162,7 @@ public class BookAddGui {
 
     public JLabel getLblCategory() {
         if (lblCategory == null) {
-            lblCategory = new JLabel("Kategori Adı");
+            lblCategory = new JLabel("Category Name");
             lblCategory.setBounds(leftSpace * 2 / 3 + (int) (screenSizeWidth / 3.415),
                     (int) (screenSizeHeight / 3.84), (int) (screenSizeWidth / 3.0355555555555553),
                     (int) (screenSizeHeight / 15.36));
@@ -179,8 +179,8 @@ public class BookAddGui {
 
     public JLabel getLblResult() {
         if (lblResult == null) {
-            lblResult = new JLabel("SONUC");
-            lblResult.setBounds(leftSpace * 2 / 3 + (int) (screenSizeWidth / 2.652427184466019), 0,
+            lblResult = new JLabel("RESULT");
+            lblResult.setBounds(leftSpace * 2 / 3 + (int) (screenSizeWidth / 3.415), 0,
                     (int) (screenSizeWidth / 3.0355555555555553), (int) (screenSizeHeight / 15.36));
 
             lblResult.setFont(font_lbl);
@@ -284,7 +284,7 @@ public class BookAddGui {
 
     public JButton getBtnComeBack() {
         if (btnComeBack == null) {
-            btnComeBack = new JButton("Geri dön");
+            btnComeBack = new JButton("Back");
             btnComeBack.setBounds(leftSpace, (int) (screenSizeHeight / 1.92),
                     (int) (screenSizeWidth / 9.106666666666667), (int) (screenSizeHeight / 15.36));
 
@@ -302,7 +302,7 @@ public class BookAddGui {
 
     public JButton getBtnAddBook() {
         if (btnBtnAddBook == null) {
-            btnBtnAddBook = new JButton("Kitabı Ekle");
+            btnBtnAddBook = new JButton("Add Book");
             btnBtnAddBook.setBounds(leftSpace * 2 / 3 + (int) (screenSizeWidth / 3.415),
                     (int) (screenSizeHeight / 1.92), (int) (screenSizeWidth / 9.106666666666667),
                     (int) (screenSizeHeight / 15.36));

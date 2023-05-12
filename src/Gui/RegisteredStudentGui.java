@@ -29,7 +29,7 @@ public class RegisteredStudentGui {
     JTextField txtNo;
     JButton btnComeBack;
     public String DataOfTable[][] = {};
-    public String HeadersOfTable[] = {"", "Öğrenci No", "Öğrenci Adı", "Öğrenci Soyadı", "Email", "Telefon"};
+    public String HeadersOfTable[] = {"", "Student No", "Student Name", "Student Surname", "Email", "Phone No"};
 
     Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     final double screenSizeWidth = screenSize.getWidth();
@@ -57,7 +57,7 @@ public class RegisteredStudentGui {
         action.SearchRegisteredStudent(0);
         setMg(mg);
         setJf(mg.getJf());
-        getJf().setTitle("KAYITLI ÖĞRENCİ SAYFASI");
+        getJf().setTitle("REGISTERED STUDENT PAGE");
         getJp().add(getLblName());
         getJp().add(getLblSurname());
         getJp().add(getLblNo());
@@ -111,7 +111,7 @@ public class RegisteredStudentGui {
 
     public JLabel getLblName() {
         if (lblName == null) {
-            lblName = new JLabel("Öğrenci Adı");
+            lblName = new JLabel("Student Name");
             lblName.setBounds(leftSpace, topSpace, lblWidth + (pushRightCounter * (lblWidth + pushRightSpace)), lblHeight);
             lblName.setForeground(Color.WHITE);
             lblName.setFont(font_lbl);
@@ -128,7 +128,7 @@ public class RegisteredStudentGui {
 
     public JLabel getLblSurname() {
         if (lblSurname == null) {
-            lblSurname = new JLabel("Öğrenci Soyadı");
+            lblSurname = new JLabel("Student Surname");
             lblSurname.setBounds(leftSpace + (pushRightCounter * (lblWidth + pushRightSpace)), topSpace, lblWidth, lblHeight);
             lblSurname.setForeground(Color.WHITE);
             lblSurname.setFont(font_lbl);
@@ -145,7 +145,7 @@ public class RegisteredStudentGui {
 
     public JLabel getLblNo() {
         if (lblNo == null) {
-            lblNo = new JLabel("Öğrenci NO");
+            lblNo = new JLabel("Student No");
             lblNo.setBounds(leftSpace + (pushRightCounter * (lblWidth + pushRightSpace)), topSpace, lblWidth, lblHeight);
             lblNo.setForeground(Color.WHITE);
             lblNo.setFont(font_lbl);
@@ -222,7 +222,7 @@ public class RegisteredStudentGui {
     public JTextField getTxtName() {
         if (txtName == null) {
             pushRightCounter = 0;
-            txtName = new JTextField("İsim Giriniz");
+            txtName = new JTextField("Type Name");
             txtName.setBounds(leftSpace + (pushRightCounter * (lblWidth + pushRightSpace)), topSpace + lblHeight + (int) (screenSizeHeight / 76.8), txtWidth, txtHeight);
             txtName.setForeground(Color.GRAY);
             txtName.setFont(fontTxtPlaceHolder);
@@ -238,7 +238,7 @@ public class RegisteredStudentGui {
 
     public JTextField getTxtSurname() {
         if (txtSurname == null) {
-            txtSurname = new JTextField("Soyisim Giriniz");
+            txtSurname = new JTextField("Type Surname");
             txtSurname.setBounds(leftSpace + (pushRightCounter * (lblWidth + pushRightSpace)), topSpace + lblHeight + (int) (screenSizeHeight / 76.8), txtWidth, txtHeight);
             txtSurname.setForeground(Color.GRAY);
             txtSurname.setFont(fontTxtPlaceHolder);
@@ -255,7 +255,7 @@ public class RegisteredStudentGui {
 
     public JTextField getTxtNo() {
         if (txtNo == null) {
-            txtNo = new JTextField("Numara Giriniz");
+            txtNo = new JTextField("Type No");
             txtNo.setBounds(leftSpace + (pushRightCounter * (lblWidth + pushRightSpace)), topSpace + lblHeight + (int) (screenSizeHeight / 76.8), txtWidth, txtHeight);
             txtNo.setForeground(Color.GRAY);
             txtNo.setFont(fontTxtPlaceHolder);
@@ -270,7 +270,7 @@ public class RegisteredStudentGui {
 
     public JButton getBtnComeBack() {
         if (btnComeBack == null) {
-            btnComeBack = new JButton("Geri dön");
+            btnComeBack = new JButton("Back");
             btnComeBack.setFont(font_lbl);
             btnComeBack.setBounds(leftSpace, (int) (screenSizeHeight / 1.7066666666666668), (int) (screenSizeWidth / 9.106666666666667), (int) (screenSizeHeight / 25.6));
             btnComeBack.setCursor(new Cursor(12));

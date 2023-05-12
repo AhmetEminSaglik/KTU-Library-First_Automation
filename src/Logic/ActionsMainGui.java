@@ -42,8 +42,8 @@ public class ActionsMainGui implements ActionListener, MouseListener, FocusListe
     boolean StudentCanTakeBook = true;
     boolean BookDeliveredSomeone = false;
     boolean bookFree = true;
-    String StudentPlaceHolder = "Öğrenci No Girin";
-    String BarcodeNoPlaceHolder = "Kitap Barkod No girin";
+    String StudentPlaceHolder = "Type Student No";
+    String BarcodeNoPlaceHolder = "Type Book Barcode No";
 
     public ActionsMainGui(MainGui mg) {
 
@@ -66,13 +66,13 @@ public class ActionsMainGui implements ActionListener, MouseListener, FocusListe
         if (e.getSource() == getMg().gettxtStudentNo() || e.getSource() == getMg().getTxtBookBarcode()) {
             if (getMg().gettxtStudentNo().getText().trim().equals("") || getMg().gettxtStudentNo().getText().equals(StudentPlaceHolder)) {
                 java.awt.Toolkit.getDefaultToolkit().beep();
-                getMg().gettxtResultScreen().setText("Öğrenci No doldurun");
+                getMg().gettxtResultScreen().setText("Fill Student No");
                 getMg().gettxtResultScreen().setBackground(Color.YELLOW);
                 //JOptionPane.showMessageDialog(null, "Öğrenci numarası boş bırakılamaz", "EKSİK BİLGİ", JOptionPane.ERROR_MESSAGE);
             } else if (getMg().getTxtBookBarcode().getText().trim().equals("")
                     || getMg().getTxtBookBarcode().getText().equals(BarcodeNoPlaceHolder)) {
                 java.awt.Toolkit.getDefaultToolkit().beep();
-                getMg().gettxtResultScreen().setText("Kitap BarkodNo doldurun");
+                getMg().gettxtResultScreen().setText("Type Book Barcode No");
                 getMg().gettxtResultScreen().setBackground(Color.ORANGE);
                 //JOptionPane.showMessageDialog(null, "Kitap Barkod Numarası boş bırakılamaz", "EKSİK BİLGİ", JOptionPane.ERROR_MESSAGE);
             } else {
@@ -141,8 +141,8 @@ public class ActionsMainGui implements ActionListener, MouseListener, FocusListe
             new FineDebtPayment(getMg());
         }
         if (e.getSource() == getMg().getExit()) {
-            Object[] options = {"Çıkış", "Giriş Sayfası ", "İptal"};
-            int answer = JOptionPane.showOptionDialog(null, "Lütfen birisini seçiniz", "ÇIKIŞ UYARISI", JOptionPane.YES_NO_CANCEL_OPTION,
+            Object[] options = {"Exit", "Sign out ", "Cancel"};
+            int answer = JOptionPane.showOptionDialog(null, "Please choose one", "EXIT OPTIONS", JOptionPane.YES_NO_CANCEL_OPTION,
                     JOptionPane.QUESTION_MESSAGE, null, options, null);
 
             if (answer == 0) {
@@ -325,12 +325,12 @@ public class ActionsMainGui implements ActionListener, MouseListener, FocusListe
         if (e.getSource() == getMg().gettxtStudentNo()) {
             if (getMg().gettxtStudentNo().getText().trim().equals("")) {
                 getMg().gettxtStudentNo().setForeground(Color.GRAY);
-                getMg().gettxtStudentNo().setText("Öğrenci No Girin");
+                getMg().gettxtStudentNo().setText("Type Student No");
             }
         } else if (e.getSource() == getMg().getTxtBookBarcode()) {
             if (getMg().getTxtBookBarcode().getText().trim().equals("")) {
                 getMg().getTxtBookBarcode().setForeground(Color.GRAY);
-                getMg().getTxtBookBarcode().setText("Kitap Barkod No girin");
+                getMg().getTxtBookBarcode().setText("Type Book Barcode No");
 
             }
         }
@@ -360,8 +360,8 @@ public class ActionsMainGui implements ActionListener, MouseListener, FocusListe
             }
             if (TookBookCounter == 3) {
                 java.awt.Toolkit.getDefaultToolkit().beep();
-                JOptionPane.showMessageDialog(null, "Öğrencide Zaten 3 tane kitap var ", "KİTAP VERME HATASI", JOptionPane.ERROR_MESSAGE);
-                getMg().gettxtResultScreen().setText("Daha Fazla Kitap Verilemez");
+                JOptionPane.showMessageDialog(null, "Student has 3 books. Not allowed to give more books.", "BOOK BORROWED ERROR", JOptionPane.ERROR_MESSAGE);
+                getMg().gettxtResultScreen().setText("NOT ALLOWED TO GIVE MORE BOOKS");
                 getMg().gettxtResultScreen().setBackground(new Color(165, 94, 234));
                 StudentCanTakeBook = false;
             }
@@ -373,7 +373,7 @@ public class ActionsMainGui implements ActionListener, MouseListener, FocusListe
                 java.awt.Toolkit.getDefaultToolkit().beep();
 
                 getMg().gettxtResultScreen().setBackground(Color.red);
-                getMg().gettxtResultScreen().setText("ÖĞRENCİ BULUNAMADI");
+                getMg().gettxtResultScreen().setText("STUDENT IS NOT FOUND");
             }
         } finally {
             sqlConnection.CloseAllConnections();
@@ -418,13 +418,13 @@ public class ActionsMainGui implements ActionListener, MouseListener, FocusListe
             bookFree = false;
             if (bookExist == false) {
                 java.awt.Toolkit.getDefaultToolkit().beep();
-                getMg().gettxtResultScreen().setText("Kitap Bulunamadı");
+                getMg().gettxtResultScreen().setText("BOOK IS NOT FOUND");
                 getMg().gettxtResultScreen().setBackground(new Color(235, 59, 90));
             } else if (BookDeliveredSomeone == true) {
                 java.awt.Toolkit.getDefaultToolkit().beep();
-                JOptionPane.showMessageDialog(null, "Kitap başkasına verilmiş",
-                        "ÖĞRECİDE BULUNAN KİTAP EŞLEŞTİRME HATASI", JOptionPane.ERROR_MESSAGE);
-                getMg().gettxtResultScreen().setText("Kitap Önceden Alınmış");
+                JOptionPane.showMessageDialog(null, "Book is given already.",
+                        "MATCH ERROR: BOOK IS ALREADY GIVEN TO STUDENT", JOptionPane.ERROR_MESSAGE);
+                getMg().gettxtResultScreen().setText("BOOK IS GIVEN ALREADY");
                 getMg().gettxtResultScreen().setBackground(Color.ORANGE);
             }
         } finally {
@@ -467,7 +467,7 @@ public class ActionsMainGui implements ActionListener, MouseListener, FocusListe
                         sqlConnection.getResultSet().getString("Email"));
             }
             getMg().gettxtResultScreen().setBackground(Color.GREEN);
-            getMg().gettxtResultScreen().setText("EŞLEŞME BAŞARILI");
+            getMg().gettxtResultScreen().setText("MATCH SUCCESSFULLY");
             SuccessVoice();
         } catch (SQLException ex) {
             Logger.getLogger(ActionsMainGui.class.getName()).log(Level.SEVERE, null, ex);

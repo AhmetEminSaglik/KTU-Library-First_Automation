@@ -54,7 +54,7 @@ public class ActionsLogin implements ActionListener {
                     }
                     if (!girisDogru) {
                         java.awt.Toolkit.getDefaultToolkit().beep();
-                        JOptionPane.showMessageDialog(null, "KULLANICI ADI VEYA PAROLA HATALI");
+                        JOptionPane.showMessageDialog(null, "USERNAME OR PASSWORD IS WRONG");
                         login.getTxtusername().setText("");
                         login.getjPass().setText("");
                     }
@@ -92,7 +92,7 @@ public class ActionsLogin implements ActionListener {
                 preparedStmt.close();
             }
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Sql bağlantısı kapatılırken hata meydana geldi");
+            JOptionPane.showMessageDialog(null, "Error occurred while closing sql connection.");
         }
     }
 

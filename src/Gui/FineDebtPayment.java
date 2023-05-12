@@ -51,7 +51,7 @@ public class FineDebtPayment {
     final int pushRightSpace = txtWidth + (int) (screenSizeWidth / 27.32);
     int pushRightCounter = 0;
     public String DataOfTable[][] = {};
-    public String HeaderOfTable[] = {"", "Öğrenci No", "Ad-Soyad", "Email", "Telefon Numarası", "Borç (TL)"};
+    public String HeaderOfTable[] = {"", "Student No", "Name-Surname", "Email", "Phone No", "Debt(TL)"};
     Font lblFont = new Font("monospaced", Font.BOLD, (int) screenSizeWidth / 80);
     Font txtFont = new Font("", Font.BOLD, (int) screenSizeWidth / 91);
     ActionTimeFine action = new ActionTimeFine(this);
@@ -60,7 +60,7 @@ public class FineDebtPayment {
 
         setMg(mg);
         setJf(mg.getJf());
-        getJf().setTitle("Para Cezaları & Borç ödeme");
+        getJf().setTitle("FINES-DEBT PAYMENT PAGE");
         getJf().add(getJp());
 
         getJp().add(getLblStudentNo());
@@ -121,7 +121,7 @@ public class FineDebtPayment {
 
     public JLabel getLblStudentNo() {
         if (lblStudentNo == null) {
-            lblStudentNo = new JLabel("Öğrenci No");
+            lblStudentNo = new JLabel("Student No");
             lblStudentNo.setBounds(LeftSpace + (pushRightCounter * pushRightSpace), lblTopSpace, lblWidth, lblHeight);
             lblStudentNo.setForeground(Color.BLACK);
             lblStudentNo.setFont(lblFont);
@@ -138,7 +138,7 @@ public class FineDebtPayment {
 
     public JLabel getLblDebt() {
         if (lblDebt == null) {
-            lblDebt = new JLabel("Borcu");
+            lblDebt = new JLabel("Debt");
             lblDebt.setBounds(LeftSpace + (pushRightCounter * pushRightSpace), lblTopSpace, lblWidth, lblHeight);
             lblDebt.setForeground(Color.BLACK);
             lblDebt.setFont(lblFont);
@@ -154,7 +154,7 @@ public class FineDebtPayment {
 
     public JLabel getLblAmountOfPayment() {
         if (lblAmountOfPayment == null) {
-            lblAmountOfPayment = new JLabel("Ödeme Miktarı");
+            lblAmountOfPayment = new JLabel("Payment Amount");
             lblAmountOfPayment.setBounds(LeftSpace + (pushRightCounter * pushRightSpace), lblTopSpace + lblHeight + txtHeight + (int) (screenSizeHeight / 76.8), lblWidth, lblHeight);
             lblAmountOfPayment.setForeground(Color.BLACK);
             lblAmountOfPayment.setFont(lblFont);
@@ -169,7 +169,7 @@ public class FineDebtPayment {
 
     public JLabel getLblResult() {
         if (lblResult == null) {
-            lblResult = new JLabel("Sonuç");
+            lblResult = new JLabel("RESULT");
             lblResult.setBounds(LeftSpace + (pushRightCounter * pushRightSpace), lblTopSpace, lblWidth, lblHeight);
             lblResult.setForeground(Color.BLACK);
             lblResult.setFont(lblFont);
@@ -185,7 +185,7 @@ public class FineDebtPayment {
 
     public JTextField getTxtStudentNo() {
         if (txtStudentNo == null) {
-            txtStudentNo = new JTextField("Öğrenci No");
+            txtStudentNo = new JTextField("Student No");
             txtStudentNo.setBounds(LeftSpace + (pushRightCounter * pushRightSpace), txtTopSpace, lblWidth, lblHeight);
             txtStudentNo.setForeground(Color.gray);
             txtStudentNo.setFont(new Font("", Font.ITALIC, (int) screenSizeWidth / 97));
@@ -211,7 +211,7 @@ public class FineDebtPayment {
             ToolTipManager ttm = ToolTipManager.sharedInstance();
             ttm.setInitialDelay(100);
             ttm.setDismissDelay(1000);
-            txtDebt.setToolTipText("Buraya Erişemezsiniz");
+            txtDebt.setToolTipText("Not allowed to acces here");
             pushRightCounter++;
 
         }
@@ -224,7 +224,7 @@ public class FineDebtPayment {
 
     public JTextField getTxtAmountOfPayment() {
         if (txtAmountOfPayment == null) {
-            txtAmountOfPayment = new JTextField("Ödeme Miktarı");
+            txtAmountOfPayment = new JTextField("Payment Amount");
             txtAmountOfPayment.setBounds(LeftSpace + (pushRightCounter * pushRightSpace), txtTopSpace + lblHeight + txtHeight + 15, lblWidth, lblHeight);
             txtAmountOfPayment.setForeground(Color.GRAY);
             txtAmountOfPayment.setBackground(Color.DARK_GRAY);
@@ -255,7 +255,7 @@ public class FineDebtPayment {
             ToolTipManager ttm = ToolTipManager.sharedInstance();
             ttm.setInitialDelay(100);
             ttm.setDismissDelay(1000);
-            txtResult.setToolTipText("Buraya Erişemezsiniz");
+            txtResult.setToolTipText("Not allowed to acces here");
             pushRightCounter++;
 
         }
@@ -350,7 +350,7 @@ public class FineDebtPayment {
 
     public JButton getBtnComeBack() {
         if (btnComeBack == null) {
-            btnComeBack = new JButton("Geri Dön");
+            btnComeBack = new JButton("Back");
             btnComeBack.setFont(lblFont);
             btnComeBack.setBounds(LeftSpace, (int) (screenSizeHeight / 1.7066666666666668),
                     (int) (screenSizeWidth / 9.106666666666667), (int) (screenSizeHeight / 25.6));

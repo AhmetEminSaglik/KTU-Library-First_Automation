@@ -61,7 +61,7 @@ public class StudentStateGui extends JPanel {
     public StudentStateGui(MainGui mg) {
 
         setMg(mg);
-        getMg().getJf().setTitle("ÖĞRENCİ DURUMU");
+        getMg().getJf().setTitle("STUDENT STATUS PAGE");
         this.setBounds(getJf().getBounds());
         this.setBackground(new Color(44, 58, 71));
         this.setLayout(null);
@@ -114,7 +114,7 @@ public class StudentStateGui extends JPanel {
 
     public JLabel getLblStudentNo() {
         if (lblStudentNo == null) {
-            lblStudentNo = new JLabel("Öğrenci No");
+            lblStudentNo = new JLabel("Student No");
             lblStudentNo.setBounds(LeftSpace, (int) (screenSizeHeight / 76.8), lblWidth, lblHeight);
             lblStudentNo.setForeground(Color.red);
             lblStudentNo.setFont(lblFont);
@@ -128,7 +128,7 @@ public class StudentStateGui extends JPanel {
 
     public JLabel getLblDept() {
         if (lblDept == null) {
-            lblDept = new JLabel("Borç Durumu");
+            lblDept = new JLabel("Debt");
             lblDept.setBounds(LeftSpace + (int) (screenSizeWidth / 3.415), (int) (screenSizeHeight / 76.8), lblWidth, lblHeight);
             lblDept.setForeground(Color.red);
             lblDept.setFont(lblFont);
@@ -212,7 +212,7 @@ public class StudentStateGui extends JPanel {
             txtDept.setBackground(new Color(206, 214, 224));
             ttm.setInitialDelay(100);
             ttm.setDismissDelay(1000);
-            txtDept.setToolTipText("Buraya Erişemezsiniz");
+            txtDept.setToolTipText("Not allowed to acces here");
         }
         return txtDept;
     }
@@ -223,7 +223,7 @@ public class StudentStateGui extends JPanel {
 
     public JTextField getTxtBookBarcodeNo1() {
         if (txtBookBarcodeNo1 == null) {
-            txtBookBarcodeNo1 = new JTextField("KİTAP YOK");
+            txtBookBarcodeNo1 = new JTextField("NO BOOK");
             txtBookBarcodeNo1.setBounds(LeftSpace, topSpace + (txtHeight + (int) (screenSizeHeight / 10.971428571428572)) * pushUndertxtCounter, txtBarcodeWidth, txtHeight);
             txtBookBarcodeNo1.setFont(txtFont);
             txtBookBarcodeNo1.setEditable(false);
@@ -231,7 +231,7 @@ public class StudentStateGui extends JPanel {
             txtBookBarcodeNo1.setBackground(new Color(206, 214, 224));
             ttm.setInitialDelay(100);
             ttm.setDismissDelay(1000);
-            txtBookBarcodeNo1.setToolTipText("Buraya Erişemezsiniz");
+            txtBookBarcodeNo1.setToolTipText("Not allowed to acces here");
             pushUndertxtCounter++;
 
         }
@@ -244,7 +244,7 @@ public class StudentStateGui extends JPanel {
 
     public JTextField getTxtBookBarcodeNo2() {
         if (txtBookBarcodeNo2 == null) {
-            txtBookBarcodeNo2 = new JTextField("KİTAP YOK");
+            txtBookBarcodeNo2 = new JTextField("NO BOOK");
             txtBookBarcodeNo2.setBounds(LeftSpace, topSpace + (txtHeight + (int) (screenSizeHeight / 10.971428571428572)) * pushUndertxtCounter, txtBarcodeWidth, txtHeight);
             txtBookBarcodeNo2.setFont(txtFont);
             txtBookBarcodeNo2.setEditable(false);
@@ -252,7 +252,7 @@ public class StudentStateGui extends JPanel {
             txtBookBarcodeNo2.setBackground(new Color(206, 214, 224));
             ttm.setInitialDelay(100);
             ttm.setDismissDelay(1000);
-            txtBookBarcodeNo2.setToolTipText("Buraya Erişemezsiniz");
+            txtBookBarcodeNo2.setToolTipText("Not allowed to acces here");
             pushUndertxtCounter++;
         }
         return txtBookBarcodeNo2;
@@ -264,7 +264,7 @@ public class StudentStateGui extends JPanel {
 
     public JTextField getTxtBookBarcodeNo3() {
         if (txtBookBarcodeNo3 == null) {
-            txtBookBarcodeNo3 = new JTextField("KİTAP YOK");
+            txtBookBarcodeNo3 = new JTextField("NO BOOK");
             txtBookBarcodeNo3.setBounds(LeftSpace, topSpace + (txtHeight + (int) (screenSizeHeight / 10.971428571428572)) * pushUndertxtCounter, txtBarcodeWidth, txtHeight);
             txtBookBarcodeNo3.setFont(txtFont);
             txtBookBarcodeNo3.setEditable(false);
@@ -272,7 +272,7 @@ public class StudentStateGui extends JPanel {
             txtBookBarcodeNo3.setBackground(new Color(206, 214, 224));
             ttm.setInitialDelay(100);
             ttm.setDismissDelay(1000);
-            txtBookBarcodeNo3.setToolTipText("Buraya Erişemezsiniz");
+            txtBookBarcodeNo3.setToolTipText("Not allowed to acces here");
             pushUndertxtCounter++;
         }
         return txtBookBarcodeNo3;
@@ -285,7 +285,7 @@ public class StudentStateGui extends JPanel {
     public JTextField getTxtBookName1() {
         if (txtBookName1 == null) {
             pushUndertxtCounter = 0;
-            txtBookName1 = new JTextField("KİTAP YOK"
+            txtBookName1 = new JTextField("NO BOOK"
                     + "");
             txtBookName1.setBounds(LeftSpace, topSpaceBook + (txtHeight + (int) (screenSizeHeight / 10.971428571428572)) * pushUndertxtCounter, txtBookNameWidth, txtHeight);
             txtBookName1.setFont(txtFont);
@@ -294,7 +294,7 @@ public class StudentStateGui extends JPanel {
             txtBookName1.setBackground(new Color(206, 214, 224));
             ttm.setInitialDelay(100);
             ttm.setDismissDelay(1000);
-            txtBookName1.setToolTipText("Buraya Erişemezsiniz");
+            txtBookName1.setToolTipText("Not allowed to acces here");
             pushUndertxtCounter++;
         }
 
@@ -307,7 +307,7 @@ public class StudentStateGui extends JPanel {
 
     public JTextField getTxtBookName2() {
         if (txtBookName2 == null) {
-            txtBookName2 = new JTextField("KİTAP YOK");
+            txtBookName2 = new JTextField("NO BOOK");
             txtBookName2.setBounds(LeftSpace, topSpaceBook + (txtHeight + (int) (screenSizeHeight / 10.971428571428572)) * pushUndertxtCounter, txtBookNameWidth, txtHeight);
             txtBookName2.setFont(txtFont);
             txtBookName2.setEditable(false);
@@ -315,7 +315,7 @@ public class StudentStateGui extends JPanel {
             txtBookName2.setBackground(new Color(206, 214, 224));
             ttm.setInitialDelay(100);
             ttm.setDismissDelay(1000);
-            txtBookName2.setToolTipText("Buraya Erişemezsiniz");
+            txtBookName2.setToolTipText("Not allowed to acces here");
             pushUndertxtCounter++;
         }
         return txtBookName2;
@@ -327,7 +327,7 @@ public class StudentStateGui extends JPanel {
 
     public JTextField getTxtBookName3() {
         if (txtBookName3 == null) {
-            txtBookName3 = new JTextField("KİTAP YOK");
+            txtBookName3 = new JTextField("NO BOOK");
             txtBookName3.setBounds(LeftSpace, topSpaceBook + (txtHeight + (int) (screenSizeHeight / 10.971428571428572)) * pushUndertxtCounter, txtBookNameWidth, txtHeight);
             txtBookName3.setFont(txtFont);
             txtBookName3.setEditable(false);
@@ -335,7 +335,7 @@ public class StudentStateGui extends JPanel {
             txtBookName3.setBackground(new Color(206, 214, 224));
             ttm.setInitialDelay(100);
             ttm.setDismissDelay(1000);
-            txtBookName3.setToolTipText("Buraya Erişemezsiniz");
+            txtBookName3.setToolTipText("Not allowed to acces here");
             pushUndertxtCounter++;
         }
         return txtBookName3;
@@ -347,7 +347,7 @@ public class StudentStateGui extends JPanel {
 
     public JButton getBtnComeBack() {
         if (btnComeBack == null) {
-            btnComeBack = new JButton("Geri dön");
+            btnComeBack = new JButton("Back");
             btnComeBack.setBounds(LeftSpace, (int) (screenSizeHeight / 1.7066666666666668),
                     (int) (screenSizeWidth / 9.106666666666667), (int) (screenSizeHeight / 21.942857142857143));
             btnComeBack.setFont(txtFont);

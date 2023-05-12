@@ -1,6 +1,7 @@
 package Gui;
 
 import Logic.ActionTimeFine;
+
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
@@ -31,7 +32,8 @@ public class AboutUs {
     int firstColor = new Random().nextInt(255);
     int secondColor = new Random().nextInt(255);
     int thirdColor = new Random().nextInt(255);
-
+    final int topSpace = (int) (screenSizeHeight / 25.6);
+    final int leftSpace = (int) (screenSizeWidth / 27.32);
     JTextField txtOldUsername;
     JTextField txtNewUsername;
     JPasswordField txtOldPassword;
@@ -75,18 +77,19 @@ public class AboutUs {
 
     public String FillTextArea() {
 
-        String txt1 = "    Yazılım mühendisliği 2. Sınıf öğrencisiyken \n"
+        String txt1 = "          I am a 2nd-grade software engr student. I am donating this library\n" +
+                "automation to the KTU's Of Technology Faculty's Library on 02.20.2020.\n" +
+                "Hoping to make the library processes easier.\n\n"
+                + "                                                            Ahmet Emin SAĞLIK\n"
+                + "                                                                       385931";
+        String txt2 = "    Yazılım mühendisliği 2. Sınıf öğrencisiyken \n"
                 + "gönüllü olarak  bu projeyi gerçekleştirip \n"
                 + "kütüphanemizin işlerini kolaylaştırmasını diliyorum.\n"
                 + "20.02.2020 tarihinde kütüphanemize \n"
                 + "bağışlıyorum.\n\n"
                 + "                    Ahmet Emin SAĞLIK 385931 \n"
                 + "                           20.02.2020";
-        String txt = "Yazılım mühendisliği 2. Sınıf öğrensiyken \n"
-                + "gönüllü olarak  bu projeyi gerçekleştirip \n"
-                + "20.02.2020 tarihinde kütüphanemize hediye ediyorum.\n\n"
-                + "                    Ahmet Emin SAĞLIK 385931 \n"
-                + "                           20.02.2020";
+
         return txt1;
     }
 
@@ -94,7 +97,7 @@ public class AboutUs {
         setMg(mg);
         setJf(mg.getJf());
         getJf().add(getJp());
-        getJf().setTitle("HAKKIMIZDA");
+        getJf().setTitle("ABOUT");
         getTxtAreaAboutMe().setBackground(new Color(firstColor, secondColor, thirdColor));
         getJp().add(getTxtAreaAboutMe());
         getJp().add(getBtnComeBack());
@@ -102,7 +105,7 @@ public class AboutUs {
         changeBackgroundColorOfPanel();
 
         getTxtAreaAboutMe().setText(FillTextArea());
-        getTxtAreaAboutMe().setFont(btnFont);
+//        getTxtAreaAboutMe().setFont(btnFont);
         getJp().add(getTxtOldUsername());
         getJp().add(getTxtNewUsername());
         getJp().add(getTxtResult());
@@ -152,7 +155,7 @@ public class AboutUs {
             getJp().setBackground(new Color(firstColor, secondColor, thirdColor));
             getTxtAreaAboutMe().setBackground(new Color(firstColor, secondColor, thirdColor));
 
-            if (firstColor + secondColor + thirdColor < 100) {
+            if (firstColor + secondColor + thirdColor < 255) {
                 ChangeForegroundColor(new Color(255, 255, 255));
             } else {
                 ChangeForegroundColor(new Color(0, 0, 0));
@@ -262,8 +265,8 @@ public class AboutUs {
         if (txtAreaAboutMe == null) {
             txtAreaAboutMe = new JTextArea();
             txtAreaAboutMe.setFocusable(false);
-            txtAreaAboutMe.setFont(new Font("", Font.BOLD, (int) (screenSizeWidth / 75.88)));
-            txtAreaAboutMe.setBounds((int) (screenSizeWidth / 17.075), (int) (screenSizeHeight / 15.36),
+            txtAreaAboutMe.setFont(new Font("", Font.BOLD, (int) (screenSizeWidth / 75)));
+            txtAreaAboutMe.setBounds(leftSpace + (int) (screenSizeWidth / 17.075), topSpace + (int) (screenSizeHeight / 15.36),
                     (int) (screenSizeWidth / 1.9514285714285715), (int) (screenSizeHeight / 3.072));
         }
         return txtAreaAboutMe;
@@ -275,7 +278,7 @@ public class AboutUs {
 
     public JButton getBtnComeBack() {
         if (btnComeBack == null) {
-            btnComeBack = new JButton("Geri Dön");
+            btnComeBack = new JButton("Back");
             btnComeBack.setFont(btnFont);
             btnComeBack.setBounds((int) (screenSizeWidth / 27.32), (int) (screenSizeHeight / 1.7066666666666668),
                     (int) (screenSizeWidth / 9.106666666666667), (int) (screenSizeHeight / 21.942857142857143));
@@ -429,7 +432,7 @@ public class AboutUs {
     public JButton getBtnChangePassword() {
 
         if (btnChangePassword == null) {
-            btnChangePassword = new JButton("Giriş bilgilerini değiştir");
+            btnChangePassword = new JButton("Change Login Information");
             btnChangePassword.setBounds(LeftSpace + txtWidth / 2,
                     txtTopSpace + (txtpushUnder * (txtHeight + (int) (screenSizeHeight / 153.6))) + lblHeight,
                     (txtWidth * 5 / 2) - (int) (screenSizeWidth / 30.355555555555554),

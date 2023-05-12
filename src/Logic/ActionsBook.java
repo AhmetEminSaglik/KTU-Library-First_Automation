@@ -83,7 +83,7 @@ public class ActionsBook implements ActionListener, FocusListener {
 
                 bag.getJp().setVisible(false);
                 bag.getMg().getJp().setVisible(true);
-                bag.getMg().getJf().setTitle("ANA SAYFA");
+                bag.getMg().getJf().setTitle("MAIN PAGE");
                 clearAllTxtMainGui();
 
             } else if (e.getSource() == bag.getBtnAddBook()
@@ -100,7 +100,7 @@ public class ActionsBook implements ActionListener, FocusListener {
 
             } else {
                 java.awt.Toolkit.getDefaultToolkit().beep();
-                bag.getTxtResult().setText("Lütfen Hepsini Eksiksiz doldurun");
+                bag.getTxtResult().setText("Please fill all of them");
                 bag.getTxtResult().setForeground(Color.red);
                 bag.getTxtResult().setBackground(Color.BLACK);
 
@@ -109,15 +109,15 @@ public class ActionsBook implements ActionListener, FocusListener {
             if (e.getSource() == brg.getBtnComeBack()) {
                 brg.getJp().setVisible(false);
                 brg.getMg().getJp().setVisible(true);
-                brg.getMg().getJf().setTitle("ANA SAYFA");
+                brg.getMg().getJf().setTitle("MAIN PAGE");
                 clearAllTxtMainGui();
             } else if (e.getSource() == brg.getTxtBarcodeNo() || e.getSource() == brg.getTxtStudentNo()) {
                 java.awt.Toolkit.getDefaultToolkit().beep();
                 if (brg.getTxtBarcodeNo().getText().trim().equals("")) {
-                    brg.getTxtResult().setText("Kitap Barkod Numarasını Doldurun");
+                    brg.getTxtResult().setText("Fill Book Barcode No");
                     brg.getTxtResult().setBackground(Color.ORANGE);
                 } else if (brg.getTxtStudentNo().getText().trim().equals("")) {
-                    brg.getTxtResult().setText("Öğrenci Numarasını Doldurun");
+                    brg.getTxtResult().setText("Fill Student No");
                     brg.getTxtResult().setBackground(Color.YELLOW);
 
                 } else {
@@ -132,7 +132,7 @@ public class ActionsBook implements ActionListener, FocusListener {
 
             if (e.getSource() == bslg.getBtnComeBack()) {
                 bslg.getJp().setVisible(false);
-                bslg.getMg().getJf().setTitle("ANA SAYFA");
+                bslg.getMg().getJf().setTitle("MAIN PAGE");
                 bslg.getMg().getJp().setVisible(true);
                 clearAllTxtMainGui();
             } else if (e.getSource() == bslg.getTxtAuthorName()) {
@@ -150,7 +150,7 @@ public class ActionsBook implements ActionListener, FocusListener {
             if (e.getSource() == burg.getBtnComeBack()) {
                 burg.setVisible(false);
                 burg.getMg().getJp().setVisible(true);
-                burg.getJf().setTitle("ANA SAYFA");
+                burg.getJf().setTitle("MAIN PAGE");
                 clearAllTxtMainGui();
             } else if (e.getSource() == burg.getBtnUpdate()
                     || e.getSource() == burg.getTxtNewBarcodeNo()
@@ -173,9 +173,9 @@ public class ActionsBook implements ActionListener, FocusListener {
         if (bag != null) {
             bag.getMg().action.NumbersOfBooks();
             bag.getMg().gettxtStudentNo().setForeground(Color.GRAY);
-            bag.getMg().gettxtStudentNo().setText("Öğrenci No Girin");
+            bag.getMg().gettxtStudentNo().setText("Type Student No");
             bag.getMg().getTxtBookBarcode().setForeground(Color.GRAY);
-            bag.getMg().getTxtBookBarcode().setText("Kitap Barkod No girin");
+            bag.getMg().getTxtBookBarcode().setText("Type Barcode No");
             bag.getMg().getTxtBookName().setText("");
             bag.getMg().gettxtResultScreen().setText("");
             bag.getMg().gettxtResultScreen().setBackground(new Color(206, 214, 224));
@@ -183,17 +183,17 @@ public class ActionsBook implements ActionListener, FocusListener {
         } else if (brg != null) {
             brg.getMg().action.NumbersOfBooks();
             brg.getMg().gettxtStudentNo().setForeground(Color.GRAY);
-            brg.getMg().gettxtStudentNo().setText("Öğrenci No Girin");
+            brg.getMg().gettxtStudentNo().setText("Type Student No");
             brg.getMg().getTxtBookBarcode().setForeground(Color.GRAY);
-            brg.getMg().getTxtBookBarcode().setText("Kitap Barkod No girin");
+            brg.getMg().getTxtBookBarcode().setText("Type Barcode No");
             brg.getMg().getTxtBookName().setText("");
             brg.getMg().gettxtResultScreen().setText("");
             brg.getMg().gettxtResultScreen().setBackground(new Color(206, 214, 224));
         } else if (bslg != null) {
             bslg.getMg().gettxtStudentNo().setForeground(Color.GRAY);
-            bslg.getMg().gettxtStudentNo().setText("Öğrenci No Girin");
+            bslg.getMg().gettxtStudentNo().setText("Type Student No");
             bslg.getMg().getTxtBookBarcode().setForeground(Color.GRAY);
-            bslg.getMg().getTxtBookBarcode().setText("Kitap Barkod No girin");
+            bslg.getMg().getTxtBookBarcode().setText("Type Barcode No");
             bslg.getMg().getTxtBookName().setText("");
             bslg.getMg().gettxtResultScreen().setText("");
             bslg.getMg().gettxtResultScreen().setBackground(new Color(206, 214, 224));
@@ -201,9 +201,9 @@ public class ActionsBook implements ActionListener, FocusListener {
         } else if (burg != null) {
             burg.getMg().action.NumbersOfBooks();
             burg.getMg().gettxtStudentNo().setForeground(Color.GRAY);
-            burg.getMg().gettxtStudentNo().setText("Öğrenci No Girin");
+            burg.getMg().gettxtStudentNo().setText("Type Student No");
             burg.getMg().getTxtBookBarcode().setForeground(Color.GRAY);
-            burg.getMg().getTxtBookBarcode().setText("Kitap Barkod No girin");
+            burg.getMg().getTxtBookBarcode().setText("Type Barcode No");
             burg.getMg().getTxtBookName().setText("");
             burg.getMg().gettxtResultScreen().setText("");
             burg.getMg().gettxtResultScreen().setBackground(new Color(206, 214, 224));
@@ -259,27 +259,27 @@ public class ActionsBook implements ActionListener, FocusListener {
         if (jtxt != bslg.getTxtBarcodeNo()) {
             bslg.getTxtBarcodeNo().setFont(fontTxtPlaceHolder);
             bslg.getTxtBarcodeNo().setForeground(bslgPlaceHolder);
-            bslg.getTxtBarcodeNo().setText("Barkod numarası giriniz");
+            bslg.getTxtBarcodeNo().setText("Type Barcode No");
         }
         if (jtxt != bslg.getTxtAuthorName()) {
             bslg.getTxtAuthorName().setFont(fontTxtPlaceHolder);
             bslg.getTxtAuthorName().setForeground(bslgPlaceHolder);
-            bslg.getTxtAuthorName().setText("Yazar ismi giriniz");
+            bslg.getTxtAuthorName().setText("Type Author Name");
         }
         if (jtxt != bslg.getTxtBookName()) {
             bslg.getTxtBookName().setFont(fontTxtPlaceHolder);
             bslg.getTxtBookName().setForeground(bslgPlaceHolder);
-            bslg.getTxtBookName().setText("Kitap ismi giriniz");
+            bslg.getTxtBookName().setText("Type Book Name");
         }
         if (jtxt != bslg.getTxtCategory()) {
             bslg.getTxtCategory().setFont(fontTxtPlaceHolder);
             bslg.getTxtCategory().setForeground(bslgPlaceHolder);
-            bslg.getTxtCategory().setText("Kategori ismi giriniz");
+            bslg.getTxtCategory().setText("Type Category Name");
         }
-        if (jtxt.getText().trim().equals("Barkod numarası giriniz")
-                || jtxt.getText().trim().equals("Yazar ismi giriniz")
-                || jtxt.getText().trim().equals("Kitap ismi giriniz")
-                || jtxt.getText().trim().equals("Kategori ismi giriniz")) {
+        if (jtxt.getText().trim().equals("Type Barcode No")
+                || jtxt.getText().trim().equals("Type Author Name")
+                || jtxt.getText().trim().equals("Type Book Name")
+                || jtxt.getText().trim().equals("Type Category Name")) {
             jtxt.setText("");
         }
         jtxt.setFont(new Font("", Font.BOLD, (int) screenSizeWidth / 91));
@@ -300,11 +300,11 @@ public class ActionsBook implements ActionListener, FocusListener {
             sqlConnection.setResultSet(SqlBookControlQuery);
             while (sqlConnection.getResultSet().next()) {
 
-                throw new Exception("Önceden Bu Barkod Numarası Alınmış");
+                throw new Exception("This Barcode No is not available.");
             }
 
         } catch (ClassNotFoundException ex) {
-            JOptionPane.showMessageDialog(null, "11111111111111111", "Kayıt Hatası", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Occured record Error", "Record Error", JOptionPane.ERROR_MESSAGE);
         } catch (SQLException ex) {
         } catch (Exception ex) {
             BookCanAdd = false;
@@ -338,7 +338,7 @@ public class ActionsBook implements ActionListener, FocusListener {
             sqlConnection.Update(SqlBookAdd);
 
             bag.getTxtResult().setBackground(Color.GREEN);
-            bag.getTxtResult().setText("Kitap Kayıt Başarılı");
+            bag.getTxtResult().setText("Book is registered Successfully");
 
             SuccessVoice();
 
@@ -346,16 +346,16 @@ public class ActionsBook implements ActionListener, FocusListener {
             JOptionPane.showMessageDialog(null, ex);
         } catch (SQLException ex) {
             java.awt.Toolkit.getDefaultToolkit().beep();
-            JOptionPane.showMessageDialog(null, "1-)Kitap Barcode Numarasına Sadece Sayı Girilebilir\n\n "
-                    + "2-)Xampp hata meydana geldi  \n\n "
-                    + "(yukarıdaki çözümlerden birisini deneyin)", "SQL HATASI", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "1-)Only numbers are allowed to type Book Barcode No.\n\n "
+                    + "2-)Error occured in Xampp\n\n "
+                    + "(Try one of the above solutions.)", "SQL Exception", JOptionPane.ERROR_MESSAGE);
 
             bag.getTxtBookBarcodeNo().setForeground(new Color(255, 159, 26));
 
         } catch (Exception ex) {
             java.awt.Toolkit.getDefaultToolkit().beep();
             bag.getTxtResult().setBackground(Color.ORANGE);
-            bag.getTxtResult().setText("Bu Barkod Numarası Zaten Kayıtlı");
+            bag.getTxtResult().setText("This Barcode is already in use");
 
         } finally {
             sqlConnection.CloseAllConnections();
@@ -430,12 +430,12 @@ public class ActionsBook implements ActionListener, FocusListener {
                 burg.getTxtNewBookName().setText("");
                 burg.getTxtNewAuthorName().setText("");
                 burg.getTxtNewCategory().setText("");
-                burg.getTxtResult().setText("Kitap Silindi");
+                burg.getTxtResult().setText("Book is deleted successfully");
                 burg.getTxtResult().setBackground(new Color(255, 121, 63));
                 sqlConnection.PreparedStatementExecute();
             } else {
 
-                burg.getTxtResult().setText("Kitap Silme İşlemi İptal Edildi");
+                burg.getTxtResult().setText("Book Delete process is canceled.");
                 burg.getTxtResult().setBackground(Color.PINK);
                 java.awt.Toolkit.getDefaultToolkit().beep();
             }
@@ -448,13 +448,13 @@ public class ActionsBook implements ActionListener, FocusListener {
             java.awt.Toolkit.getDefaultToolkit().beep();
             if (AlreadyCame == false) {
 
-                int answer = JOptionPane.showConfirmDialog(null, "Kitabı Silmek İçin Önce Kitap Bilgilerini Getirmeniz gerekmektedir\n"
-                        + "                                        Bilgiler Getirilsin mi ?", "EŞLEŞME HATASI", JOptionPane.YES_NO_OPTION);
+                int answer = JOptionPane.showConfirmDialog(null, "Book data must be retrived before deleting book.\n"
+                        + "                                        Do you want to retrive Data?", "MATCH DATA ERROR", JOptionPane.YES_NO_OPTION);
                 if (answer == JOptionPane.YES_OPTION) {
                     DBBookBringData();
                 }
             } else if (StudentTookBook == true) {
-                burg.getTxtResult().setText("Kitap Öğrenci Üzerine Kayıtlı, Silme Başarısız");
+                burg.getTxtResult().setText("Book is borrowed by Student. Deletion is failed");
                 burg.getTxtResult().setBackground(new Color(250, 177, 160));
 
             } else {
@@ -496,33 +496,33 @@ public class ActionsBook implements ActionListener, FocusListener {
                 burg.getTxtNewCategory().setText(sqlConnection.getResultSet().getString("CategoryName"));
                 BookBringCame = true;
                 burg.getTxtResult().setBackground(new Color(24, 220, 255));
-                burg.getTxtResult().setText("Bilgiler Getirildi");
+                burg.getTxtResult().setText("Data Retrived");
 
                 SuccessVoice();
             }
             if (!BookBringCame) {
                 java.awt.Toolkit.getDefaultToolkit().beep();
-                JOptionPane.showMessageDialog(null, burg.getTxtBarcodeNo().getText().trim() + " Barkod Nolu Kitap Kaydı YOKTUR",
-                        "EKSİK KAYIT HATASI", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "There is no book record such as "+burg.getTxtBarcodeNo().getText().trim()+"  barcode",
+                        "MISSING RECORD ERROR", JOptionPane.ERROR_MESSAGE);
                 burg.getTxtNewBarcodeNo().setText("");
                 burg.getTxtNewBookName().setText("");
                 burg.getTxtNewAuthorName().setText("");
                 burg.getTxtNewCategory().setText("");
 
                 burg.getTxtResult().setBackground(new Color(255, 82, 82));
-                burg.getTxtResult().setText("İstenilen Bilgiler Kayıtta Bulunamadı");
+                burg.getTxtResult().setText("Requested data is not found in records.");
 
             }
         } catch (ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(null, ex + " ");
         } catch (SQLException ex) {
             if (BarcodeNoEmpty == false) {
-                JOptionPane.showMessageDialog(null, "Barkod Numarasını Doldurup Aratmalısınız", "SQL HATASI", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Barcode not must be filled.", "SQL EXCEPTION", JOptionPane.WARNING_MESSAGE);
             }
         } catch (Exception ex) {
             if (AlreadyCame == true) {
                 java.awt.Toolkit.getDefaultToolkit().beep();
-                JOptionPane.showMessageDialog(null, "Aratılan Barkod Nolu Kitap  Zaten Getirildi", "ARAMA HATASI", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "request Book data is already retrived", "USER REQUEST ERROR", JOptionPane.ERROR_MESSAGE);
             }
         } finally {
             sqlConnection.CloseAllConnections();
@@ -557,7 +557,7 @@ public class ActionsBook implements ActionListener, FocusListener {
                 throw new Exception();
 
             }
-            int answer = JOptionPane.showConfirmDialog(null, "Güncellemek İstediğinize Emin misiniz?", "GÜNCELLEME ONAYI", JOptionPane.YES_NO_OPTION);
+            int answer = JOptionPane.showConfirmDialog(null, "Are you sure you want to update?", "UPDATE CONFIRMATION", JOptionPane.YES_NO_OPTION);
             if (answer != JOptionPane.YES_OPTION) {
                 return;
             }
@@ -565,19 +565,16 @@ public class ActionsBook implements ActionListener, FocusListener {
             sqlConnection.Update(SqlBookUpdateQuery);
 
             burg.getTxtResult().setBackground(Color.GREEN);
-            burg.getTxtResult().setText("GÜNCELLENME BAŞARILI");
+            burg.getTxtResult().setText("UPDATED SUCCESSFULLY");
             SuccessVoice();
-        } catch (ClassNotFoundException ex) {
-            JOptionPane.showMessageDialog(null, ex + "aaaaaaaaaaaaaaaaa");
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, ex + "\n\n\n1-) Bilgileri Güncelleyebilmeniz İçin Önce Öğrenci Numarasını\n"
-                    + "Aratmalısınız\n"
-                    + "2-) Yeni Öğrenci Numarasına Sayı girmelisiniz", "GÜNCELLEME HATASI", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, ex + "\n\n\n1-) Before update student data must be retrived.\n"
+                    + "2-) New Student no must be filled.", "GÜNCELLEME HATASI", JOptionPane.ERROR_MESSAGE);
         } catch (Exception ex) {
             if (emptyArea == true) {
                 java.awt.Toolkit.getDefaultToolkit().beep();
-                JOptionPane.showMessageDialog(null, "Lütfen Bilgileri Eksiksiz Bir Şekilde Doldurunuz", "EKSİK BİLGİ", JOptionPane.ERROR_MESSAGE);
-                burg.getTxtResult().setText("Eksik Bilgi, Güncelleme Başarısız");
+                JOptionPane.showMessageDialog(null, "Please fill all of the textfields.", "MISSING INFORMATION", JOptionPane.ERROR_MESSAGE);
+                burg.getTxtResult().setText("MISSING INFORMATION, Updation is failed");
                 burg.getTxtResult().setBackground(new Color(225, 112, 85));
             }
         } finally {
@@ -631,24 +628,24 @@ public class ActionsBook implements ActionListener, FocusListener {
             }
 
         } catch (ClassNotFoundException ex) {
-            JOptionPane.showMessageDialog(null, "Class Bulunamadı", "CLASS BULUNAMADI", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Class is not found", "CLASS NOT FOUND", JOptionPane.ERROR_MESSAGE);
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex, "SQL HATASI", JOptionPane.ERROR_MESSAGE);
         } catch (Exception ex) {
             BookCanUpdate = false;
             java.awt.Toolkit.getDefaultToolkit().beep();
             if (allSame == true) {
-                JOptionPane.showMessageDialog(null, "Bilgiler zaten güncel", "GÜNCELLEME HATASI", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Data is already updated.", "UPDATE ERROR", JOptionPane.ERROR_MESSAGE);
             } else if (newBookNoFree == false) {
-                JOptionPane.showMessageDialog(null, " YENİ Kitap Barkod Numarasında Başka Bir Kitap Kayıtlı", "GÜNCELLEME HATASI", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, " New barcode no is not available. Enter another barcode no", "UPDATE ERROR", JOptionPane.ERROR_MESSAGE);
             } else if (oldBookNoFree == false) {
-                JOptionPane.showMessageDialog(null, " ESKİ Kitap Barkod Numarasında Kayıtlı Kitap Bulunmamaktadır\n"
-                        + "Güncelleme Başarısız", "GÜNCELLEME HATASI", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, " Barcode no in book barcode no texfield is not found\n"
+                        + "Updation is failed", "UPDATE ERROR", JOptionPane.ERROR_MESSAGE);
             }
 
             burg.getTxtResult().setBackground(Color.red);
             burg.getTxtResult().setBackground(new Color(255, 82, 82));
-            burg.getTxtResult().setText("Güncelleme Başarısız");
+            burg.getTxtResult().setText("Updation is failed");
         } finally {
             sqlConnection.CloseAllConnections();
         }
@@ -665,13 +662,13 @@ public class ActionsBook implements ActionListener, FocusListener {
                 return true;
             }
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "1 SQL HATASI");
+            JOptionPane.showMessageDialog(null, "SQL Exception");
         } finally {
             sqlConnection.CloseAllConnections();
         }
         java.awt.Toolkit.getDefaultToolkit().beep();
         brg.getTxtResult().setBackground(Color.red);
-        brg.getTxtResult().setText("Kayıtlı Öğrenci Bulunamadı");
+        brg.getTxtResult().setText("Not found registered student");
         return false;
 
     }
@@ -687,7 +684,7 @@ public class ActionsBook implements ActionListener, FocusListener {
             if (!sqlConnection.getResultSet().next()) {
                 java.awt.Toolkit.getDefaultToolkit().beep();
                 brg.getTxtResult().setBackground(Color.red);
-                brg.getTxtResult().setText("Kayıtlı Kitap Bulunamadı");
+                brg.getTxtResult().setText("Not found registed book");
                 return false;
             }
             brg.getTxtBookName().setText(sqlConnection.getResultSet().getString("Name"));
@@ -695,7 +692,7 @@ public class ActionsBook implements ActionListener, FocusListener {
 
         } catch (SQLException ex) {
             java.awt.Toolkit.getDefaultToolkit().beep();
-            brg.getTxtResult().setText("EŞLEŞME BAŞARISIZ (Öğrenci Ödünç Alan kişi) / ( YADA ) / Kitap Şuan Kütüphanemizde bulunmaktadır");
+            brg.getTxtResult().setText("Failed Match. Student No or Book Barcode No is invalid.");
             brg.getTxtResult().setBackground(new Color(250, 130, 49));
             return false;
         } finally {
@@ -810,14 +807,14 @@ public class ActionsBook implements ActionListener, FocusListener {
                 if (FineAdded == false) {
 
                     brg.getTxtResult().setBackground(Color.green);
-                    brg.getTxtResult().setText("KİTAP İADE BAŞARILI");
+                    brg.getTxtResult().setText("BOOK RETURNED SUCCESSFULLY");
                 } else {
 
                     java.awt.Toolkit.getDefaultToolkit().beep();
 
                     brg.getTxtResult().setBackground(new Color(22, 160, 133));
 
-                    brg.getTxtResult().setText("KİTAP İADE BAŞARILI  / ANCAK 30 GÜNÜ GEÇİRDİĞİ İÇİN CEZA YAPTIRIMI UYGUNLANMIŞTIR");
+                    brg.getTxtResult().setText("BOOK RETURN IS SUCCESSFUL / But the penalty is applied because it has exceeded 30 days.");
 
                 }
                 String Query = "UPDATE student Set debt=" + Fine + " WHERE  No LIKE '" + brg.getTxtStudentNo().getText().trim() + "'";
@@ -831,17 +828,17 @@ public class ActionsBook implements ActionListener, FocusListener {
 
                     java.awt.Toolkit.getDefaultToolkit().beep();
                     brg.getTxtResult().setBackground(Color.ORANGE);
-                    brg.getTxtResult().setText("Kitap Kütüphanemize Zaten İade Edilmiş.");
+                    brg.getTxtResult().setText("Book is already in returned to library.");
                 } else {
 
                     java.awt.Toolkit.getDefaultToolkit().beep();
                     brg.getTxtResult().setBackground(Color.RED);
-                    brg.getTxtResult().setText("Kitap - Öğrenci Uyuşmamaktadır. İade Alınmamıştır.");
+                    brg.getTxtResult().setText("Book-Student is not match. Book return is failed.");
                 }
             }
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, ex + " : 2 SQL HATASI");
+            JOptionPane.showMessageDialog(null, ex + " : 2 SQL Exception");
         } finally {
 
             sqlConnection.CloseAllConnections();
@@ -901,10 +898,10 @@ public class ActionsBook implements ActionListener, FocusListener {
                     if (sqlConnection.getResultSet().getString("StudentNo").equals(null)) {
 
                     }
-                    bslg.DataOfTable[counter][3] = "Öğrencide";
+                    bslg.DataOfTable[counter][3] = "in Student";
 
                 } catch (NullPointerException e) {
-                    bslg.DataOfTable[counter][3] = "Rafta";
+                    bslg.DataOfTable[counter][3] = "in shelf";
                 }
 
                 bslg.DataOfTable[counter][4] = sqlConnection.getResultSet().getString("CategoryName");

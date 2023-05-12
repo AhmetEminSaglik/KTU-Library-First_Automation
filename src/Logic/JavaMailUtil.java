@@ -39,8 +39,8 @@ public class JavaMailUtil {
     static String WhoSendMail = "<br><br><br>"
             + "   <font color=\"gray\">  "
             + "<hr style=\"border: 1px dashed gray;\" />"
-            + " <i>Karadeniz  Teknik Üniversitesi / Of Teknoloji Fakültesi Kütüphanesi<br>"
-            + "Enerji Mühendisliği Bölümü Giriş Katı</i></font>"
+            + " <i>Karadeniz Technich University / Of Technical Faculty Library<br>"
+            + "</i></font>"
             + "<br> <i><b> <i>"
             + "<a href=\"#\"i class=\"fa fa-github\"></i></a><a href=\"https://www.instagram.com/ahmeteminsaglik/?hl=tr\"> "
             + " Created by <font color=" + Color.red + " >Ahmet Emin SAĞLIK </font>" + "</a></i></b> "//<font size=\"4\"> </font>
@@ -49,12 +49,13 @@ public class JavaMailUtil {
     public void MailStudentWhoExtendTime(String name, String surname, String barcodeNo, String bookName, String email) {
         LocalDate localDate = LocalDate.now();
 
-        String Text = "Değerli Öğrencimiz  " + name + " " + surname.toUpperCase() + ", <br><br>" + localDate + " tarihinde " + barcodeNo + " barkod numaralı, " + bookName + " isimli kitabın "
-                + "süresini uzatmış bulunmaktasınız. Lütfen  en geç " + localDate.plusDays(29) + " tarihinde kitabı teslim edin ya da bu zaman aralığında kitap süresini tekrar uzattırın. "
-                + "Anlayışınız için teşekkür eder iyi günler dileriz.";
+        String Text = "Dear Student " + name + " " + surname.toUpperCase() + ", <br><br>"
+                + "You have renewed the loan period of the book name \"" + bookName + "\" with barcode no " + barcodeNo + " untill " + localDate + "."
+                + "Please return the book before " + localDate.plusDays(29) + "."
+                + "Thank you for your understanding and have a good day.";
 
         Text += WhoSendMail;
-        String MessageSubject = "Kitap Süresi Uzatma İşlemi (" + barcodeNo + ")";
+        String MessageSubject = "Extension Book Loan Period (" + barcodeNo + ")";
         sendEmail(Text, email, MessageSubject);
 
     }
@@ -62,23 +63,23 @@ public class JavaMailUtil {
     public void MaidStudentWhoPayDebt(String nameSurname, Double MoneyFromStudent, Double Debt, String email) {
 
         LocalDate localDate = LocalDate.now();
-        String Text = "Değerli Öğrencimiz  " + nameSurname + ", <br><br>" + localDate + " tarihinde ";
+        String Text = "Dear Student  " + nameSurname + ", <br><br>You have ";
         if (MoneyFromStudent > 0) {
-            Text += (MoneyFromStudent + Debt) + " TL olan borcunuzun " + MoneyFromStudent + " TL' sini ödemiş bulunmaktasınız. ";
+            Text += "paid " + MoneyFromStudent + " TL of " + (MoneyFromStudent + Debt) + " debt";
         } else {
-            Text += (Debt + MoneyFromStudent) + " TL olan borcunuza " + (-MoneyFromStudent) + " TL daha eklemiş bulunmaktasınız.";
+            Text += "added more " + (-MoneyFromStudent) + " TL to your debt " + (Debt + MoneyFromStudent);
         }
-
+        Text += "on " + localDate + ".";
         String TextAdd = "";
         if (Debt > 0.0) {
-            TextAdd = " Toplamda " + Debt + " TL daha borcunuz bulunmaktadır. Bilginize... ";
+            TextAdd = " You have total " + Debt + " TL debt. For your information...";
         } else if (Debt < 0.0) {
-            TextAdd = Debt + " TL kadar kütüphanemizde alacağınız vardır. Bilginize... ";
+            TextAdd = "You will get " + Debt + " TL from library. For your information...";
         } else {
-            TextAdd = "Borcunuz bitmiş bulunmaktadır. Bilginize... ";
+            TextAdd = "Your debt is over. For your information...";
         }
         Text += TextAdd + WhoSendMail;
-        String MessageSubject = "Borç Ödeme İşlemi (" + Debt + " TL)";
+        String MessageSubject = "Debt Payment Process(" + Debt + " TL)";
 
         sendEmail(Text, email, MessageSubject);
 
@@ -87,22 +88,23 @@ public class JavaMailUtil {
     public void MailStudentWhoTakeBook(String name, String surname, String barcode, String bookName, String email) {
         LocalDate localDate = LocalDate.now();
 
-        String Text = "Değerli Öğrencimiz  " + name + " " + surname.toUpperCase() + ", <br><br>" + localDate + " tarihinde " + barcode + " barkod numaralı, " + bookName + " isimli kitabı "
-                + "almış bulunmaktasınız. Lütfen  en geç " + localDate.plusDays(29) + " tarihinde kitabı teslim ediniz. "
-                + "Anlayışınız için teşekkür eder iyi günler dileriz.";
+        String Text = "Dear Student  " + name + " " + surname.toUpperCase() + ", <br><br>" +
+                "You borrowed the \"" + bookName + "\" with barcode no " + barcode + " on " + localDate + "."
+                + "Please return the book before " + localDate.plusDays(29) + "."
+                + "Thank you for your understanding and have a good day.";
 
         Text += WhoSendMail;
-        String MessageSubject = "Kitap Alma İşlemi (" + barcode + ") ";
+        String MessageSubject = "Borrowed Book Process (" + barcode + ") ";
         sendEmail(Text, email, MessageSubject);
 
     }
 
     public void MailStudentWhoDeleted(String StudentNo, String name, String surname, String email) {
 
-        //String Text = StudentNo + " numaralı " + name + " " + surname.toUpperCase() + " isimli Değerli Öğrencimiz,<br><br>"
-        String Text = "Değerli Öğrencimiz " + name + " " + surname.toUpperCase() + ",<br><br>"
-                + "Of Teknoloji Fakültesi Kütüphanesinden kaydınız silinmiştir. Hayatınızda başarılar dileriz. ";
-        String MessageSubject = "Kayıt Silme İşlemi ";
+        //String Text = StudentNo + " numaralı " + name + " " + surname.toUpperCase() + " isimli Dear Student,<br><br>"
+        String Text = "Dear Student " + name + " " + surname.toUpperCase() + ",<br><br>"
+                + "Your record is deleted from Of Technical Faculty Library. Wish you success in your life.";
+        String MessageSubject = "Record Deletion Process ";
 
         Text += WhoSendMail;
         sendEmail(Text, email, MessageSubject);
@@ -111,10 +113,10 @@ public class JavaMailUtil {
     public void MailStudentWhoDeliverBookBack(String name, String surname, String barcode, String bookName, String email) {
         LocalDate localDate = LocalDate.now();
 
-        String Text = "Değerli Öğrencimiz  " + name + " " + surname.toUpperCase() + ", <br><br>" + localDate + " tarihinde " + barcode + " barkod numaralı, " + bookName + " isimli kitabı "
-                + "Of Teknoloji Fakültesi Kütüphanesine iade etmiş bulunmaktasınız. <br>"
-                + "Anlayışınız için teşekkür eder iyi günler dileriz.";
-        String MessageSubject = "Kitap İade İşlemi (" + barcode + ")";
+        String Text = "Dear Student  " + name + " " + surname.toUpperCase() + ", <br><br>" +
+                "You returned the \"" + bookName + "\" with barcode no " + barcode + " on " + localDate + "."
+                + "Thank you for your understanding and have a good day.";
+        String MessageSubject = "Book Return Process (" + barcode + ")";
 
         Text += WhoSendMail;
         sendEmail(Text, email, MessageSubject);
@@ -124,11 +126,12 @@ public class JavaMailUtil {
     public void MailStudentWhoRegister(String StudentNo, String name, String surname, String email) {
         LocalDate localDate = LocalDate.now();
         //?????******
-        //String Text = StudentNo + " numaralı Sevgili " + name + " " + surname + " isimli değerli öğrencimiz,<br> <br>"
-        String Text = "Değerli Öğrencimiz " + name + " " + surname + ", <br><br>"
-                + localDate + " tarihinde Of Teknoloji Fakültesi Kütüphanesi ne kaydınız yapılmıştır. "
-                + "Bundan sonra bu mail üzerinden bilgilendirileceksiniz. İyi günler dileriz. ";
-        String MessageSubject = "Öğrenci Kayıt İşlemi ";
+        //String Text = StudentNo + " numaralı Sevgili " + name + " " + surname + " isimli Dear Student,<br> <br>"
+        String Text = "Dear Student " + name + " " + surname + ", <br><br>" +
+                "You are registered to Of Technical Faculty Library." +
+                "From now on, you will be informed through this email. Have a good day.";
+
+        String MessageSubject = "Register Student Process";
 
         Text += WhoSendMail;
         sendEmail(Text, email, MessageSubject);
@@ -157,16 +160,16 @@ public class JavaMailUtil {
             if (CounterOfMail > 0) {
                 if (MessageWillSend == true) {
 
-                    JOptionPane.showMessageDialog(null, CounterOfMail + " Tane Mail atılmıştır\n"
-                            + last7DayCounter + " tanesi son 7 güne girenler için\n"
-                            + last3DayCounter + " tanesi son 3 güne girenler için\n"
-                            + over30DayCounter + " tanesi 30 günü aşanlar için \n\n"
-                            + "Artık programı kapatabilirsiniz");
+                    JOptionPane.showMessageDialog(null, CounterOfMail + " Emails have been sent.\n"
+                            + last7DayCounter + " of them for students have less then 7 days.\n"
+                            + last3DayCounter + " of them for students have less then 3 days.\n"
+                            + over30DayCounter + " of them for students have exceed the time limit.\n\n"
+                            + "You may close the application.");
 
                 } else {
 
-                    JOptionPane.showMessageDialog(null, "Toplamda " + CounterOfMail + " Farklı Kişiye Mail Atılacaktır\n"
-                            + "Lütfen atılan maillerin ayrıntısını  görmeden programı kapatmayınız");
+                    JOptionPane.showMessageDialog(null, "Send emails " + CounterOfMail + "  different students.\n"
+                            + "Please run the program until see the email details.");
 
                     CounterOfMail = 0;
                     last7DayCounter = 0;
@@ -220,7 +223,7 @@ public class JavaMailUtil {
             }
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "HATA : \n\n\n" + ex);
+            JOptionPane.showMessageDialog(null, "Error : \n\n\n" + ex);
         }
         //   sqlConnection.CloseAllConnections();
 
@@ -308,10 +311,11 @@ public class JavaMailUtil {
             message = new MimeMessage(session);
             message.setFrom(new InternetAddress(username));
             message.setRecipient(Message.RecipientType.TO, new InternetAddress(recepient));
-            message.setSubject("Of Teknoloji Fakültesi Kitap İade Geciktirme Cezası");
+            message.setSubject("Late Return Book Fine for the Of Technical Faculty.");
 
-            message.setContent("Değerli öğrencimiz, <br><br>Az önce iade ettiğiniz kitabı geciktirdiğiniz için  kütüphaneye " + Debt + " TL "
-                    + "borcunuz vardır. Lütfen zamanında teslim etmeye özen gösteriniz. Anlayışınız için teşekkür eder iyi günler dileriz."
+            message.setContent("Dear Student, <br><br>You have returned the book but it's time was exceed. So you have to pay " + Debt + "." +
+                    "Please return the book in given time."
+                    + "Thank you for your understanding and have a good day."
                     + WhoSendMail, "text/html;charset=utf-8");
 
         } catch (Exception ex) {
@@ -362,45 +366,46 @@ public class JavaMailUtil {
             SqlConnection sqlConnection2 = new SqlConnection();
             sqlConnection2.setResultSet(query);
             sqlConnection2.getResultSet();
-            String text = "Değerli Öğrencimiz " + nameSurname + ", <br><br>";
+            String text = "Dear Student " + nameSurname + ", <br><br>";
             if (sqlConnection2.getResultSet().next()) {
 
             }
-            //Değerli Öğrencimiz
+            //Dear Student
 
             switch (condition) {
                 case LAST7DAYS:
 
-                    message.setSubject("Of Teknoloji Fakültesi Kütüphanesi SON 7 GÜN Uyarısı ( BİLDİRİM  / " + sqlConnection2.getResultSet().getString("book.BarcodeNo") + " )");
+                    message.setSubject("Of Technical Faculty Library Last 7 DAYS Warning ( Notification  / " + sqlConnection2.getResultSet().getString("book.BarcodeNo") + " )");
 
-                    message.setContent(text + sqlConnection2.getResultSet().getString("book.CategoryName") + " kategorisindeki, "
-                            + sqlConnection2.getResultSet().getString("book.AuthorName") + " isimli yazara ait olan, "
-                            + sqlConnection2.getResultSet().getString("book.BarcodeNo") + " barkod numaralı, "
-                            + sqlConnection2.getResultSet().getString("book.Name") + "  adlı kitabınızın iadesi için son 7 gün kalmıştır.\n\n "
-                            + " EN GEÇ " + lastDayOfBook(sqlConnection2.getResultSet().getString("book.BarcodeNo")) + " "
-                            + " TARİHİNDE KÜTÜPHANEYE TESLİM EDİLMESİ GEREKMEKTEDİR. " + " Anlayışınız için teşekkür eder iyi günler dileriz." + WhoSendMail,
+                    message.setContent(text +"category "+ sqlConnection2.getResultSet().getString("book.CategoryName") + ",  "
+                                    +"author name "+ sqlConnection2.getResultSet().getString("book.AuthorName") + ", "
+                                    +"barcode no "+ sqlConnection2.getResultSet().getString("book.BarcodeNo") + ", "
+                                    + " book name with  " + sqlConnection2.getResultSet().getString("book.Name") + " remained 7 days to return in time.\n\n "
+                                    + " Deadline is " + lastDayOfBook(sqlConnection2.getResultSet().getString("book.BarcodeNo")) + "."
+                                    + "Thank you for your understanding and have a good day." + WhoSendMail,
                             "text/html;charset=utf-8");
 
                     break;
                 case LAST3DAYS:
 
-                    message.setSubject("Of Teknoloji Fakültesi Kütüphanesi SON 3 GÜN Uyarısı ( KRİTİK / " + sqlConnection2.getResultSet().getString("book.BarcodeNo") + " )");
-                    message.setContent(text + sqlConnection2.getResultSet().getString("book.CategoryName") + " kategorisindeki, "
-                            + sqlConnection2.getResultSet().getString("book.AuthorName") + " isimli yazara ait olan, "
-                            + sqlConnection2.getResultSet().getString("book.BarcodeNo") + " barkod numaralı, "
-                            + sqlConnection2.getResultSet().getString("book.Name") + "  adlı kitabınızın iadesi için son 3 gün kalmıştır.\n"
-                            + "EN GEÇ " + lastDayOfBook(sqlConnection2.getResultSet().getString("book.BarcodeNo")) + " TARİHİNDE KÜTÜPHANEYE TESLİM EDİLMESİ GEREKMEKTEDİR. "
-                            + " Lütfen para cezası aşamasına geçilmeden önce kitabınızı iade edin ya da kitabınızın süresini uzattırın. \n Anlayışınız için teşekkür eder iyi günler dileriz." + WhoSendMail,
+                    message.setSubject("Of Technical Faculty Library Last 7 DAYS Warning ( Critical / " + sqlConnection2.getResultSet().getString("book.BarcodeNo") + " )");
+                    message.setContent(text +"category "+sqlConnection2.getResultSet().getString("book.CategoryName") + ", "
+                                    + "author name "+sqlConnection2.getResultSet().getString("book.AuthorName") + ", "
+                                    + "barcode no "+sqlConnection2.getResultSet().getString("book.BarcodeNo") + ", "
+                                    + "book name with "+sqlConnection2.getResultSet().getString("book.Name") + "  remained 3 days to return in time.\n"
+                                    + "Deadline is  " + lastDayOfBook(sqlConnection2.getResultSet().getString("book.BarcodeNo")) + ". "
+                                    + "Thank you for your understanding and have a good day." + WhoSendMail,
                             "text/html;charset=utf-8");
                     break;
                 case STARTEDFINE:
 
-                    message.setSubject("Of Teknoloji Fakültesi Kütüphanesi CEZA BAŞLANGIÇ ( CEZA / " + sqlConnection2.getResultSet().getString("book.BarcodeNo") + " )");
-                    message.setContent(text + sqlConnection2.getResultSet().getString("book.CategoryName") + " kategorisindeki, "
-                            + sqlConnection2.getResultSet().getString("book.AuthorName") + " isimli yazara ait olan, "
-                            + sqlConnection2.getResultSet().getString("book.BarcodeNo") + " barkod numaralı, "
-                            + sqlConnection2.getResultSet().getString("book.Name") + "   adlı kitabınızın teslim süresini geciktirdiğiniz için hakkınızda cezai işlem başlatılmıştır. "
-                            + "Geç getirdiğiniz gün başına 0.5 TL para cezası uygulanmaktadır. Anlayışınız için teşekkür eder iyi günler dileriz." + WhoSendMail,
+                    message.setSubject("Of Technical Faculty Fine Begin Date ( Fine / " + sqlConnection2.getResultSet().getString("book.BarcodeNo") + " )");
+                    message.setContent(text + "You have exceed the deadline of category " + sqlConnection2.getResultSet().getString("book.CategoryName") + ", "
+                                    + "author name " + sqlConnection2.getResultSet().getString("book.AuthorName") + ", "
+                                    + "barkod numaralı" + sqlConnection2.getResultSet().getString("book.BarcodeNo") + ", "
+                                    + "book name with  " + sqlConnection2.getResultSet().getString("book.Name") + ". The punitive action has been initiated against you. "
+                                    + "A fine of 0.5 TL per day is applied for the days the book is returned late."
+                                    + "Thank you for your understanding and have a good day." + WhoSendMail,
                             "text/html;charset=utf-8");
                     break;
 

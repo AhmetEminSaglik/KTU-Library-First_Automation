@@ -81,12 +81,12 @@ public class ActionStudent implements ActionListener, FocusListener {
                     DbStudentAdd();
                 } else {
                     java.awt.Toolkit.getDefaultToolkit().beep();
-                    sag.getTxtResult().setText("Lütfen Hepsini Eksiksiz  Doldurun");
+                    sag.getTxtResult().setText("Please fill all of them");
                     sag.getTxtResult().setForeground(Color.red);
                     sag.getTxtResult().setBackground(Color.BLACK);
                 }
             } else if (e.getSource() == sag.getBtnClear()) {
-                int answer = JOptionPane.showConfirmDialog(null, "Tüm veriler Silinecektir Emin misiniz? ", "Silme Uyarısı", 0);
+                int answer = JOptionPane.showConfirmDialog(null, "All data will be deleted. Are you sure?", "DATA DELETE WARNING", 0);
                 if (answer == JOptionPane.YES_OPTION) {
 
                     SuccessVoice();
@@ -101,14 +101,14 @@ public class ActionStudent implements ActionListener, FocusListener {
                 }
             } else if (e.getSource() == sag.getBtnComeBack()) {
                 sag.getJp().setVisible(false);
-                sag.getMg().getJf().setTitle("ANA SAYFA");
+                sag.getMg().getJf().setTitle("MAIN PAGE");
                 sag.getMg().getJp().setVisible(true);
                 clearAllTxtMainGui();
             }
         } else if (sug != null) {
             if (e.getSource() == sug.getBtnComeBack()) {
                 sug.setVisible(false);
-                sug.getMg().getJf().setTitle("ANA SAYFA");
+                sug.getMg().getJf().setTitle("MAIN PAGE");
                 clearAllTxtMainGui();
                 sug.getMg().getJp().setVisible(true);
 
@@ -117,8 +117,8 @@ public class ActionStudent implements ActionListener, FocusListener {
                     DBStudentBringData();
                 } else {
                     java.awt.Toolkit.getDefaultToolkit().beep();
-                    JOptionPane.showMessageDialog(null, "Öğrenci numarasını doldurmadan aratamazsınız",
-                            "ARAMA HATASI", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Must be filf Student No",
+                            "SEARCH ERROR", JOptionPane.ERROR_MESSAGE);
                 }
             } else if (e.getSource() == sug.getBtnUpdate()
                     || e.getSource() == sug.getTxtResult()
@@ -138,7 +138,7 @@ public class ActionStudent implements ActionListener, FocusListener {
         } else if (ssg != null) {
             if (e.getSource() == ssg.getBtnComeBack()) {
                 ssg.setVisible(false);
-                ssg.getMg().getJf().setTitle("ANA SAYFA");
+                ssg.getMg().getJf().setTitle("MAIN PAGE");
                 ssg.getMg().getJp().setVisible(true);
                 clearAllTxtMainGui();
             } else if (e.getSource() == ssg.getTxtStudentNo()) {
@@ -149,7 +149,7 @@ public class ActionStudent implements ActionListener, FocusListener {
         } else if (rsg != null) {
             if (e.getSource() == rsg.getBtnComeBack()) {
                 rsg.getJp().setVisible(false);
-                rsg.getMg().getJf().setTitle("ANA SAYFA");
+                rsg.getMg().getJf().setTitle("MAIN PAGE");
                 rsg.getMg().getJp().setVisible(true);
                 clearAllTxtMainGui();
             } else if (e.getSource() == rsg.getTxtName()) {
@@ -176,7 +176,7 @@ public class ActionStudent implements ActionListener, FocusListener {
 
         try {
 
-            String SqlStudentControlQuery = "SELECT * FROM `student` WHERE  No LIKE '" + sug.getTxtno().getText() + "'";
+            String SqlStudentControlQuery = "SELECT * FROM `student` WHERE  No LIKE '" + sug.getTxtno().getText().trim() + "'";
             SqlConnection.setResultSet(SqlStudentControlQuery);
 
             if (SqlConnection.getResultSet().next()) {
@@ -193,14 +193,14 @@ public class ActionStudent implements ActionListener, FocusListener {
                     throw new Exception();
                 }
             } else {
-                throw new Exception("Kayıtlı Öğrenci Bulunamadı");
+                throw new Exception("Not found registered student.");
             }
 
             String SqlStudentdDeleteQuery = "DELETE FROM `student` WHERE No LIKE '" + sug.getTxtNewNo().getText().trim() + "'";
 
             SqlConnection.setPrepareStatement(SqlStudentdDeleteQuery);
 
-            int answer = JOptionPane.showConfirmDialog(null, "Öğrenciyi Silmek istediğinizden Emin misiniz ? ", "SİLME UYARISI",
+            int answer = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete student?", "DELETE STUDENT WARNING",
                     JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if (answer == JOptionPane.YES_OPTION) {
                 SuccessVoice();
@@ -220,11 +220,11 @@ public class ActionStudent implements ActionListener, FocusListener {
                 sug.getTxtNewSurname().setText("");
                 sug.getTxtPhoneNo().setText("");
                 sug.getTxtNewEmail().setText("");
-                sug.getTxtResult().setText("Öğrenci Silindi");
+                sug.getTxtResult().setText("STUDENT IS DELETED SUCCESSFULLY");
                 sug.getTxtResult().setBackground(new Color(255, 121, 63));
                 SqlConnection.getPreparedStatement().execute();
             } else {
-                sug.getTxtResult().setText("Öğrenci Silme İşlemi İptal Edildi");
+                sug.getTxtResult().setText("STUDENT DELETION IS CANCELED");
                 sug.getTxtResult().setBackground(Color.PINK);
                 java.awt.Toolkit.getDefaultToolkit().beep();
             }
@@ -232,26 +232,26 @@ public class ActionStudent implements ActionListener, FocusListener {
         } catch (ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(null, "ClASS NOT FOUND");
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, ex + "\n\n\nÖğrenci Silebilmek İçin Önce Öğrenci Kayıtlı Öğrenci Bilgilerini Getirmelisiniz");
+            JOptionPane.showMessageDialog(null, ex + "\n\n\nStudent data must be retrived before delete student");
         } catch (Exception ex) {
             if (AlreadyCame == false) {
                 java.awt.Toolkit.getDefaultToolkit().beep();
-                int answer = JOptionPane.showConfirmDialog(null, "Öğrenciyi Silmek İçin Önce Öğrenci Bilgilerini Getirmeniz gerekmektedir\n"
-                        + "                                        Bilgiler Getirilsin mi ?", "EŞLEŞME HATASI", JOptionPane.YES_NO_OPTION);
+                int answer = JOptionPane.showConfirmDialog(null, "Student data must be retrived before delete student\n"
+                        + "                                        Do you want to retrive data?", "MATCH EXCEPTION", JOptionPane.YES_NO_OPTION);
                 if (answer == JOptionPane.YES_OPTION) {
                     DBStudentBringData();
                 }
             } else if (StudentHasDebt == true) {
-                JOptionPane.showMessageDialog(null, "Öğrencinin borcu olduğu için silinemiyor");
+                JOptionPane.showMessageDialog(null, "Student is not allowed to delete because of having debt.");
 
                 java.awt.Toolkit.getDefaultToolkit().beep();
                 sug.getTxtResult().setBackground(new Color(255, 82, 82));
-                sug.getTxtResult().setText("Silme Başarısız");
+                sug.getTxtResult().setText("DELETION IS FAILED");
             } else {
-                JOptionPane.showConfirmDialog(null, sug.getTxtno().getText().trim() + " Nolu Kayıtlı Öğrenci bulunamadı", "SİLME HATASI", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showConfirmDialog(null, "Student is not found with number :  "+sug.getTxtno().getText().trim() , "DELETION ERROR", JOptionPane.ERROR_MESSAGE);
                 java.awt.Toolkit.getDefaultToolkit().beep();
                 sug.getTxtResult().setBackground(new Color(255, 82, 82));
-                sug.getTxtResult().setText("Silme Başarısız");
+                sug.getTxtResult().setText("DELETION IS FAILED");
             }
         } finally {
 
@@ -273,9 +273,9 @@ public class ActionStudent implements ActionListener, FocusListener {
                     || sug.getTxtPhoneNo().getText().trim().equals("")
                     || sug.getTxtno().getText().trim().equals("")) {
                 java.awt.Toolkit.getDefaultToolkit().beep();
-                sug.getTxtResult().setText("EKSİK BİLGİ / GÜNCELLEME İPTAL");
+                sug.getTxtResult().setText("MISSING INFORMATION/ UPDATION CANCELLED");
                 sug.getTxtResult().setBackground(new Color(250, 130, 49));
-                JOptionPane.showMessageDialog(null, "Lütfen Bütün Bilgileri eksiksiz bir şekilde Doldurunuz", "EKSİK BİLGİ GÜNCELLEMESİ", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Please fill all textfields.", "UPDATE MISSING INFORMATION", JOptionPane.ERROR_MESSAGE);
                 return;
             }
 
@@ -289,11 +289,10 @@ public class ActionStudent implements ActionListener, FocusListener {
 
             DBStudentControlToUpdate();
             if (!StudentCanUpdate) {
-                throw new Exception("Güncellenecek Hedef Öğrenecek Numarası Kayıt Bulundurduğu için\n"
-                        + "Güncelleme İptal Edilmiştir");
+                throw new Exception("New student no is allready in use. Updation is cancelled.");
 
             }
-            int answer = JOptionPane.showConfirmDialog(null, "Güncellemek İstediğinize Emin misiniz?", "GÜNCELLEME ONAYI", JOptionPane.YES_NO_OPTION);
+            int answer = JOptionPane.showConfirmDialog(null, "Are you sure you want to update?", "UPDATE CONFIRMATION", JOptionPane.YES_NO_OPTION);
             if (answer != JOptionPane.YES_OPTION) {
                 return;
             }
@@ -305,15 +304,14 @@ public class ActionStudent implements ActionListener, FocusListener {
 
             sqlConnection.Update(SqlBookStudentNoUpdateQuery);
             sug.getTxtResult().setBackground(Color.GREEN);
-            sug.getTxtResult().setText("GÜNCELLENME BAŞARILI");
+            sug.getTxtResult().setText("UPDATED SUCCESSFULLY");
 
             SuccessVoice();
         } catch (ClassNotFoundException ex) {
-            JOptionPane.showMessageDialog(null, ex + "aaaaaaaaaaaaaaaaa");
+//            JOptionPane.showMessageDialog(null, ex + "aaaaaaaaaaaaaaaaa");
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, ex + "\n\n\n1-) Bilgileri Güncelleyebilmeniz İçin Önce Öğrenci Numarasını\n"
-                    + "Aratmalısınız\n"
-                    + "2-) Yeni Öğrenci Numarasına Sayı girmelisiniz", "GÜNCELLEME HATASI", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, ex + "\n\n\n1-) Must be retrived student data before update."
+                    + "2-) Must type only numbers to student number.", "UPDATE ERROR", JOptionPane.ERROR_MESSAGE);
         } catch (Exception ex) {
 
         } finally {
@@ -351,20 +349,20 @@ public class ActionStudent implements ActionListener, FocusListener {
                 sug.getTxtPhoneNo().setText(sqlConnection.getResultSet().getString("Phone"));
                 StudentBringCame = true;
                 sug.getTxtResult().setBackground(new Color(24, 220, 255));
-                sug.getTxtResult().setText("Bilgiler Getirildi");
+                sug.getTxtResult().setText("DATA IS RETRIVED");
 
                 SuccessVoice();
             }
             if (!StudentBringCame) {
                 java.awt.Toolkit.getDefaultToolkit().beep();
-                JOptionPane.showMessageDialog(null, sug.getTxtno().getText().trim() + " Nolu öğrenci Kaydı YOKTUR", "EKSİK KAYIT HATASI", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Student is not found with number :  "+sug.getTxtno().getText().trim() , "EKSİK KAYIT HATASI", JOptionPane.ERROR_MESSAGE);
                 sug.getTxtNewNo().setText("");
                 sug.getTxtNewName().setText("");
                 sug.getTxtNewSurname().setText("");
                 sug.getTxtNewEmail().setText("");
                 sug.getTxtPhoneNo().setText("");
                 sug.getTxtResult().setBackground(new Color(255, 82, 82));
-                sug.getTxtResult().setText("İstenilen Bilgiler Kayıtta Bulunamadı");
+                sug.getTxtResult().setText("Requested data is not found in records.");
 
             }
 
@@ -372,12 +370,12 @@ public class ActionStudent implements ActionListener, FocusListener {
             JOptionPane.showMessageDialog(null, ex);
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, ex + "\nLütfen Öğrenci Numarasına Sayı girin", "DEĞER HATASI", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, ex + "\nPlease type only numbers in Student No.", "WRONG TYPE", JOptionPane.ERROR_MESSAGE);
 
         } catch (Exception ex) {
             if (AlreadyCame == true) {
                 java.awt.Toolkit.getDefaultToolkit().beep();
-                JOptionPane.showMessageDialog(null, "Bilgiler Zaten Getirildi", "UYARI", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Data already retrived.", "WARNING", JOptionPane.INFORMATION_MESSAGE);
             }
         } finally {
             sqlConnection.CloseAllConnections();
@@ -411,7 +409,7 @@ public class ActionStudent implements ActionListener, FocusListener {
             sqlConnection.Update(SqlStudentAdd);
 
             sag.getTxtResult().setBackground(Color.GREEN);
-            sag.getTxtResult().setText("Öğrenci Kayıt edilmiştir");
+            sag.getTxtResult().setText("Student is registed.");
             Thread SendEmail = new Thread(new Runnable() {
                 @Override
                 public void run() {
@@ -428,7 +426,7 @@ public class ActionStudent implements ActionListener, FocusListener {
         } catch (Exception ex) {
             java.awt.Toolkit.getDefaultToolkit().beep();
             sag.getTxtResult().setBackground(Color.ORANGE);
-            sag.getTxtResult().setText("Öğrenci Zaten Kayıtlı");
+            sag.getTxtResult().setText("Student is already registered.");
 
         } finally {
 
@@ -488,17 +486,16 @@ public class ActionStudent implements ActionListener, FocusListener {
             StudentCanUpdate = false;
             java.awt.Toolkit.getDefaultToolkit().beep();
             if (allSame == true) {
-                JOptionPane.showMessageDialog(null, "BİLGİLER ZATEN GÜNCEL", "GÜNCELLEME HATASI", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "DATA IS ALREADY UP TO DATE", "GÜNCELLEME HATASI", JOptionPane.ERROR_MESSAGE);
                 sug.getTxtResult().setBackground(new Color(254, 202, 87));
-                sug.getTxtResult().setText("Bilgiler Zaten Güncel");
+                sug.getTxtResult().setText("Already updated.");
             } else if (newStudentNoFree == false) {
-                JOptionPane.showMessageDialog(null, " YENİ Öğrenci Numarasında Başka Bir Öğrenci Kayıtlı Olduğu için\n"
-                        + "Güncelleme Başarısız", "GÜNCELLEME HATASI", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, " New Student No is in use. Updation is Failed", "UPDATE ERROR", JOptionPane.ERROR_MESSAGE);
             } else if (oldStudentNoFree == false) {
-                JOptionPane.showMessageDialog(null, " ESKİ Öğrenci Numarasında Kayıtlı Kimse Bulunmamaktadır\n"
-                        + "Güncelleme Başarısız", "GÜNCELLEME HATASI", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, " Student no is not found in records.\n"
+                        + "Updation is Failed", "UPDATE ERROR", JOptionPane.ERROR_MESSAGE);
                 sug.getTxtResult().setBackground(new Color(255, 82, 82));
-                sug.getTxtResult().setText("Güncelleme Başarısız");
+                sug.getTxtResult().setText("UPDATION FAILED.");
                 return;
 
             }
@@ -557,11 +554,11 @@ public class ActionStudent implements ActionListener, FocusListener {
                 rsg.getTxtNo().setFont(new Font("", Font.BOLD, (int) screenSizeWidth / 91));
                 rsg.getTxtName().setForeground(rsgPlaceHolder);
                 rsg.getTxtName().setFont(fontTxtPlaceHolder);
-                rsg.getTxtName().setText("İsim Giriniz");
+                rsg.getTxtName().setText("Type Name");
                 rsg.getTxtSurname().setForeground(rsgPlaceHolder);
-                rsg.getTxtSurname().setText("Soyisim Giriniz");
+                rsg.getTxtSurname().setText("Type Surname");
                 rsg.getTxtSurname().setFont(fontTxtPlaceHolder);
-                if (rsg.getTxtNo().getText().trim().equals("Numara Giriniz")) {
+                if (rsg.getTxtNo().getText().trim().equals("Type No")) {
                     rsg.getTxtNo().setText("");
                 }
 
@@ -569,12 +566,12 @@ public class ActionStudent implements ActionListener, FocusListener {
                 rsg.getTxtName().setForeground(Color.BLACK);
                 rsg.getTxtName().setFont(new Font("", Font.BOLD, (int) screenSizeWidth / 91));
                 rsg.getTxtNo().setForeground(rsgPlaceHolder);
-                rsg.getTxtNo().setText("Numara Giriniz");
+                rsg.getTxtNo().setText("Type No");
                 rsg.getTxtNo().setFont(fontTxtPlaceHolder);
                 rsg.getTxtSurname().setForeground(rsgPlaceHolder);
-                rsg.getTxtSurname().setText("Soyisim Giriniz");
+                rsg.getTxtSurname().setText("Type Surname");
                 rsg.getTxtSurname().setFont(fontTxtPlaceHolder);
-                if (rsg.getTxtName().getText().trim().equals("İsim Giriniz")) {
+                if (rsg.getTxtName().getText().trim().equals("Type Name")) {
                     rsg.getTxtName().setText("");
                 }
             } else if (e.getSource() == rsg.getTxtSurname()) {
@@ -582,11 +579,11 @@ public class ActionStudent implements ActionListener, FocusListener {
                 rsg.getTxtSurname().setFont(new Font("", Font.BOLD, (int) screenSizeWidth / 91));
                 rsg.getTxtName().setForeground(rsgPlaceHolder);
                 rsg.getTxtName().setFont(fontTxtPlaceHolder);
-                rsg.getTxtName().setText("İsim Giriniz");
+                rsg.getTxtName().setText("Type Name");
                 rsg.getTxtNo().setForeground(rsgPlaceHolder);
-                rsg.getTxtNo().setText("Numara Giriniz");
+                rsg.getTxtNo().setText("Type No");
                 rsg.getTxtNo().setFont(fontTxtPlaceHolder);
-                if (rsg.getTxtSurname().getText().trim().equals("Soyisim Giriniz")) {
+                if (rsg.getTxtSurname().getText().trim().equals("Type Surname")) {
                     rsg.getTxtSurname().setText("");
                 }
             }
@@ -598,18 +595,18 @@ public class ActionStudent implements ActionListener, FocusListener {
         if (sag != null) {
 
             sag.getMg().gettxtStudentNo().setForeground(Color.GRAY);
-            sag.getMg().gettxtStudentNo().setText("Öğrenci No Girin");
+            sag.getMg().gettxtStudentNo().setText("Type Student No");
             sag.getMg().getTxtBookBarcode().setForeground(Color.GRAY);
-            sag.getMg().getTxtBookBarcode().setText("Kitap Barkod No girin");
+            sag.getMg().getTxtBookBarcode().setText("Type Book Barcode No");
             sag.getMg().getTxtBookName().setText("");
             sag.getMg().gettxtResultScreen().setText("");
             sag.getMg().gettxtResultScreen().setBackground(new Color(206, 214, 224));
         } else if (ssg != null) {
 
             ssg.getMg().gettxtStudentNo().setForeground(Color.GRAY);
-            ssg.getMg().gettxtStudentNo().setText("Öğrenci No Girin");
+            ssg.getMg().gettxtStudentNo().setText("Type Student No");
             ssg.getMg().getTxtBookBarcode().setForeground(Color.GRAY);
-            ssg.getMg().getTxtBookBarcode().setText("Kitap Barkod No girin");
+            ssg.getMg().getTxtBookBarcode().setText("Type Book Barcode No");
             ssg.getMg().getTxtBookName().setText("");
             ssg.getMg().gettxtResultScreen().setText("");
             ssg.getMg().gettxtResultScreen().setBackground(new Color(206, 214, 224));
@@ -617,9 +614,9 @@ public class ActionStudent implements ActionListener, FocusListener {
         } else if (sug != null) {
 
             sug.getMg().gettxtStudentNo().setForeground(Color.GRAY);
-            sug.getMg().gettxtStudentNo().setText("Öğrenci No Girin");
+            sug.getMg().gettxtStudentNo().setText("Type Student No");
             sug.getMg().getTxtBookBarcode().setForeground(Color.GRAY);
-            sug.getMg().getTxtBookBarcode().setText("Kitap Barkod No girin");
+            sug.getMg().getTxtBookBarcode().setText("Type Book Barcode No");
             sug.getMg().getTxtBookName().setText("");
             sug.getMg().gettxtResultScreen().setText("");
             sug.getMg().gettxtResultScreen().setBackground(new Color(206, 214, 224));
@@ -627,9 +624,9 @@ public class ActionStudent implements ActionListener, FocusListener {
         } else if (rsg != null) {
 
             rsg.getMg().gettxtStudentNo().setForeground(Color.GRAY);
-            rsg.getMg().gettxtStudentNo().setText("Öğrenci No Girin");
+            rsg.getMg().gettxtStudentNo().setText("Type Student No");
             rsg.getMg().getTxtBookBarcode().setForeground(Color.GRAY);
-            rsg.getMg().getTxtBookBarcode().setText("Kitap Barkod No girin");
+            rsg.getMg().getTxtBookBarcode().setText("Type Book Barcode No");
             rsg.getMg().getTxtBookName().setText("");
             rsg.getMg().gettxtResultScreen().setText("");
             rsg.getMg().gettxtResultScreen().setBackground(new Color(206, 214, 224));
@@ -679,7 +676,7 @@ public class ActionStudent implements ActionListener, FocusListener {
             if (BookCounter > 0) {
 
                 java.awt.Toolkit.getDefaultToolkit().beep();
-                JOptionPane.showMessageDialog(null, "Öğrencinin elinde " + BookCounter + " adet kitap vardır. Kayıt Silinemez");
+                JOptionPane.showMessageDialog(null, "Student has " + BookCounter + " books. Student is not allowed to delete.");
                 return false;
             } else {
                 SuccessVoice();
@@ -835,7 +832,7 @@ public class ActionStudent implements ActionListener, FocusListener {
                     paintSsgDebt(sqlconnection.getResultSet().getDouble("Debt"));
                 } else {
                     java.awt.Toolkit.getDefaultToolkit().beep();
-                    JOptionPane.showMessageDialog(null, ssg.getTxtStudentNo().getText().trim() + "  Numaralı öğrenci Kayıtlı değildir", "ÖĞRENCİ BULUNAMADI", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, " Student no "+ssg.getTxtStudentNo().getText().trim() +"is not found.", "STUDENT MISSMATCH", JOptionPane.ERROR_MESSAGE);
 
                 }
             }
@@ -867,7 +864,7 @@ public class ActionStudent implements ActionListener, FocusListener {
     }
 
     public void ResetStudentState() {
-        String EmptyTextForStudentState = "KİTAP YOK";
+        String EmptyTextForStudentState = "No Book";
         ssg.getTxtDept().setText("");
         ssg.getTxtDept().setBackground(new Color(206, 214, 224));
         ssg.getTxtBookName1().setText(EmptyTextForStudentState);

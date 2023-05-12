@@ -55,7 +55,7 @@ public class StudentAddGui {
 
     public StudentAddGui(MainGui mg) {
         setJf(mg.getJf());
-        getJf().setTitle("ÖĞRENCİ EKLE");
+        getJf().setTitle("ADD STUDENT PAGE");
         setMg(mg);
         mg.getJp().setVisible(false);
         getJf().add(getJp());
@@ -126,7 +126,7 @@ public class StudentAddGui {
 
     public JLabel getLblNo() {
         if (lblNo == null) {
-            lblNo = new JLabel("Öğrenci No");
+            lblNo = new JLabel("Student No");
             lblNo.setBounds(leftSpace, topSpace + (lblpushUnder * lblPushCounter), lblWidth, lblheight);
             lblNo.setForeground(Color.BLACK);
             lblNo.setFont(lblFont);
@@ -142,8 +142,8 @@ public class StudentAddGui {
 
     public JLabel getLblResult() {
         if (lblResult == null) {
-            lblResult = new JLabel("Sonuç ");
-            lblResult.setBounds(leftSpace + txtWidth + (int) (screenSizeWidth / 17.075),
+            lblResult = new JLabel("RESULT ");
+            lblResult.setBounds(leftSpace + txtWidth + (int) (screenSizeWidth / 17),
                     topSpace + (lblpushUnder * lblPushCounter), lblWidth, lblheight);
 
             lblResult.setForeground(Color.BLACK);
@@ -160,7 +160,7 @@ public class StudentAddGui {
 
     public JLabel getLblName() {
         if (lblName == null) {
-            lblName = new JLabel("Öğrenci Adı");
+            lblName = new JLabel("Student Name");
             lblName.setBounds(leftSpace, topSpace + (lblpushUnder * lblPushCounter), lblWidth, lblheight);
             lblName.setForeground(Color.BLACK);
             lblName.setFont(lblFont);
@@ -176,7 +176,7 @@ public class StudentAddGui {
     public JLabel getLblSurname() {
         if (lblSurname == null) {
 
-            lblSurname = new JLabel("Öğrenci Soyadı");
+            lblSurname = new JLabel("Student Surname");
             lblSurname.setBounds(leftSpace + txtWidth + (int) (screenSizeWidth / 17.075),
                     topSpace + (lblpushUnder * lblPushCounter), lblWidth, lblheight);
             lblSurname.setForeground(Color.BLACK);
@@ -194,7 +194,7 @@ public class StudentAddGui {
     public JLabel getLblEmail() {
         if (lblEmail == null) {
 
-            lblEmail = new JLabel("Öğrenci Email");
+            lblEmail = new JLabel("Student Email");
             lblEmail.setBounds(leftSpace, topSpace + (lblpushUnder * lblPushCounter), lblWidth, lblheight);
             lblEmail.setForeground(Color.BLACK);
             lblEmail.setFont(lblFont);
@@ -209,7 +209,7 @@ public class StudentAddGui {
 
     public JLabel getLblPhoneNo() {
 
-        lblPhoneNo = new JLabel("Öğrenci Telefon No");
+        lblPhoneNo = new JLabel("Student Phone No");
 
         lblPhoneNo.setBounds(leftSpace + txtWidth + (int) (screenSizeWidth / 17.075),
                 topSpace + (lblpushUnder * lblPushCounter), lblWidth, lblheight);
@@ -250,7 +250,7 @@ public class StudentAddGui {
             txtResult.setBackground(new Color(206, 214, 224));
             ttm.setInitialDelay(100);
             ttm.setDismissDelay(1000);
-            txtResult.setToolTipText("Buraya Erişemezsiniz");
+            txtResult.setToolTipText("Not allowed to acces here");
             lblPushCounter++;
         }
         return txtResult;
@@ -303,7 +303,7 @@ public class StudentAddGui {
 
     public JButton getBtnComeBack() {
         if (btnComeBack == null) {
-            btnComeBack = new JButton("Geri Dön");
+            btnComeBack = new JButton("Back");
             btnComeBack.setFont(lblFont);
             btnComeBack.setBounds(leftSpace, (int) (screenSizeHeight / 1.7066666666666668),
                     (int) (screenSizeWidth / 9.106666666666667), (int) (screenSizeHeight / 25.6));
@@ -319,7 +319,7 @@ public class StudentAddGui {
 
     public JButton getBtnAdd() {
         if (btnAdd == null) {
-            btnAdd = new JButton("Ekle ");
+            btnAdd = new JButton("Add");
             btnAdd.setFont(lblFont);
             btnAdd.setBounds(leftSpace,
                     (int) (screenSizeHeight / 2.1942857142857144),
@@ -336,7 +336,7 @@ public class StudentAddGui {
 
     public JButton getBtnClear() {
         if (btnClear == null) {
-            btnClear = new JButton(" Temizle ");
+            btnClear = new JButton("Clean");
             btnClear.setFont(lblFont);
             btnClear.setBounds(leftSpace + (int) (screenSizeWidth / 7.805714285714286),
                     (int) (screenSizeHeight / 2.1942857142857144),

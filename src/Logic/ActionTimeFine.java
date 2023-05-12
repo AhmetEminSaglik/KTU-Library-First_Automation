@@ -39,8 +39,8 @@ public class ActionTimeFine implements ActionListener, FocusListener {
     FineDebtPayment fdp;
     AboutUs au;
     public boolean noVoice = false;
-    String PlaceHolderStudent = "Öğrenci No";
-    String PlaceHolderBook = "Kitap Barkod No";
+    String PlaceHolderStudent = "Student No";
+    String PlaceHolderBook = "Book Barcode No";
     Font FocusFont = new Font("", Font.BOLD, (int) screenSizeWidth / 91);
     Font LostFocusFont = new Font("", Font.ITALIC, (int) screenSizeWidth / 91);
     boolean visibleOfTxt = false;
@@ -69,27 +69,27 @@ public class ActionTimeFine implements ActionListener, FocusListener {
 
         if (tcet != null) {
             tcet.getMg().gettxtStudentNo().setForeground(Color.GRAY);
-            tcet.getMg().gettxtStudentNo().setText("Öğrenci No Girin");
+            tcet.getMg().gettxtStudentNo().setText("Type Student No");
             tcet.getMg().getTxtBookBarcode().setForeground(Color.GRAY);
-            tcet.getMg().getTxtBookBarcode().setText("Kitap Barkod No girin");
+            tcet.getMg().getTxtBookBarcode().setText("Type Book Barcode No");
             tcet.getMg().getTxtBookName().setText("");
             tcet.getMg().gettxtResultScreen().setText("");
             tcet.getMg().gettxtResultScreen().setBackground(new Color(206, 214, 224));
 
         } else if (fdp != null) {
             fdp.getMg().gettxtStudentNo().setForeground(Color.GRAY);
-            fdp.getMg().gettxtStudentNo().setText("Öğrenci No Girin");
+            fdp.getMg().gettxtStudentNo().setText("Type Student No");
             fdp.getMg().getTxtBookBarcode().setForeground(Color.GRAY);
-            fdp.getMg().getTxtBookBarcode().setText("Kitap Barkod No girin");
+            fdp.getMg().getTxtBookBarcode().setText("Type Book Barcode No");
             fdp.getMg().getTxtBookName().setText("");
             fdp.getMg().gettxtResultScreen().setText("");
             fdp.getMg().gettxtResultScreen().setBackground(new Color(206, 214, 224));
 
         } else if (au != null) {
             au.getMg().gettxtStudentNo().setForeground(Color.GRAY);
-            au.getMg().gettxtStudentNo().setText("Öğrenci No Girin");
+            au.getMg().gettxtStudentNo().setText("Type Student No");
             au.getMg().getTxtBookBarcode().setForeground(Color.GRAY);
-            au.getMg().getTxtBookBarcode().setText("Kitap Barkod No girin");
+            au.getMg().getTxtBookBarcode().setText("Type Book Barcode No");
             au.getMg().getTxtBookName().setText("");
             au.getMg().gettxtResultScreen().setText("");
             au.getMg().gettxtResultScreen().setBackground(new Color(206, 214, 224));
@@ -103,20 +103,20 @@ public class ActionTimeFine implements ActionListener, FocusListener {
 
             if (e.getSource() == tcet.getBtnComeBack()) {
                 tcet.setVisible(false);
-                tcet.getMg().getJf().setTitle("ANA SAYFA");
+                tcet.getMg().getJf().setTitle("MAIN PAGE");
                 tcet.getMg().getJp().setVisible(true);
                 clearAllTxtMainGui();
             } else if (e.getSource() == tcet.getBtnExtendTime()) {
                 if (!tcet.getTxtBookBarcodeNoToExtendTime().getText().trim().equals("")) {
                     ExtendTime();
                 } else {
-                    tcet.getTxtResult().setText("Kitap seçmelisiniz");
+                    tcet.getTxtResult().setText("Must Select Book.");
                     tcet.getTxtResult().setBackground(new Color(231, 76, 60));
                     java.awt.Toolkit.getDefaultToolkit().beep();
-                    JOptionPane.showMessageDialog(null, "Kitap seçilmeden süre uzatılamaz", "SÜRE UZATMA HATASI", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Must select book to extend time.", "TIME EXTEND ERROR", JOptionPane.ERROR_MESSAGE);
                 }
             } else if (e.getSource() == tcet.getTxtBookBarcodeNoToExtendTime()) {
-                JOptionPane.showMessageDialog(null, tcet.getTxtBookBarcodeNoToExtendTime().getText() + " barkod nolu  kitap bilgileri buraya getirilecek");
+                JOptionPane.showMessageDialog(null, "Book with "+tcet.getTxtBookBarcodeNoToExtendTime().getText() + " barcode no will be retrived");
             } else if (e.getSource() == tcet.getTxtSearchStudentNo()) {
                 noVoice = false;
                 SearchStudentBarkodNo(1);
@@ -133,7 +133,7 @@ public class ActionTimeFine implements ActionListener, FocusListener {
 
                 } else {
 
-                    JOptionPane.showMessageDialog(null, "Arama Yapmak İçin Alanlardan Birisini Doldurmanız Gerekmektedir");
+                    JOptionPane.showMessageDialog(null, "Must be filled one of the fields to search.");
                 }
             }
         } else if (fdp != null) {
@@ -141,7 +141,7 @@ public class ActionTimeFine implements ActionListener, FocusListener {
             if (e.getSource() == fdp.getBtnComeBack()) {
                 fdp.getJp().setVisible(false);
                 fdp.getMg().getJp().setVisible(true);
-                fdp.getMg().getJf().setTitle("ANA SAYFA");
+                fdp.getMg().getJf().setTitle("MAIN PAGE");
                 clearAllTxtMainGui();
             } else if (e.getSource() == fdp.getTxtStudentNo()) {
 
@@ -152,21 +152,21 @@ public class ActionTimeFine implements ActionListener, FocusListener {
                     payDebt();
                     BringStudentWhoHasDebt(1);
                 } else {
-                    JOptionPane.showMessageDialog(null, "Ödemek için önce öğrencinin bilgilerini çağırmalısınız");
+                    JOptionPane.showMessageDialog(null, "Before payment, student data must be retrived.");
                 }
 
             }
 
         } else if (au != null) {
             usernameChanged = false;
-            String firstEnrtyInfo = "     ---KULLANICI ADI DEĞİŞTİRME ---\nKullanıcı Adınızı,  Parolanızı ve Yeni Kullanıcı Adınızı girmeniz gerekmektedir.\n\n"
-                    + "      --- ŞİFRE DEĞİŞTİRME ---\nKullanıcı Adınızı, Şifrenizi ve Yeni Şifre ile Şifre Tekrarını doldurmanız gerekmektedir.\n\n"
-                    + "      --- HEM KULLANICI ADI HEM ŞİFRE DEĞİŞTİRME--- \nBütün bilgileri doldurmanız gerekmektedir.";
+            String firstEnrtyInfo = "     ---UPDATE USERNAME ---\nUsername, password and new username must be filled.\n\n"
+                    + "      --- UPDATE PASSWORD ---\nUsername, password, new password and repeat password must be filled.\n\n"
+                    + "      --- UPDATE BOTH USERNAME AND PASSWORD --- \nMust be filled all fields.";
             if (e.getSource() == au.getBtnComeBack()) {
                 au.stopChangeBackground = true;
                 au.getJp().setVisible(false);
                 au.getMg().getJp().setVisible(true);
-                au.getMg().getJf().setTitle("ANA SAYFA");
+                au.getMg().getJf().setTitle("MAIN PAGE");
                 clearAllTxtMainGui();
 
             } else if (e.getSource() == au.getBtnChangePassword()
@@ -207,27 +207,27 @@ public class ActionTimeFine implements ActionListener, FocusListener {
                                 if (!au.getTxtOldUsername().getText().equals(au.getTxtNewUsername().getText())) {
 
                                     passwordWillChange = true;
-                                    Object[] options = {"Onayla", "İptal"};
-                                    String message = "Kullanıcı Adınızı ve Şifrenizi Değiştirmek İstediğinize Emin Misiniz ?";
-                                    int answer = JOptionPane.showOptionDialog(null, message, "GÜNCELLEME ONAYI", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, "Onayla");
+                                    Object[] options = {"Accept", "Cancel"};
+                                    String message = "Are you you want to update your username and password?";
+                                    int answer = JOptionPane.showOptionDialog(null, message, "UPDATE CONFIRMATION", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, "Onayla");
 
                                     if (answer == JOptionPane.YES_OPTION) {
 
                                         if (!SearchInDatabase(UserExit(au.getTxtOldUsername().getText().trim(),
                                                 String.valueOf(au.getTxtOldPassword().getPassword())))) {
-                                            JOptionPane.showMessageDialog(null, "Kullanıcı Adı ya da Parola Hatalı");
+                                            JOptionPane.showMessageDialog(null, "Username or password is wrong");
                                             ResetPasswords();
                                             FailedOrCanceledUpdate(FAILED);
                                         } else if (SearchInDatabase(UserExit(au.getTxtNewUsername().getText().trim(),
                                                 ""))) {
-                                            JOptionPane.showMessageDialog(null, "Bu kullanıcı adı Alınmış lütfen başka bir kullanıcı adı giriniz");
+                                            JOptionPane.showMessageDialog(null, "Username is allready in use. Please type another username.");
                                         } else {
                                             if (ArePasswordsSame(au.getTxtOldPassword(), au.getTxtNewPassword1()) == false) {
                                                 UpdateUser();
                                                 UpdatePassword();
                                             } else {
                                                 FailedOrCanceledUpdate(FAILED);
-                                                JOptionPane.showMessageDialog(null, "Yeni Parolanız eski Parolanız ile aynı olamaz");
+                                                JOptionPane.showMessageDialog(null, "New password must be different than old password.");
                                                 ResetPasswords();
                                             }
                                         }
@@ -237,9 +237,9 @@ public class ActionTimeFine implements ActionListener, FocusListener {
                                     }
                                 } else {
                                     java.awt.Toolkit.getDefaultToolkit().beep();
-                                    JOptionPane.showMessageDialog(null, "Aynı kullanıcı adıyla değişiklik yapamazsınız");
+                                    JOptionPane.showMessageDialog(null, "Not allowed to update with same username.");
                                     ResetPasswords();
-                                    au.getTxtResult().setText("Kullanıcı adları aynı");
+                                    au.getTxtResult().setText("usernames are same.");
                                     au.getTxtResult().setBackground(Color.red);
                                 }
                             } else {
@@ -261,9 +261,9 @@ public class ActionTimeFine implements ActionListener, FocusListener {
                                 && au.getTxtOldPassword().getPassword().length == 0
                                 && au.getTxtNewPassword1().getPassword().length == 0
                                 && au.getTxtNewPassword2().getPassword().length == 0) {
-                            JOptionPane.showMessageDialog(null, "Kullanıcı adınızı değiştirmek için  Kullanıcı Adını ve  Parolanızı doldurmanız gerekmektedir");
+                            JOptionPane.showMessageDialog(null, "To update username, both  username and password must be filled.");
                         } else {
-                            JOptionPane.showMessageDialog(null, "Hem kullanıcı adınızı hem şifrenizi değiştirmek için lüfen tüm bilgileri doldurunuz ");
+                            JOptionPane.showMessageDialog(null, "To update both username and password, then all fields must be filled.");
                         }
                     } else if (au.getTxtOldPassword().getPassword().length > 0
                             || au.getTxtNewPassword1().getPassword().length > 0
@@ -281,14 +281,13 @@ public class ActionTimeFine implements ActionListener, FocusListener {
                                 PasswordsAreDifferent();
                             }
                         } else {
-                            JOptionPane.showMessageDialog(null, "Şifrenizi değiştirmek için lütfen \n şifrenizi, yeni şifreniz ve şifre tekrarını eksiksiz doldurun ");
+                            JOptionPane.showMessageDialog(null, "To update password, please fill password, new password and repeat password.");
                         }
                     } else if (!au.getTxtNewUsername().getText().trim().equals("")) {
                         if (!au.getTxtOldUsername().getText().trim().equals("") && !au.getTxtNewUsername().getText().trim().equals("")) {
-                            JOptionPane.showMessageDialog(null, "Kullanıcı Adınızı Değiştirmek İstediğinize Emin Misiniz ?");
+                            JOptionPane.showMessageDialog(null, "Are you sure you want to update your username?");
                         } else {
-                            JOptionPane.showMessageDialog(null, "Kullanıcı adını değiştirmek için lütfen \n kullanıcı adını ve yeni kullanıcı adı bölümünü dolduurn"
-                                    + "");
+                            JOptionPane.showMessageDialog(null, "To update username please fill username, password and new username.");
                         }
                     }
 
@@ -315,9 +314,9 @@ public class ActionTimeFine implements ActionListener, FocusListener {
 
     public void PasswordsAreDifferent() {
         java.awt.Toolkit.getDefaultToolkit().beep();
-        JOptionPane.showMessageDialog(null, "Yeni Parolanız ile Parola tekrarı uyuşmamaktadır");
+        JOptionPane.showMessageDialog(null, "New passwrod and repeat pasword is not matched.");
         ResetPasswords();
-        au.getTxtResult().setText("Yeni Parolalar Farklı");
+        au.getTxtResult().setText("New passwords not matcheds.");
         au.getTxtResult().setBackground(Color.red);
     }
 
@@ -349,12 +348,12 @@ public class ActionTimeFine implements ActionListener, FocusListener {
         switch (choose) {
             case FAILED:
 
-                au.getTxtResult().setText("İşlem Başarısız");
+                au.getTxtResult().setText("PROCESS IS FAILED.");
                 au.getTxtResult().setBackground(Color.red);
 
                 break;
             case CANCELED:
-                au.getTxtResult().setText("İşlem iptal edildi");
+                au.getTxtResult().setText("PROCESS IS CANCELLED.");
                 au.getTxtResult().setBackground(Color.ORANGE);
 
                 break;
@@ -392,19 +391,20 @@ public class ActionTimeFine implements ActionListener, FocusListener {
                         SuccessVoice();
                         au.getTxtResult().setText("İşlem Başarılı");
                         au.getTxtResult().setBackground(Color.CYAN);
-                        JOptionPane.showMessageDialog(null, "Hem Kullanıcı Adınız hem de Parolanız değiştirildi. \n\nPROGRAM YENİDEN BAŞLATILACAKk");
+                        JOptionPane.showMessageDialog(null, "Both username and password are updated.\n\n" +
+                                "APPLICATION WILL BE RESTARTED.");
                     } else {
                         SuccessVoice();
-                        au.getTxtResult().setText("Parola Değiştirildi");
+                        au.getTxtResult().setText("Password is updated.");
 
                         au.getTxtResult().setBackground(Color.GREEN);
-                        JOptionPane.showMessageDialog(null, "Parolanız değiştirildi. \n\nPROGRAM YENİDEN BAŞLATILACAKk");
+                        JOptionPane.showMessageDialog(null, "Password is updated. \n\nAPPLICATION WILL BE RESTARTED");
                     }
                     GoToLoginAfterChangeUsernameOrPassword();
                 }
 
             } else {
-                JOptionPane.showMessageDialog(null, "Kullanıcı adınız ya da parolanız yanlış");
+                JOptionPane.showMessageDialog(null, "Username or passwrod is wrong.");
                 ResetPasswords();
             }
             sqlConnection.CloseAllConnections();
@@ -436,27 +436,27 @@ public class ActionTimeFine implements ActionListener, FocusListener {
             if (SearchInDatabase(UserExit(au.getTxtNewUsername().getText().trim(), ""))) {
 
                 FailedOrCanceledUpdate(FAILED);
-                JOptionPane.showMessageDialog(null, "Yeni kullanıcı adı zaten kayıtlı  Lütfen başka bir kullanıcı adı giriniz");
+                JOptionPane.showMessageDialog(null, "New username is in use. Please type another username.");
 
                 StopUpdate = true;
             } else {
                 sqlConnection.Update(UpdateUser);
 
-                au.getTxtResult().setText("Kullanıcı adı Değişti");
+                au.getTxtResult().setText("username is updated.");
                 au.getTxtResult().setBackground(Color.GREEN);
                 au.getTxtResult().setForeground(Color.BLACK);
 
                 usernameChanged = true;
                 if (passwordWillChange == false) {
                     SuccessVoice();
-                    JOptionPane.showMessageDialog(null, "Kullanıcı adı değişti. \n\nPROGRAM YENİDEN BAŞLATILACAK");
+                    JOptionPane.showMessageDialog(null, "Username is updated. adı değişti. \n\nAPPLICATION WILL BE RESTARTED");
                     GoToLoginAfterChangeUsernameOrPassword();
                 }
 
             }
         } else {
             java.awt.Toolkit.getDefaultToolkit().beep();
-            JOptionPane.showMessageDialog(null, "Kullanıcı ya da parola hatalı");
+            JOptionPane.showMessageDialog(null, "Username or password is wrong.");
             ResetPasswords();
             FailedOrCanceledUpdate(FAILED);
         }
@@ -484,7 +484,7 @@ public class ActionTimeFine implements ActionListener, FocusListener {
         String ExtendTimeQuery = "UPDATE book SET BorrowedDate= NOW() , book.Condition = NULL WHERE BarcodeNo LIKE '" + tcet.getTxtBookBarcodeNoToExtendTime().getText().trim() + "'";
         try {
             sqlconnection.Update(ExtendTimeQuery);
-            tcet.getTxtResult().setText(" Kitap Süresi Uzatıldı");
+            tcet.getTxtResult().setText("Time is extended.");
             tcet.getTxtResult().setBackground(new Color(29, 209, 161));
 
             SearchStudentBarkodNo(3);
@@ -640,12 +640,12 @@ public class ActionTimeFine implements ActionListener, FocusListener {
                 if (counter > 0) {
                     SuccessVoice();
                     if (dontUpdateResult == false) {
-                        tcet.getTxtResult().setText("Bilgiler Getirildi");
+                        tcet.getTxtResult().setText("Data is retrived.");
                         tcet.getTxtResult().setBackground(Color.GREEN);
                     }
                 } else {
                     java.awt.Toolkit.getDefaultToolkit().beep();
-                    tcet.getTxtResult().setText("Aradığınız Veriler Bulunamadı");
+                    tcet.getTxtResult().setText("Requested data is not found.");
                     tcet.getTxtResult().setBackground(Color.RED);
                     tcet.getTxtBookBarcodeNoToExtendTime().setText("");
                     tcet.getTxtBookNameToExtendTime().setText("");
@@ -668,7 +668,7 @@ public class ActionTimeFine implements ActionListener, FocusListener {
 
     public void fillDebtAndResult(String NameSurname, Double AmountOfPayment, Double Debt, String Email) {
         if (Debt > 0.0) {
-            fdp.getTxtResult().setText(Debt + " TL borcunuz kalmıştır");
+            fdp.getTxtResult().setText(" Remained debt "+Debt +" TL");
             fdp.getTxtResult().setBackground(new Color(255, 118, 117));
             // fdp.getTxtDebt().setBackground(Color.red);
 
@@ -676,11 +676,11 @@ public class ActionTimeFine implements ActionListener, FocusListener {
 
             Debt = -Debt;
 
-            fdp.getTxtResult().setText(Debt + " TL alacaksınız");
+            fdp.getTxtResult().setText("You will get "+Debt);
             fdp.getTxtResult().setBackground(new Color(162, 155, 254));
             fdp.getTxtDebt().setBackground(new Color(116, 185, 255));
         } else {
-            fdp.getTxtResult().setText("Borcunuz Bitmiştir");
+            fdp.getTxtResult().setText("Your debt is over.");
             fdp.getTxtResult().setBackground(new Color(85, 239, 196));
             fdp.getTxtDebt().setText("0.0");
             fdp.getTxtDebt().setBackground(new Color(206, 214, 224));
@@ -728,12 +728,12 @@ public class ActionTimeFine implements ActionListener, FocusListener {
                 }
                 SuccessVoice();
             } else {
-                JOptionPane.showMessageDialog(null, "0 Tl ödeme yapamazsınız");
+                JOptionPane.showMessageDialog(null, "Payment debt must be different than 0");
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex + " hatası ");
         } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(null, "Lütfen Sadece Sayı İçeren Değerler Giriniz", "DEĞER HATASI", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Type only numbers", "MISSMATCH INPUT", JOptionPane.ERROR_MESSAGE);
         } finally {
             sqlConnection.CloseAllConnections();
         }
@@ -774,7 +774,7 @@ public class ActionTimeFine implements ActionListener, FocusListener {
                 if (StudentNumberWhoHasDebt == 1) {
                     fdp.getTxtDebt().setText(sqlConnection.getResultSet().getString("Debt"));
                     fdp.getTxtStudentNo().setText(sqlConnection.getResultSet().getString("No"));
-                    fdp.getTxtResult().setText("Bilgiler getirildi");
+                    fdp.getTxtResult().setText("Data is retrived.");
                     fdp.getTxtResult().setBackground(Color.GREEN);
                     fdp.getTxtAmountOfPayment().setEditable(true);
                     fdp.getTxtAmountOfPayment().setFocusable(true);
@@ -788,7 +788,7 @@ public class ActionTimeFine implements ActionListener, FocusListener {
                 }
             }
             if (StudentNumberWhoHasDebt == 0) {
-                fdp.getTxtResult().setText("Öğrenci Bulunamadı");
+                fdp.getTxtResult().setText("Student not found.");
                 fdp.getTxtResult().setBackground(Color.red);
             }
             fdp.getJp().remove(fdp.getSp());
@@ -837,7 +837,7 @@ public class ActionTimeFine implements ActionListener, FocusListener {
                 fdp.getTxtAmountOfPayment().setFocusable(false);
                 fdp.getTxtAmountOfPayment().setBackground(Color.DARK_GRAY);
 
-                if (fdp.getTxtStudentNo().getText().trim().equals("Öğrenci No")) {
+                if (fdp.getTxtStudentNo().getText().trim().equals("Student No")) {
                     fdp.getTxtStudentNo().setText("");
 
                 }
@@ -845,10 +845,10 @@ public class ActionTimeFine implements ActionListener, FocusListener {
                 fdp.getTxtStudentNo().setFont(new Font("", Font.BOLD, (int) screenSizeWidth / 91));
                 fdp.getTxtAmountOfPayment().setForeground(Color.gray);
                 fdp.getTxtAmountOfPayment().setFont(new Font("", Font.ITALIC, (int) screenSizeWidth / 97));
-                fdp.getTxtAmountOfPayment().setText("Ödeme Miktarı");
+                fdp.getTxtAmountOfPayment().setText("Payment Amount");
 
             } else if (e.getSource() == fdp.getTxtAmountOfPayment()) {
-                if (fdp.getTxtAmountOfPayment().getText().trim().equals("Ödeme Miktarı")) {
+                if (fdp.getTxtAmountOfPayment().getText().trim().equals("Payment Amount")) {
                     if (Double.parseDouble(fdp.getTxtDebt().getText()) < 0.0) {
                         fdp.getTxtAmountOfPayment().setText("-");
                     } else {

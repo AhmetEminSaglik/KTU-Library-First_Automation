@@ -87,7 +87,7 @@ public class MainGui {
     public MainGui(Login login) {
         //getJp(). = login.getJf();
         setJf(login.getJf());
-        getJf().setTitle("ANA SAYFA");
+        getJf().setTitle("MAIN PAGE");
         getJp().setBounds(0, 0, getJf().getWidth(), getJf().getHeight());
         getJf().add(getJp());
         getJp().setVisible(true);
@@ -209,7 +209,7 @@ public class MainGui {
     public JLabel getLblStudentNo() {
         if (lblStudentNo == null) {
             lblStudentNo = build_JlabelForNulls(lblStudentNo);
-            lblStudentNo.setText("Öğrenci No ");
+            lblStudentNo.setText("Student No ");
 
         }
         return lblStudentNo;
@@ -222,7 +222,7 @@ public class MainGui {
     public JLabel getLblBookBarcode() {
         if (lblBookBarcode == null) {
             lblBookBarcode = build_JlabelForNulls(lblBookBarcode);
-            lblBookBarcode.setText("Kitap Barkod No");
+            lblBookBarcode.setText("Book Barcode No");
         }
         return lblBookBarcode;
     }
@@ -234,7 +234,7 @@ public class MainGui {
     public JLabel getLblResultScreen() {
         if (lblResultScreen == null) {
             lblResultScreen = build_JlabelForNulls(lblResultScreen);
-            lblResultScreen.setText("Sonuç ");
+            lblResultScreen.setText("Result");
 
         }
         return lblResultScreen;
@@ -246,7 +246,7 @@ public class MainGui {
 
     public JLabel getLblBookName() {
         if (lblBookName == null) {
-            lblBookName = new JLabel("Kitap  Adı");
+            lblBookName = new JLabel("Book Name");
             lblBookName.setBounds((int) (screenSizeWidth / 136.6), (int) (screenSizeHeight / 5.688888888888889),
                     (int) (screenSizeWidth / 4.553333333333334), (int) (screenSizeHeight / 10.971428571428572));
             lblBookName.setForeground(Color.WHITE);
@@ -261,7 +261,7 @@ public class MainGui {
 
     public JLabel getLblTotalBook() {
         if (lblTotalBook == null) {
-            lblTotalBook = new JLabel("Toplam Kitap Sayısı");
+            lblTotalBook = new JLabel("Total Books Number");
             lblTotalBook.setBounds((total_remain_given_books_x + holding_area_scale) * total_remain_given_books_counter,
                     total_remain_given_books_y, holding_area_scale,
                     (int) (screenSizeHeight / 15.36));
@@ -279,8 +279,8 @@ public class MainGui {
 
     public JLabel getLblRemainBook() {
         if (lblRemainBook == null) {
-            lblRemainBook = new JLabel("Verilen Kitap Sayısı");
-            lblRemainBook.setBounds((int) (screenSizeWidth / 136.6) + (total_remain_given_books_x + holding_area_scale) * total_remain_given_books_counter,
+            lblRemainBook = new JLabel("Borrowed Books");
+            lblRemainBook.setBounds((int) (screenSizeWidth / 45) + (total_remain_given_books_x + holding_area_scale) * total_remain_given_books_counter,
                     total_remain_given_books_y, holding_area_scale,
                     (int) (screenSizeHeight / 15.36));
             lblRemainBook.setFont(new Font("monospaced", Font.BOLD, (int) ((int) screenSizeWidth / 62.09)));
@@ -296,8 +296,8 @@ public class MainGui {
 
     public JLabel getLblGivenBook() {
         if (lblGivenBook == null) {
-            lblGivenBook = new JLabel("Kalan Kitap Sayısı");
-            lblGivenBook.setBounds((int) (screenSizeWidth / 91.06666666666666) + (total_remain_given_books_x + holding_area_scale) * total_remain_given_books_counter,
+            lblGivenBook = new JLabel("Books In Shelf");
+            lblGivenBook.setBounds((int) (screenSizeWidth / 45) + (total_remain_given_books_x + holding_area_scale) * total_remain_given_books_counter,
                     1 + total_remain_given_books_y, holding_area_scale,
                     (int) (screenSizeHeight / 15.36));
             lblGivenBook.setFont(new Font("monospaced", Font.BOLD, (int) ((int) screenSizeWidth / 62.09)));
@@ -318,7 +318,7 @@ public class MainGui {
             txtStudentNo.addActionListener(action);
             txtStudentNo.addFocusListener(action);
             txtStudentNo.setForeground(Color.GRAY);
-            txtStudentNo.setText("Öğrenci No Girin");
+            txtStudentNo.setText("Type Student No");
 
         }
         return txtStudentNo;
@@ -334,7 +334,7 @@ public class MainGui {
             txtBookBarcode.addActionListener(action);
             txtBookBarcode.addFocusListener(action);
             txtBookBarcode.setForeground(Color.GRAY);
-            txtBookBarcode.setText("Kitap Barkod No girin");
+            txtBookBarcode.setText("Type Book Barcode No");
 
         }
         return txtBookBarcode;
@@ -348,7 +348,7 @@ public class MainGui {
         if (txtResultScreen == null) {
             txtResultScreen = build_JTextfiledForNulls(txtResultScreen);
             txtResultScreen.setEditable(false);
-            txtResultScreen.setToolTipText("Buraya Erişemezsiniz");
+            txtResultScreen.setToolTipText("Not allowed to acces here");
             ttm.setInitialDelay(100);
             ttm.setDismissDelay(1000);
             txtResultScreen.setBackground(new Color(206, 214, 224));
@@ -374,7 +374,7 @@ public class MainGui {
 
             ttm.setInitialDelay(100);
             ttm.setDismissDelay(1000);
-            txtBookName.setToolTipText("Buraya Erişemezsiniz");
+            txtBookName.setToolTipText("Not allowed to acces here");
 
         }
         return txtBookName;
@@ -458,7 +458,7 @@ public class MainGui {
     public JButton getBookAdd() {
         if (bookAdd == null) {
             bookAdd = build_JbuttonForNulls(bookAdd, FloorOfBook_X, FirstButtons_Y);
-            bookAdd.setText("Kitap Ekle");
+            bookAdd.setText("Add Book");
         }
         return bookAdd;
     }
@@ -470,7 +470,7 @@ public class MainGui {
     public JButton getBookReturn() {
         if (bookReturn == null) {
             bookReturn = build_JbuttonForNulls(bookReturn, FloorOfBook_X, SecondButtons_Y);
-            bookReturn.setText("Kitap İade");
+            bookReturn.setText("Return Book");
         }
         return bookReturn;
     }
@@ -482,7 +482,7 @@ public class MainGui {
     public JButton getBookSearchList() {
         if (bookSearchList == null) {
             bookSearchList = build_JbuttonForNulls(bookSearchList, FloorOfBook_X, ThirdButtons_Y);
-            bookSearchList.setText("Kitap Listesi & Sorgula");
+            bookSearchList.setText("Book List");
 
         }
         return bookSearchList;
@@ -495,7 +495,7 @@ public class MainGui {
     public JButton getBookUpdateRemove() {
         if (bookUpdateRemove == null) {
             bookUpdateRemove = build_JbuttonForNulls(bookUpdateRemove, FloorOfBook_X, FourthButtons_Y);
-            bookUpdateRemove.setText("Kitap Güncelle & Sil");
+            bookUpdateRemove.setText("Update & Delete Book");
         }
 
         return bookUpdateRemove;
@@ -508,7 +508,7 @@ public class MainGui {
     public JButton getStudentAdd() {
         if (studentAdd == null) {
             studentAdd = build_JbuttonForNulls(studentAdd, FloorOfStudent_X, FirstButtons_Y);
-            studentAdd.setText("Ögrenci Ekle");
+            studentAdd.setText("Add Student");
         }
 
         return studentAdd;
@@ -521,7 +521,7 @@ public class MainGui {
     public JButton getStudentUpdate() {
         if (studentUpdate == null) {
             studentUpdate = build_JbuttonForNulls(studentUpdate, FloorOfStudent_X, SecondButtons_Y);
-            studentUpdate.setText("Ögrenci Güncelle & Sil");
+            studentUpdate.setText("Update & Delete Student");
         }
         return studentUpdate;
     }
@@ -533,7 +533,7 @@ public class MainGui {
     public JButton getStudentState() {
         if (studentState == null) {
             studentState = build_JbuttonForNulls(studentState, FloorOfStudent_X, ThirdButtons_Y);
-            studentState.setText("Ögrenci Durumu");
+            studentState.setText("Student Status");
         }
 
         return studentState;
@@ -546,7 +546,7 @@ public class MainGui {
     public JButton getRegisteredStudent() {
         if (registeredStudent == null) {
             registeredStudent = build_JbuttonForNulls(registeredStudent, FloorOfStudent_X, FourthButtons_Y);
-            registeredStudent.setText("Kayıtlı Ögrenci listesi");
+            registeredStudent.setText("Registered Student List");
 
         }
         return registeredStudent;
@@ -559,7 +559,7 @@ public class MainGui {
     public JButton getTimeControlExtraTime() {
         if (TimeControl_ExtraTime == null) {
             TimeControl_ExtraTime = build_JbuttonForNulls(TimeControl_ExtraTime, FloorOf_Time_Exit_X, FirstButtons_Y);
-            TimeControl_ExtraTime.setText("Süre Kontrol & Uzatma");
+            TimeControl_ExtraTime.setText("Time Check & Extension");
 
         }
         return TimeControl_ExtraTime;
@@ -572,7 +572,7 @@ public class MainGui {
     public JButton getFineDebtPayment() {
         if (FineDebtPayment == null) {
             FineDebtPayment = build_JbuttonForNulls(FineDebtPayment, FloorOf_Time_Exit_X, SecondButtons_Y);
-            FineDebtPayment.setText("Para Cezaları & Ödeme");
+            FineDebtPayment.setText("Fines & Payment");
 
         }
         return FineDebtPayment;
@@ -585,7 +585,7 @@ public class MainGui {
     public JButton getAboutUs() {
         if (aboutUs == null) {
             aboutUs = build_JbuttonForNulls(aboutUs, FloorOf_Time_Exit_X, ThirdButtons_Y);
-            aboutUs.setText("Hakkımızda / Parola");
+            aboutUs.setText("About & Password");
 
         }
         return aboutUs;
@@ -598,7 +598,7 @@ public class MainGui {
     public JButton getExit() {
         if (exit == null) {
             exit = build_JbuttonForNulls(exit, FloorOf_Time_Exit_X, FourthButtons_Y);
-            exit.setText("Çıkış / Giriş Sayfası");
+            exit.setText("Sign Out & Login Page");
         }
         return exit;
     }
