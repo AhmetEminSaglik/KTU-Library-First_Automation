@@ -132,11 +132,8 @@ public class ActionStudent implements ActionListener, FocusListener {
                 DBStudentUpdate();
 
             } else if (e.getSource() == sug.getBtnDelete()) {
-                if (ControlBeforeRemoveStudent() == true) {
+                if (ControlBeforeRemoveStudent(sug) == true) {
                     DBStudentDelete();
-                }{
-                    sug.getTxtResult().setText("STUDENT DELETION FAILED. HAS BOOKS");
-                    sug.getTxtResult().setBackground(new Color(255, 50, 50));
                 }
             }
         } else if (ssg != null) {
@@ -194,7 +191,7 @@ public class ActionStudent implements ActionListener, FocusListener {
                 }
                 if (Double.parseDouble(SqlConnection.getResultSet().getString("Debt")) > 0.0) {
                     StudentHasDebt = true;
-                    throw new Exception();
+                    throw new Exception("STUDENT HAS DEBT. DELETION FAILED");
                 }
             } else {
                 throw new Exception("Not found registered student.");
@@ -209,12 +206,16 @@ public class ActionStudent implements ActionListener, FocusListener {
             if (answer == JOptionPane.YES_OPTION) {
                 SuccessVoice();
 
+                String no=sug.getTxtno().getText().trim();
+                String name=sug.getTxtNewName().getText().trim();
+                String surname=sug.getTxtNewSurname().getText().trim();
+                String email=sug.getTxtNewEmail().getText().trim();
+
+
                 Thread SendEmail = new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        new JavaMailUtil().MailStudentWhoDeleted(sug.getTxtno().getText().trim(),
-                                sug.getTxtNewName().getText().trim(), sug.getTxtNewSurname().getText().trim(),
-                                sug.getTxtNewEmail().getText().trim());
+                        new JavaMailUtil().MailStudentWhoDeleted(no,name, surname,email);
                     }
                 }
                 );
@@ -241,7 +242,7 @@ public class ActionStudent implements ActionListener, FocusListener {
             if (AlreadyCame == false) {
                 java.awt.Toolkit.getDefaultToolkit().beep();
                 int answer = JOptionPane.showConfirmDialog(null, "Student data must be retrived before delete student\n"
-                        + "                                        Do you want to retrive data?", "MATCH EXCEPTION", JOptionPane.YES_NO_OPTION);
+                        + "Do you want to retrive data?", "MATCH EXCEPTION", JOptionPane.YES_NO_OPTION);
                 if (answer == JOptionPane.YES_OPTION) {
                     DBStudentBringData();
                 }
@@ -250,7 +251,7 @@ public class ActionStudent implements ActionListener, FocusListener {
 
                 java.awt.Toolkit.getDefaultToolkit().beep();
                 sug.getTxtResult().setBackground(new Color(255, 82, 82));
-                sug.getTxtResult().setText("DELETION IS FAILED");
+                sug.getTxtResult().setText(ex.getMessage());
             } else {
                 JOptionPane.showConfirmDialog(null, "Student is not found with number :  " + sug.getTxtno().getText().trim(), "DELETION ERROR", JOptionPane.ERROR_MESSAGE);
                 java.awt.Toolkit.getDefaultToolkit().beep();
@@ -664,7 +665,7 @@ public class ActionStudent implements ActionListener, FocusListener {
 
     }
 
-    public boolean ControlBeforeRemoveStudent() {
+    public boolean ControlBeforeRemoveStudent(StudentUpdateGui sug) {
         SqlConnection sqlConnection = new SqlConnection();
 
         try {
@@ -681,6 +682,8 @@ public class ActionStudent implements ActionListener, FocusListener {
 
                 java.awt.Toolkit.getDefaultToolkit().beep();
                 JOptionPane.showMessageDialog(null, "Student has " + BookCounter + " books. Student is not allowed to delete.");
+                sug.getTxtResult().setText("STUDENT DELETION FAILED. HAS BOOKS");
+                sug.getTxtResult().setBackground(new Color(255, 50, 50));
                 return false;
             } else {
                 SuccessVoice();

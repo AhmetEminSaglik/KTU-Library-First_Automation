@@ -107,7 +107,7 @@ public class JavaMailUtil {
 
         //String Text = StudentNo + " numaralı " + name + " " + surname.toUpperCase() + " isimli Dear Student,<br><br>"
         String Text = "Dear Student " + name + " " + surname.toUpperCase() + ",<br><br>"
-                + "Your record is deleted from Of Technical Faculty Library. Wish you success in your life.";
+                + "Your record is deleted from Of Technical Faculty Library. <br><br>Wish you success in your life.";
         String MessageSubject = "Record Deletion Process ";
 
         Text += WhoSendMail;
@@ -119,7 +119,7 @@ public class JavaMailUtil {
 
         String Text = "Dear Student  " + name + " " + surname.toUpperCase() + ", <br><br>" +
                 "You returned the \"" + bookName + "\" with barcode no " + barcode + " on " + localDate + ".<br>"
-                + "Thank you for your understanding. Have a good day.";
+                + "Thank you for your understanding. <br><br>Have a nice day.";
         String MessageSubject = "Book Return Process (" + barcode + ")";
 
         Text += WhoSendMail;
@@ -133,7 +133,7 @@ public class JavaMailUtil {
         //String Text = StudentNo + " numaralı Sevgili " + name + " " + surname + " isimli Dear Student,<br> <br>"
         String Text = "Dear Student " + name + " " + surname + ", <br><br>" +
                 "You are registered to Of Technical Faculty Library." +
-                "From now on, you will be informed through this email. Have a good day.";
+                "From now on, you will be informed through this email. <br><br>Have a nice day.";
 
         String MessageSubject = "Register Student Process";
 
@@ -250,7 +250,6 @@ public class JavaMailUtil {
             }
 
         });
-
         prepareMessage(session, usernameEmail, email, Text, MessageSubject);
 
         try {
@@ -319,7 +318,7 @@ public class JavaMailUtil {
 
             message.setContent("Dear Student, <br><br>You have returned the book but it's time was exceed. So you have to pay " + Debt + "." +
                     "Please return the book in given time.<br>"
-                    + "Thank you for your understanding. Have a good day."
+                    + "Thank you for your understanding. <br><br>Have a nice day."
                     + WhoSendMail, "text/html;charset=utf-8");
 
         } catch (Exception ex) {
