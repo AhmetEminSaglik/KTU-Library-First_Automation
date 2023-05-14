@@ -175,7 +175,7 @@ public class ActionsBook implements ActionListener, FocusListener {
             bag.getMg().gettxtStudentNo().setForeground(Color.GRAY);
             bag.getMg().gettxtStudentNo().setText("Type Student No");
             bag.getMg().getTxtBookBarcode().setForeground(Color.GRAY);
-            bag.getMg().getTxtBookBarcode().setText("Type Barcode No");
+            bag.getMg().getTxtBookBarcode().setText("Type Book Barcode No");
             bag.getMg().getTxtBookName().setText("");
             bag.getMg().gettxtResultScreen().setText("");
             bag.getMg().gettxtResultScreen().setBackground(new Color(206, 214, 224));
@@ -185,7 +185,7 @@ public class ActionsBook implements ActionListener, FocusListener {
             brg.getMg().gettxtStudentNo().setForeground(Color.GRAY);
             brg.getMg().gettxtStudentNo().setText("Type Student No");
             brg.getMg().getTxtBookBarcode().setForeground(Color.GRAY);
-            brg.getMg().getTxtBookBarcode().setText("Type Barcode No");
+            brg.getMg().getTxtBookBarcode().setText("Type Book Barcode No");
             brg.getMg().getTxtBookName().setText("");
             brg.getMg().gettxtResultScreen().setText("");
             brg.getMg().gettxtResultScreen().setBackground(new Color(206, 214, 224));
@@ -193,7 +193,7 @@ public class ActionsBook implements ActionListener, FocusListener {
             bslg.getMg().gettxtStudentNo().setForeground(Color.GRAY);
             bslg.getMg().gettxtStudentNo().setText("Type Student No");
             bslg.getMg().getTxtBookBarcode().setForeground(Color.GRAY);
-            bslg.getMg().getTxtBookBarcode().setText("Type Barcode No");
+            bslg.getMg().getTxtBookBarcode().setText("Type Book Barcode No");
             bslg.getMg().getTxtBookName().setText("");
             bslg.getMg().gettxtResultScreen().setText("");
             bslg.getMg().gettxtResultScreen().setBackground(new Color(206, 214, 224));
@@ -203,7 +203,7 @@ public class ActionsBook implements ActionListener, FocusListener {
             burg.getMg().gettxtStudentNo().setForeground(Color.GRAY);
             burg.getMg().gettxtStudentNo().setText("Type Student No");
             burg.getMg().getTxtBookBarcode().setForeground(Color.GRAY);
-            burg.getMg().getTxtBookBarcode().setText("Type Barcode No");
+            burg.getMg().getTxtBookBarcode().setText("Type Book Barcode No");
             burg.getMg().getTxtBookName().setText("");
             burg.getMg().gettxtResultScreen().setText("");
             burg.getMg().gettxtResultScreen().setBackground(new Color(206, 214, 224));
@@ -259,7 +259,7 @@ public class ActionsBook implements ActionListener, FocusListener {
         if (jtxt != bslg.getTxtBarcodeNo()) {
             bslg.getTxtBarcodeNo().setFont(fontTxtPlaceHolder);
             bslg.getTxtBarcodeNo().setForeground(bslgPlaceHolder);
-            bslg.getTxtBarcodeNo().setText("Type Barcode No");
+            bslg.getTxtBarcodeNo().setText("Type Book Barcode No");
         }
         if (jtxt != bslg.getTxtAuthorName()) {
             bslg.getTxtAuthorName().setFont(fontTxtPlaceHolder);
@@ -276,7 +276,7 @@ public class ActionsBook implements ActionListener, FocusListener {
             bslg.getTxtCategory().setForeground(bslgPlaceHolder);
             bslg.getTxtCategory().setText("Type Category Name");
         }
-        if (jtxt.getText().trim().equals("Type Barcode No")
+        if (jtxt.getText().trim().equals("Type Book Barcode No")
                 || jtxt.getText().trim().equals("Type Author Name")
                 || jtxt.getText().trim().equals("Type Book Name")
                 || jtxt.getText().trim().equals("Type Category Name")) {

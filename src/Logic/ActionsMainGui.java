@@ -325,12 +325,12 @@ public class ActionsMainGui implements ActionListener, MouseListener, FocusListe
         if (e.getSource() == getMg().gettxtStudentNo()) {
             if (getMg().gettxtStudentNo().getText().trim().equals("")) {
                 getMg().gettxtStudentNo().setForeground(Color.GRAY);
-                getMg().gettxtStudentNo().setText("Type Student No");
+                getMg().gettxtStudentNo().setText(StudentPlaceHolder);
             }
         } else if (e.getSource() == getMg().getTxtBookBarcode()) {
             if (getMg().getTxtBookBarcode().getText().trim().equals("")) {
                 getMg().getTxtBookBarcode().setForeground(Color.GRAY);
-                getMg().getTxtBookBarcode().setText("Type Book Barcode No");
+                getMg().getTxtBookBarcode().setText(BarcodeNoPlaceHolder);
 
             }
         }
