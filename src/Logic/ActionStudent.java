@@ -751,7 +751,7 @@ public class ActionStudent implements ActionListener, FocusListener {
                         delay += diff.getDays();
                     }
 
-                    if (delay < 30) {
+                    if (delay <= 30) {
                         delay = 30 - delay;
 
                         delayString = "+" + Integer.toString(delay);

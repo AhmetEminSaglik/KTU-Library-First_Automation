@@ -335,7 +335,7 @@ public class FineDebtPayment {
 
     public JButton getBtnPay() {
         if (btnPay == null) {
-            btnPay = new JButton("Öde");
+            btnPay = new JButton("Pay");
             btnPay.setBounds(LeftSpace + (pushRightCounter * pushRightSpace), txtTopSpace + lblHeight + txtHeight + (int) (screenSizeHeight / 51.2), lblWidth, (int) (screenSizeHeight / 25.6));
             btnPay.setFont(lblFont);
             btnPay.setCursor(new Cursor(12));
