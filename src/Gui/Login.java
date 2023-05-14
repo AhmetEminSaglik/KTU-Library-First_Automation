@@ -187,7 +187,7 @@ public class Login extends JPanel {
 
     public JButton getSignIn() {
         if (signIn == null) {
-            signIn = new JButton("Sing in ");
+            signIn = new JButton("Sing in");
             signIn.setBounds((screenSizeWidth / 3) - (screenSizeWidth / 70), (int) (screenSizeHeight / 2.2),
                     screenSizeWidth / 9 + (screenSizeWidth / 50), screenSizeHeight / 19);
 
@@ -273,8 +273,8 @@ public class Login extends JPanel {
                 stmt.executeUpdate(sql);
 
             } catch (SQLException se) {
-                JOptionPane.showMessageDialog(null, se + "\n\n   Çözüm Önerileri: \n"
-                        + "1-) Lütfen xampp portunu açınız");
+                JOptionPane.showMessageDialog(null, se + "\n\n   Solution Advices :\n"
+                        + "1-) Please start xampp port.");
 
             } catch (ClassNotFoundException ex) {
 
@@ -338,8 +338,8 @@ public class Login extends JPanel {
 
                 if (over30Days > 0 || inLast3Days > 0) {
 
-                    JOptionPane.showMessageDialog(null, "30 günü aşmış ödünç verilen kitapların sayısı : " + over30Days
-                            + "\n\n Son üç gün  içinde iade edilmesi gereken kitap sayısı : " + inLast3Days);
+                    JOptionPane.showMessageDialog(null, "The number of books borrowed that have exceeded 30 days is " + over30Days +"."
+                            + "\n\nThe number of books that are due to be returned within the last 3 days is " + inLast3Days+".");
 
                 }
 
@@ -410,7 +410,7 @@ public class Login extends JPanel {
 
             String sql2 = "INSERT INTO `admin` (`Username`, `Password`) "
                     + "VALUES ('1', '1'),"
-                    + "('2','2')";
+                    + "('test','test    ')";
 
             stmt.executeUpdate(sql2);
         } catch (SQLException se) {

@@ -77,11 +77,11 @@ public class AboutUs {
 
     public String FillTextArea() {
 
-        String txt1 = "          I am a 2nd-grade software engr student. I am donating this library\n" +
-                "automation to the KTU's Of Technology Faculty's Library on 02.20.2020.\n" +
-                "Hoping to make the library processes easier.\n\n"
-                + "                                                            Ahmet Emin SAĞLIK\n"
-                + "                                                                       385931";
+        String txt1 = "         I am a 2nd-grade software engr student. I am donating this\n" +
+                "library automation to the KTU's Of Technology Faculty's Library\n" +
+                "on February 20, 2020. Hoping to make the library processes easier.\n\n"
+                + "                                                                       Ahmet Emin SAĞLIK\n"
+                + "                                                                                  385931";
         String txt2 = "    Yazılım mühendisliği 2. Sınıf öğrencisiyken \n"
                 + "gönüllü olarak  bu projeyi gerçekleştirip \n"
                 + "kütüphanemizin işlerini kolaylaştırmasını diliyorum.\n"
@@ -155,7 +155,7 @@ public class AboutUs {
             getJp().setBackground(new Color(firstColor, secondColor, thirdColor));
             getTxtAreaAboutMe().setBackground(new Color(firstColor, secondColor, thirdColor));
 
-            if (firstColor + secondColor + thirdColor < 255) {
+            if (firstColor + secondColor + thirdColor < 255 || (firstColor<50 ||secondColor<50||thirdColor<50)) {
                 ChangeForegroundColor(new Color(255, 255, 255));
             } else {
                 ChangeForegroundColor(new Color(0, 0, 0));
@@ -266,7 +266,7 @@ public class AboutUs {
             txtAreaAboutMe = new JTextArea();
             txtAreaAboutMe.setFocusable(false);
             txtAreaAboutMe.setFont(new Font("", Font.BOLD, (int) (screenSizeWidth / 75)));
-            txtAreaAboutMe.setBounds(leftSpace + (int) (screenSizeWidth / 17.075), topSpace + (int) (screenSizeHeight / 15.36),
+            txtAreaAboutMe.setBounds(leftSpace + (int) (screenSizeWidth / 17), topSpace + (int) (screenSizeHeight / 15.36),
                     (int) (screenSizeWidth / 1.9514285714285715), (int) (screenSizeHeight / 3.072));
         }
         return txtAreaAboutMe;
@@ -454,7 +454,7 @@ public class AboutUs {
     public JLabel getLblOldUsername() {
 
         if (lblOldUsername == null) {
-            lblOldUsername = new JLabel("Kullanıcı Adı");
+            lblOldUsername = new JLabel("Username");
             lblOldUsername.setBounds(LeftSpace + (lblpushRight * (lblWidth + (int) (screenSizeWidth / 136.6))),
                     lblTopSpace + (lblpushUnder * (lblHeight + (int) (screenSizeHeight / 76.8))),
                     lblWidth, lblHeight);
@@ -474,7 +474,7 @@ public class AboutUs {
 
     public JLabel getLblNewUsername() {
         if (lblNewUsername == null) {
-            lblNewUsername = new JLabel("Yeni Kullanıcı Adı");
+            lblNewUsername = new JLabel("New Username");
             lblNewUsername.setBounds(LeftSpace + (lblpushRight * (lblWidth + (int) (screenSizeWidth / 136.6))),
                     lblTopSpace + (lblpushUnder * (lblHeight + (int) (screenSizeHeight / 76.8))),
                     lblWidth, lblHeight);
@@ -492,7 +492,7 @@ public class AboutUs {
 
     public JLabel getLblResult() {
         if (lblResult == null) {
-            lblResult = new JLabel("SONUÇ ");
+            lblResult = new JLabel("RESULT");
             lblResult.setBounds(LeftSpace + (lblpushRight * (lblWidth + (int) (screenSizeWidth / 136.6))),
                     lblTopSpace + (lblpushUnder * (lblHeight + (int) (screenSizeHeight / 76.8))),
                     lblWidth, lblHeight);
@@ -512,7 +512,7 @@ public class AboutUs {
 
     public JLabel getLblOldPassword() {
         if (lblOldPassword == null) {
-            lblOldPassword = new JLabel(" Parolanız");
+            lblOldPassword = new JLabel("Password");
             lblOldPassword.setBounds(LeftSpace + (lblpushRight * (lblWidth + (int) (screenSizeWidth / 136.6))),
                     lblTopSpace + (lblpushUnder * (lblHeight + (int) (screenSizeHeight / 76.8) + txtHeight / 5 * 4)),
                     lblWidth, lblHeight);
@@ -538,7 +538,7 @@ public class AboutUs {
 
     public JLabel getLblNewPassword1() {
         if (lblNewPassword1 == null) {
-            lblNewPassword1 = new JLabel("Yeni  Parola");
+            lblNewPassword1 = new JLabel("New Password");
             lblNewPassword1.setBounds(LeftSpace + (lblpushRight * (lblWidth + (int) (screenSizeWidth / 136.6))),
                     lblTopSpace + (lblpushUnder * (lblHeight + (int) (screenSizeHeight / 76.8) + txtHeight / 5 * 4)),
                     lblWidth, lblHeight);
@@ -557,7 +557,7 @@ public class AboutUs {
 
     public JLabel getLblNewPassword2() {
         if (lblNewPassword2 == null) {
-            lblNewPassword2 = new JLabel("Parola Tekrarı");
+            lblNewPassword2 = new JLabel("Repeat Password");
             lblNewPassword2.setBounds(LeftSpace + (lblpushRight * (lblWidth + (int) (screenSizeWidth / 136.6))),
                     lblTopSpace + (lblpushUnder * (lblHeight + (int) (screenSizeHeight / 76.8) + txtHeight / 5 * 4)),
                     lblWidth, lblHeight);

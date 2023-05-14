@@ -31,15 +31,15 @@ public class JavaMailUtil {
     static boolean saveConditionOnMysql = true;
     static Message message;
 
-    public static final String usernameEmail = "example@gmail.com";
-    public static final String passwordEmail = "passwrods";
+    public static final String usernameEmail = "ahmeteminsaglik@gmail.com";
+    public static final String passwordEmail = "pgdbtwqhklhfugoo";
 
     Icon icon = new ImageIcon("GitHub-Mark-64px.png");
 
     static String WhoSendMail = "<br><br><br>"
             + "   <font color=\"gray\">  "
             + "<hr style=\"border: 1px dashed gray;\" />"
-            + " <i>Karadeniz Technich University / Of Technical Faculty Library<br>"
+            + " <i>Karadeniz Technical University / Of Faculty of Technology Library<br>"
             + "</i></font>"
             + "<br> <i><b> <i>"
             + "<a href=\"#\"i class=\"fa fa-github\"></i></a><a href=\"https://www.instagram.com/ahmeteminsaglik/?hl=tr\"> "
@@ -50,9 +50,10 @@ public class JavaMailUtil {
         LocalDate localDate = LocalDate.now();
 
         String Text = "Dear Student " + name + " " + surname.toUpperCase() + ", <br><br>"
-                + "You have renewed the loan period of the book name \"" + bookName + "\" with barcode no " + barcodeNo + " untill " + localDate + "."
-                + "Please return the book before " + localDate.plusDays(29) + "."
-                + "Thank you for your understanding and have a good day.";
+                + "You have renewed the loan period of the book name \"" + bookName + "\" with barcode no " + barcodeNo + " untill " + localDate + ". "
+                + "Please return the book before " + localDate.plusDays(29) + ".<br>"
+                + "Thank you for your understanding."
+                +"<br><br>Wish you have a nice day.";
 
         Text += WhoSendMail;
         String MessageSubject = "Extension Book Loan Period (" + barcodeNo + ")";
@@ -65,7 +66,7 @@ public class JavaMailUtil {
         LocalDate localDate = LocalDate.now();
         String Text = "Dear Student  " + nameSurname + ", <br><br>You have ";
         if (MoneyFromStudent > 0) {
-            Text += "paid " + MoneyFromStudent + " TL of " + (MoneyFromStudent + Debt) + " debt";
+            Text += "paid " + MoneyFromStudent + " TL of " + (MoneyFromStudent + Debt) + " debt ";
         } else {
             Text += "added more " + (-MoneyFromStudent) + " TL to your debt " + (Debt + MoneyFromStudent);
         }
@@ -77,7 +78,9 @@ public class JavaMailUtil {
             TextAdd = "You will get " + Debt + " TL from library. For your information...";
         } else {
             TextAdd = "Your debt is over. For your information...";
+
         }
+        TextAdd += "<br><br>Wish you have a nice day.";
         Text += TextAdd + WhoSendMail;
         String MessageSubject = "Debt Payment Process(" + Debt + " TL)";
 
@@ -89,9 +92,10 @@ public class JavaMailUtil {
         LocalDate localDate = LocalDate.now();
 
         String Text = "Dear Student  " + name + " " + surname.toUpperCase() + ", <br><br>" +
-                "You borrowed the \"" + bookName + "\" with barcode no " + barcode + " on " + localDate + "."
+                "You borrowed the \"" + bookName + "\" book with barcode no " + barcode + " on " + localDate + ". "
                 + "Please return the book before " + localDate.plusDays(29) + "."
-                + "Thank you for your understanding and have a good day.";
+                + "Thank you for your understanding.<br>"
+                + "Wish have a nice day.";
 
         Text += WhoSendMail;
         String MessageSubject = "Borrowed Book Process (" + barcode + ") ";
@@ -114,8 +118,8 @@ public class JavaMailUtil {
         LocalDate localDate = LocalDate.now();
 
         String Text = "Dear Student  " + name + " " + surname.toUpperCase() + ", <br><br>" +
-                "You returned the \"" + bookName + "\" with barcode no " + barcode + " on " + localDate + "."
-                + "Thank you for your understanding and have a good day.";
+                "You returned the \"" + bookName + "\" with barcode no " + barcode + " on " + localDate + ".<br>"
+                + "Thank you for your understanding. Have a good day.";
         String MessageSubject = "Book Return Process (" + barcode + ")";
 
         Text += WhoSendMail;
@@ -314,8 +318,8 @@ public class JavaMailUtil {
             message.setSubject("Late Return Book Fine for the Of Technical Faculty.");
 
             message.setContent("Dear Student, <br><br>You have returned the book but it's time was exceed. So you have to pay " + Debt + "." +
-                    "Please return the book in given time."
-                    + "Thank you for your understanding and have a good day."
+                    "Please return the book in given time.<br>"
+                    + "Thank you for your understanding. Have a good day."
                     + WhoSendMail, "text/html;charset=utf-8");
 
         } catch (Exception ex) {
@@ -377,35 +381,36 @@ public class JavaMailUtil {
 
                     message.setSubject("Of Technical Faculty Library Last 7 DAYS Warning ( Notification  / " + sqlConnection2.getResultSet().getString("book.BarcodeNo") + " )");
 
-                    message.setContent(text +"category "+ sqlConnection2.getResultSet().getString("book.CategoryName") + ",  "
-                                    +"author name "+ sqlConnection2.getResultSet().getString("book.AuthorName") + ", "
-                                    +"barcode no "+ sqlConnection2.getResultSet().getString("book.BarcodeNo") + ", "
-                                    + " book name with  " + sqlConnection2.getResultSet().getString("book.Name") + " remained 7 days to return in time.\n\n "
-                                    + " Deadline is " + lastDayOfBook(sqlConnection2.getResultSet().getString("book.BarcodeNo")) + "."
-                                    + "Thank you for your understanding and have a good day." + WhoSendMail,
+                    message.setContent(text +
+                                    "You are approaching the due date for returning the borrowed book " + sqlConnection2.getResultSet().getString("book.Name") + ". "
+                                    + "You have last 7 days to return the book. "
+                                    + "Please return the book before " + lastDayOfBook(sqlConnection2.getResultSet().getString("book.BarcodeNo")) + ".<br>"
+                                    + "Thank you for your understanding."
+                                    + "<br><br>Wish you have a nice day." + WhoSendMail,
                             "text/html;charset=utf-8");
 
                     break;
                 case LAST3DAYS:
 
                     message.setSubject("Of Technical Faculty Library Last 7 DAYS Warning ( Critical / " + sqlConnection2.getResultSet().getString("book.BarcodeNo") + " )");
-                    message.setContent(text +"category "+sqlConnection2.getResultSet().getString("book.CategoryName") + ", "
-                                    + "author name "+sqlConnection2.getResultSet().getString("book.AuthorName") + ", "
-                                    + "barcode no "+sqlConnection2.getResultSet().getString("book.BarcodeNo") + ", "
-                                    + "book name with "+sqlConnection2.getResultSet().getString("book.Name") + "  remained 3 days to return in time.\n"
-                                    + "Deadline is  " + lastDayOfBook(sqlConnection2.getResultSet().getString("book.BarcodeNo")) + ". "
-                                    + "Thank you for your understanding and have a good day." + WhoSendMail,
+                    message.setContent(text +
+                                    "You are approaching the due date for returning the borrowed book " + sqlConnection2.getResultSet().getString("book.Name") + ". "
+                                    + "You have last 3 days to return the book. "
+                                    + "Please return the book before " + lastDayOfBook(sqlConnection2.getResultSet().getString("book.BarcodeNo")) + ".<br>"
+                                    + "Thank you for your understanding. "
+                                    + "<b>Wish you have a nice day." + WhoSendMail,
                             "text/html;charset=utf-8");
                     break;
                 case STARTEDFINE:
 
-                    message.setSubject("Of Technical Faculty Fine Begin Date ( Fine / " + sqlConnection2.getResultSet().getString("book.BarcodeNo") + " )");
-                    message.setContent(text + "You have exceed the deadline of category " + sqlConnection2.getResultSet().getString("book.CategoryName") + ", "
-                                    + "author name " + sqlConnection2.getResultSet().getString("book.AuthorName") + ", "
-                                    + "barkod numaralı" + sqlConnection2.getResultSet().getString("book.BarcodeNo") + ", "
-                                    + "book name with  " + sqlConnection2.getResultSet().getString("book.Name") + ". The punitive action has been initiated against you. "
-                                    + "A fine of 0.5 TL per day is applied for the days the book is returned late."
-                                    + "Thank you for your understanding and have a good day." + WhoSendMail,
+                    message.setSubject("Of Technical Faculty Penalty Begin Date ( Penalty / " + sqlConnection2.getResultSet().getString("book.BarcodeNo") + " )");
+                    message.setContent(text + "You have exceed the deadline the " + sqlConnection2.getResultSet().getString("book.Name") + " book with "
+                                    + sqlConnection2.getResultSet().getString("book.BarcodeNo") + " barcode no. "
+                                    + "The punitive action has been initiated against you. "
+                                    + "Each day the book is returned late, a fine of 0.5 TL will be applied. "
+                                    + "Please return the book as soon as possible.<br>"
+                                    + "Thank you for your understanding."
+                                    + "<br><br> Wish you have a nice day." + WhoSendMail,
                             "text/html;charset=utf-8");
                     break;
 

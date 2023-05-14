@@ -119,8 +119,8 @@ public class MainGui {
         getJp().add(getBookSearchList());
         getJp().add(getBookUpdateRemove());
         getJp().add(getStudentAdd());
-        getJp().add(getStudentUpdate());
         getJp().add(getStudentState());
+        getJp().add(getStudentUpdate());
         getJp().add(getRegisteredStudent());
         getJp().add(getTimeControlExtraTime());
         getJp().add(getFineDebtPayment());
@@ -421,7 +421,7 @@ public class MainGui {
             txtGivenBook.setForeground(Color.BLACK);
             total_remain_given_books_counter++;
             txtGivenBook.setBorder(BorderFactory.createLineBorder(Color.WHITE, 0));
-            txtGivenBook.setBorder(BorderFactory.createCompoundBorder(txtGivenBook.getBorder(), BorderFactory.createEmptyBorder(0, (int) (screenSizeWidth / 27.32), 0, 0)));
+            txtGivenBook.setBorder(BorderFactory.createCompoundBorder(txtGivenBook.getBorder(), BorderFactory.createEmptyBorder(0, (int) (screenSizeWidth / 21), 0, 0)));
 
             txtGivenBook.addActionListener(action);
         }
@@ -481,7 +481,7 @@ public class MainGui {
 
     public JButton getBookSearchList() {
         if (bookSearchList == null) {
-            bookSearchList = build_JbuttonForNulls(bookSearchList, FloorOfBook_X, ThirdButtons_Y);
+            bookSearchList = build_JbuttonForNulls(bookSearchList, FloorOfBook_X, FourthButtons_Y);
             bookSearchList.setText("Book List");
 
         }
@@ -494,7 +494,7 @@ public class MainGui {
 
     public JButton getBookUpdateRemove() {
         if (bookUpdateRemove == null) {
-            bookUpdateRemove = build_JbuttonForNulls(bookUpdateRemove, FloorOfBook_X, FourthButtons_Y);
+            bookUpdateRemove = build_JbuttonForNulls(bookUpdateRemove, FloorOfBook_X, ThirdButtons_Y);
             bookUpdateRemove.setText("Update & Delete Book");
         }
 
@@ -520,7 +520,7 @@ public class MainGui {
 
     public JButton getStudentUpdate() {
         if (studentUpdate == null) {
-            studentUpdate = build_JbuttonForNulls(studentUpdate, FloorOfStudent_X, SecondButtons_Y);
+            studentUpdate = build_JbuttonForNulls(studentUpdate, FloorOfStudent_X, ThirdButtons_Y);
             studentUpdate.setText("Update & Delete Student");
         }
         return studentUpdate;
@@ -532,7 +532,7 @@ public class MainGui {
 
     public JButton getStudentState() {
         if (studentState == null) {
-            studentState = build_JbuttonForNulls(studentState, FloorOfStudent_X, ThirdButtons_Y);
+            studentState = build_JbuttonForNulls(studentState, FloorOfStudent_X, SecondButtons_Y);
             studentState.setText("Student Status");
         }
 

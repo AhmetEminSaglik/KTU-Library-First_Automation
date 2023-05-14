@@ -420,7 +420,7 @@ public class ActionsBook implements ActionListener, FocusListener {
             String SqlBookdDeleteQuery = "DELETE FROM `book` WHERE BarcodeNo LIKE '" + burg.getTxtNewBarcodeNo().getText().trim() + "'";
 
             sqlConnection.setPrepareStatement(SqlBookdDeleteQuery);
-            int answer = JOptionPane.showConfirmDialog(null, "Kitabı Silmek istediğinizden Emin misiniz ? ", "SİLME UYARISI",
+            int answer = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete the book? ", "SİLME UYARISI",
                     JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if (answer == JOptionPane.YES_OPTION) {
 

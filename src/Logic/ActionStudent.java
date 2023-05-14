@@ -4,6 +4,7 @@ import Gui.RegisteredStudentGui;
 import Gui.StudentAddGui;
 import Gui.StudentStateGui;
 import Gui.StudentUpdateGui;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -248,7 +249,7 @@ public class ActionStudent implements ActionListener, FocusListener {
                 sug.getTxtResult().setBackground(new Color(255, 82, 82));
                 sug.getTxtResult().setText("DELETION IS FAILED");
             } else {
-                JOptionPane.showConfirmDialog(null, "Student is not found with number :  "+sug.getTxtno().getText().trim() , "DELETION ERROR", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showConfirmDialog(null, "Student is not found with number :  " + sug.getTxtno().getText().trim(), "DELETION ERROR", JOptionPane.ERROR_MESSAGE);
                 java.awt.Toolkit.getDefaultToolkit().beep();
                 sug.getTxtResult().setBackground(new Color(255, 82, 82));
                 sug.getTxtResult().setText("DELETION IS FAILED");
@@ -355,7 +356,7 @@ public class ActionStudent implements ActionListener, FocusListener {
             }
             if (!StudentBringCame) {
                 java.awt.Toolkit.getDefaultToolkit().beep();
-                JOptionPane.showMessageDialog(null, "Student is not found with number :  "+sug.getTxtno().getText().trim() , "EKSİK KAYIT HATASI", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Student is not found with number :  " + sug.getTxtno().getText().trim(), "EKSİK KAYIT HATASI", JOptionPane.ERROR_MESSAGE);
                 sug.getTxtNewNo().setText("");
                 sug.getTxtNewName().setText("");
                 sug.getTxtNewSurname().setText("");
@@ -780,14 +781,16 @@ public class ActionStudent implements ActionListener, FocusListener {
 
                         if (delay < 30) {
                             delay = 30 - delay;
-                            delayString = "+" + Integer.toString(delay);
+                            delayString = "+" + delay;
                             ssg.getLblLendingDayNumber2().setForeground(Color.green);
                         } else {
                             delay -= 30;
-                            delayString = "-" + Integer.toString(delay);
+                            if (delay == 0) {
+                                delay = 1;
+                            }
+                            delayString = "-" + delay;
                             ssg.getLblLendingDayNumber2().setForeground(Color.red);
                         }
-
                         ssg.getLblLendingDayNumber2().setText(delayString);
 
                         if (BorrowedDate3 != null) {
@@ -832,7 +835,7 @@ public class ActionStudent implements ActionListener, FocusListener {
                     paintSsgDebt(sqlconnection.getResultSet().getDouble("Debt"));
                 } else {
                     java.awt.Toolkit.getDefaultToolkit().beep();
-                    JOptionPane.showMessageDialog(null, " Student no "+ssg.getTxtStudentNo().getText().trim() +"is not found.", "STUDENT MISSMATCH", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, " Student no " + ssg.getTxtStudentNo().getText().trim() + "is not found.", "STUDENT MISSMATCH", JOptionPane.ERROR_MESSAGE);
 
                 }
             }

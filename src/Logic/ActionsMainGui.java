@@ -361,7 +361,7 @@ public class ActionsMainGui implements ActionListener, MouseListener, FocusListe
             if (TookBookCounter == 3) {
                 java.awt.Toolkit.getDefaultToolkit().beep();
                 JOptionPane.showMessageDialog(null, "Student has 3 books. Not allowed to give more books.", "BOOK BORROWED ERROR", JOptionPane.ERROR_MESSAGE);
-                getMg().gettxtResultScreen().setText("NOT ALLOWED TO GIVE MORE BOOKS");
+                getMg().gettxtResultScreen().setText("NOT GIVEN. OVER REQUEST");
                 getMg().gettxtResultScreen().setBackground(new Color(165, 94, 234));
                 StudentCanTakeBook = false;
             }
