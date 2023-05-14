@@ -134,6 +134,9 @@ public class ActionStudent implements ActionListener, FocusListener {
             } else if (e.getSource() == sug.getBtnDelete()) {
                 if (ControlBeforeRemoveStudent() == true) {
                     DBStudentDelete();
+                }{
+                    sug.getTxtResult().setText("STUDENT DELETION FAILED. HAS BOOKS");
+                    sug.getTxtResult().setBackground(new Color(255, 50, 50));
                 }
             }
         } else if (ssg != null) {

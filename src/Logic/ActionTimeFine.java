@@ -389,7 +389,7 @@ public class ActionTimeFine implements ActionListener, FocusListener {
                 if (sqlConnection.Update(UpdatePasswordQuery) == 1) {
                     if (usernameChanged == true) {
                         SuccessVoice();
-                        au.getTxtResult().setText("İşlem Başarılı");
+                        au.getTxtResult().setText("SUCCESSFUL");
                         au.getTxtResult().setBackground(Color.CYAN);
                         JOptionPane.showMessageDialog(null, "Both username and password are updated.\n\n" +
                                 "APPLICATION WILL BE RESTARTED.");
