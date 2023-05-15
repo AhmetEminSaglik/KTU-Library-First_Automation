@@ -775,8 +775,9 @@ public class ActionsBook implements ActionListener, FocusListener {
                     if (diff.getDays() > 0) {
                         delay += diff.getDays();
                     }
-                    if (delay > 30) {
+                    if (delay >= 30) {
                         delay = delay - 30;
+                        delay++;
                         Fine = FineFee * delay + debt;
                         FineAdded = true;
                         String Query = "SELECT * FROM student WHERE No LIKE '" + brg.getTxtStudentNo().getText().trim() + "'";

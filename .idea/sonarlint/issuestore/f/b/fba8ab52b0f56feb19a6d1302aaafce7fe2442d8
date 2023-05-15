@@ -1,0 +1,79 @@
+
+b	java:S112İ"FDefine and throw a dedicated exception instead of using a generic one.(‰Æáe8Ö÷ŸÍ1
+b	java:S112‹"FDefine and throw a dedicated exception instead of using a generic one.(‰Æáe8Ö÷ŸÍ1
+b	java:S112š"FDefine and throw a dedicated exception instead of using a generic one.(‰Æáe8×÷ŸÍ1
+f
+java:S1192…"IDefine a constant instead of duplicating this literal "COUNT(*)" 3 times.(¹±û98Û÷ŸÍ1
+{
+java:S1192Ÿ"XDefine a constant instead of duplicating this literal "StudentNoBookBarcodetxt" 8 times.(¿Ê¾Èÿÿÿÿÿ8Ú÷ŸÍ1
+R
+java:S1066º"/Merge this if statement with the enclosing one.(Æ³òÓüÿÿÿÿ8Ü÷ŸÍ1
+R
+java:S1066Ë"/Merge this if statement with the enclosing one.(çáÀ°øÿÿÿÿ8¿¬ÉÔ1
+F
+java:S1604ã"(Make this anonymous inner class a lambda(È÷÷—8Ş÷ŸÍ1
+P
+java:S1199¸"-Extract this nested code block into a method.(ÒÌâ–øÿÿÿÿ8ã÷ŸÍ1
+u	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÔÖØ^8ã÷ŸÍ1
+~	java:S116*"]Rename this field "StudentCanTakeBook" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±âÃÿÿÿÿÿ8ë Í1
+{	java:S116+"_Rename this field "BookDeliveredSomeone" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³÷şö8ì Í1
+~	java:S116-"]Rename this field "StudentPlaceHolder" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(â²ÕÉûÿÿÿÿ8ì Í1
+€	java:S116."_Rename this field "BarcodeNoPlaceHolder" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬¡é¾ÿÿÿÿÿ8ì Í1
+¤
+java:S1186ß"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ø¡ı¥ûÿÿÿÿ8í Í1
+¤
+java:S1186™"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ä Ïúüÿÿÿÿ8í Í1
+¤
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(®î’×üÿÿÿÿ8î Í1
+Ÿ
+java:S1186£"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ãÆĞÂ8î Í1
+t
+java:S3776A"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.(¼ Òşüÿÿÿÿ8ö Í1
+Y
+java:S1854o"7Remove this useless assignment to local variable "sag".(æ‚ûµûÿÿÿÿ8÷ Í1
+]	java:S125G"<This block of commented-out lines of code should be removed.(Ò²¤æüÿÿÿÿ8û Í1
+X	java:S125M"<This block of commented-out lines of code should be removed.(ÉÌ˜Ç8ı Í1
+J	java:S108V")Either remove or fill this block of code.(®ˆâ€ıÿÿÿÿ8ş Í1
+J
+java:S1481o"(Remove this unused "sag" local variable.(æ‚ûµûÿÿÿÿ8«‚ Í1
+u
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(‘ËØøÿÿÿÿ8³‚ Í1
+K	java:S108­")Either remove or fill this block of code.(ë‚‰¼ÿÿÿÿÿ8¸‚ Í1
+K	java:S108¸")Either remove or fill this block of code.(ÒÌâ–øÿÿÿÿ8¾‚ Í1
+F	java:S108½")Either remove or fill this block of code.(˜ÍÃ8¿‚ Í1
+K	java:S108Á")Either remove or fill this block of code.(«“¿İÿÿÿÿÿ8À‚ Í1
+F	java:S108É")Either remove or fill this block of code.(˜ÍÃ8Á‚ Í1
+K	java:S108Ì")Either remove or fill this block of code.(«“¿İÿÿÿÿÿ8Â‚ Í1
+M
+java:S1481Ñ"/Remove this unused "allInteger" local variable.(„çŸ÷8Ã‚ Í1
+K	java:S108×")Either remove or fill this block of code.(éÍ¢øÿÿÿÿ8Ä‚ Í1
+p	java:S100Ó"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôÒüæıÿÿÿÿ8Ö‚ Í1
+F	java:S108Ş")Either remove or fill this block of code.(å¥‡8Ü‚ Í1
+F	java:S108ò")Either remove or fill this block of code.(À‹ø„8â‚ Í1
+E
+java:S1125ô"'Remove the unnecessary boolean literal.(£ÇÑ¢8Ü‚ Í1
+p	java:S100€"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶´€ûÿÿÿÿ8Ş‚ Í1
+c
+java:S2147Ÿ"ECombine this catch with the one at line 413, which has the same body.(À‹ø„8ß‚ Í1
+Y	java:S125–"<This block of commented-out lines of code should be removed.(¥´Ğ¸8â‚ Í1
+F	java:S108")Either remove or fill this block of code.(Ö¨š•8ã‚ Í1
+F	java:S108Ÿ")Either remove or fill this block of code.(À‹ø„8õ‚ Í1
+E
+java:S1125£"'Remove the unnecessary boolean literal.(«ùå8ã‚ Í1
+E
+java:S1125§"'Remove the unnecessary boolean literal.(ÜÕùÁ8å‚ Í1
+p	java:S100´"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶ËÉøÿÿÿÿ8æ‚ Í1
+E
+java:S1125¿"'Remove the unnecessary boolean literal.(£ÇÑ¢8ç‚ Í1
+E
+java:S1125Ä"'Remove the unnecessary boolean literal.(ò¬Åİ8è‚ Í1
+Y	java:S125Ì"<This block of commented-out lines of code should be removed.(µÑõ…8é‚ Í1
+k	java:S100ï"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰ªÈ8ñ‚ Í1
+c
+java:S2147÷"ECombine this catch with the one at line 502, which has the same body.(Ãôş•8ò‚ Í1
+c
+java:S2147ø"ECombine this catch with the one at line 502, which has the same body.( ¡É­8ó‚ Í1
+F	java:S108ö")Either remove or fill this block of code.(ê¼é8ö‚ Í1
+F	java:S108÷")Either remove or fill this block of code.(Ãôş•8ö‚ Í1
+F	java:S108ø")Either remove or fill this block of code.( ¡É­8â•ÇÔ1
+j	java:S100ı"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³ ó]8ö‚ Í1

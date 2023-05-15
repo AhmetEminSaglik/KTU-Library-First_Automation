@@ -1,0 +1,30 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Â¿Âëüÿÿÿÿ
+7
+java:S11700"!Make this final field static too.(Œâ¥‹
+<
+java:S11701"!Make this final field static too.(ÄÆó‚şÿÿÿÿ
+7
+java:S11702"!Make this final field static too.(»ÊÑ
+7
+java:S11705"!Make this final field static too.(â–ÕÆ
+<
+java:S11707"!Make this final field static too.(Ø…Äşÿÿÿÿ
+7
+java:S11708"!Make this final field static too.(ÔĞÒÔ
+<
+java:S11709"!Make this final field static too.(ú™Ùæÿÿÿÿÿ
+6
+java:S1170:"!Make this final field static too.(åŞšl
+7
+java:S1170;"!Make this final field static too.(Ò“Ì
+6
+java:S1170?"!Make this final field static too.(¥×üA
+<
+java:S1170@"!Make this final field static too.(Ñ¤÷Ğşÿÿÿÿ
+<
+java:S1170A"!Make this final field static too.(µöîşÿÿÿÿ
+:
+java:S1948)"$Make "mg" transient or serializable.(Ú¯¸‘
+>
+java:S1948*"(Make "action" transient or serializable.(™üšÍ

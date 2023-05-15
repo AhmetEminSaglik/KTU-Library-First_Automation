@@ -1,0 +1,28 @@
+
+r
+java:S1192ö"VDefine a constant instead of duplicating this literal "com.mysql.jdbc.Driver" 3 times.(äÃ„Õùÿÿÿÿ
+=
+java:S1604N"(Make this anonymous inner class a lambda(£·®
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Â¿Âëüÿÿÿÿ
+C
+java:S19486"(Make "action" transient or serializable.(ÌåùÛùÿÿÿÿ
+Q	java:S125$"<This block of commented-out lines of code should be removed.(Üø‡‰
+y
+java:S2142Z"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(è®ã¶øÿÿÿÿ
+V	java:S125c"<This block of commented-out lines of code should be removed.(÷´ÕŒøÿÿÿÿ
+=
+java:S1905’"&Remove this unnecessary cast to "int".(õÛÜĞ
+B
+java:S1905”"&Remove this unnecessary cast to "int".(õÄ°øÿÿÿÿ
+8
+java:S1110¢"!Remove these useless parentheses.(š°™ø
+d	java:S100ô"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ÿ¡öĞ
+@
+java:S2115‚")Add password protection to this database.(»¥ÏÉ
+i	java:S100¡"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒ–Ü•ûÿÿÿÿ
+@
+java:S2115®")Add password protection to this database.(»¥ÏÉ
+W	java:S125¶"<This block of commented-out lines of code should be removed.(ºÓ¿çúÿÿÿÿ
+i	java:S100‰"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(é˜İ©ûÿÿÿÿ
+@
+java:S2115—")Add password protection to this database.(»¥ÏÉ

@@ -75,7 +75,7 @@ public class JavaMailUtil {
         if (Debt > 0.0) {
             TextAdd = " You have total " + Debt + " TL debt. For your information...";
         } else if (Debt < 0.0) {
-            TextAdd = "You will get " + Debt + " TL from library. For your information...";
+            TextAdd = "You will get " + Math.abs(Debt) + " TL from library. For your information...";
         } else {
             TextAdd = "Your debt is over. For your information...";
 
@@ -316,7 +316,7 @@ public class JavaMailUtil {
             message.setRecipient(Message.RecipientType.TO, new InternetAddress(recepient));
             message.setSubject("Late Return Book Fine for the Of Technical Faculty.");
 
-            message.setContent("Dear Student, <br><br>You have returned the book but it's time was exceed. So you have to pay " + Debt + "." +
+            message.setContent("Dear Student, <br><br>You have returned the book but it's time was exceed. So you have to pay " + Debt + ". " +
                     "Please return the book in given time.<br>"
                     + "Thank you for your understanding. <br><br>Have a nice day."
                     + WhoSendMail, "text/html;charset=utf-8");
@@ -391,7 +391,7 @@ public class JavaMailUtil {
                     break;
                 case LAST3DAYS:
 
-                    message.setSubject("Of Technical Faculty Library Last 7 DAYS Warning ( Critical / " + sqlConnection2.getResultSet().getString("book.BarcodeNo") + " )");
+                    message.setSubject("Of Technical Faculty Library Last 3 DAYS Warning ( Critical / " + sqlConnection2.getResultSet().getString("book.BarcodeNo") + " )");
                     message.setContent(text +
                                     "You are approaching the due date for returning the borrowed book " + sqlConnection2.getResultSet().getString("book.Name") + ". "
                                     + "You have last 3 days to return the book. "
