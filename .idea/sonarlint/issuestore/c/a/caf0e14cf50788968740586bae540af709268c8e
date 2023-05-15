@@ -1,0 +1,33 @@
+
+_
+java:S1192â"HDefine a constant instead of duplicating this literal "NO BOOK" 6 times.(õ”Ï
+v
+java:S1192×"ZDefine a constant instead of duplicating this literal "Not allowed to acces here" 7 times.(Ëö«·úÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Â¿Âëüÿÿÿÿ
+n	java:S1162"TRename this field "LeftSpace" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(™áù›ıÿÿÿÿ
+7
+java:S1170("!Make this final field static too.(ğå¿†
+<
+java:S1170)"!Make this final field static too.(©‘Ø¦øÿÿÿÿ
+7
+java:S1170+"!Make this final field static too.(¤½ï“
+<
+java:S1170,"!Make this final field static too.(«ŒÎøÿÿÿÿ
+7
+java:S1170-"!Make this final field static too.(Ò“Ì
+<
+java:S1170/"!Make this final field static too.(İ¸Íùÿÿÿÿ
+<
+java:S11701"!Make this final field static too.(ØšÓùûÿÿÿÿ
+<
+java:S11702"!Make this final field static too.(™áù›ıÿÿÿÿ
+7
+java:S11705"!Make this final field static too.(µ¡“¥
+<
+java:S11706"!Make this final field static too.(§‰«üÿÿÿÿ
+:
+java:S19489"$Make "mg" transient or serializable.(Ú¯¸‘
+>
+java:S1948:"(Make "action" transient or serializable.(™üšÍ
+@
+java:S1948;"%Make "ttm" transient or serializable.(ïœôúúÿÿÿÿ

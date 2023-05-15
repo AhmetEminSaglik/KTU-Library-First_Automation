@@ -143,7 +143,7 @@ public class AboutUs {
 
     public void ChangeBackground(int colorIndex, int Color) {
         try {
-            Thread.sleep(30);
+            Thread.sleep(15);
             if (colorIndex == 0) {
                 firstColor = Color;
             } else if (colorIndex == 1) {
@@ -432,7 +432,7 @@ public class AboutUs {
     public JButton getBtnChangePassword() {
 
         if (btnChangePassword == null) {
-            btnChangePassword = new JButton("Change Login Information");
+            btnChangePassword = new JButton("Change Login Credentials");
             btnChangePassword.setBounds(LeftSpace + txtWidth / 2,
                     txtTopSpace + (txtpushUnder * (txtHeight + (int) (screenSizeHeight / 153.6))) + lblHeight,
                     (txtWidth * 5 / 2) - (int) (screenSizeWidth / 30.355555555555554),
