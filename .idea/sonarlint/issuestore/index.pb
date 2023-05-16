@@ -13,3 +13,5 @@ K
 src/Logic/ActionsLogin.java,c\e\cebd5e8a354af05c61ac6b906c6fb8532496025a
 L
 src/Gui/StudentStateGui.java,c\a\caf0e14cf50788968740586bae540af709268c8e
+L
+src/Gui/FineDebtPayment.java,6\e\6e3ebfd71e3b5fabcd5432b1a7edf273e87b8016

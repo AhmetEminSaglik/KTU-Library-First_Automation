@@ -31,8 +31,8 @@ public class JavaMailUtil {
     static boolean saveConditionOnMysql = true;
     static Message message;
 
-    public static final String usernameEmail = "ahmeteminsaglik@gmail.com";
-    public static final String passwordEmail = "pgdbtwqhklhfugoo";
+    public static final String usernameEmail = "example@gmail.com";
+    public static final String passwordEmail = "passwrods";
 
     Icon icon = new ImageIcon("GitHub-Mark-64px.png");
 
