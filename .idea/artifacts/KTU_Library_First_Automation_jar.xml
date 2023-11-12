@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="KTU-Library-First_Automation:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/KTU_Library_First_Automation_jar</output-path>
+    <root id="archive" name="KTU-Library-First_Automation.jar">
+      <element id="module-output" name="lib" />
+      <element id="module-output" name="KTU-Library-First_Automation" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../lib/javax.mail.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../lib/mail.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../lib/mysql-connector-java-5.1.48.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../lib/CopyLibs/org-netbeans-modules-java-j2seproject-copylibstask.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../lib/MySQLDriver/mysql-connector-java-5.1.23-bin.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

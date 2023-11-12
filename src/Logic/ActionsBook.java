@@ -706,9 +706,9 @@ public class ActionsBook implements ActionListener, FocusListener {
     }
 
     public void sendEmailHasDebt(String nameSurname, String StudentEmail, double Debt) {
-        JavaMailUtil jmu = new JavaMailUtil();
+//        JavaMailUtil jmu = new JavaMailUtil();
 
-        Thread sendEmailThread = new Thread(new Runnable() {
+        /*Thread sendEmailThread = new Thread(new Runnable() {
             @Override
             public void run() {
                 jmu.sendEmail(nameSurname, StudentEmail, Debt);
@@ -718,10 +718,11 @@ public class ActionsBook implements ActionListener, FocusListener {
         });
 
         sendEmailThread.start();
-
+*/
     }
 
     public void sendEmailHasNoDebt(String name, String surname, String bacodeNo, String bookName, String email) {
+/*
 
         Thread sendEmailThread = new Thread(new Runnable() {
             @Override
@@ -733,6 +734,7 @@ public class ActionsBook implements ActionListener, FocusListener {
         });
 
         sendEmailThread.start();
+*/
 
     }
 

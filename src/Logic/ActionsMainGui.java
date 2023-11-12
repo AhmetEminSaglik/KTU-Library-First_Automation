@@ -479,6 +479,7 @@ public class ActionsMainGui implements ActionListener, MouseListener, FocusListe
     }
 
     public void sendEmail(String name, String surname, String bacodeNo, String bookName, String email) {
+/*
 
         Thread sendEmailThread = new Thread(new Runnable() {
             @Override
@@ -489,6 +490,7 @@ public class ActionsMainGui implements ActionListener, MouseListener, FocusListe
         });
 
         sendEmailThread.start();
+*/
 
     }
 

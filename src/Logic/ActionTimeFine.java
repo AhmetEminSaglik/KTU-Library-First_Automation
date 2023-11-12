@@ -494,7 +494,7 @@ public class ActionTimeFine implements ActionListener, FocusListener {
                     //String name, String surname, String bacodeNo, String bookName, String email
                     String Query = "SELECT * FROM book INNER JOIN student ON book.StudentNo=Student.No";
                     sqlconnection.setResultSet(Query);
-                    try {
+                    /*try {
                         if (sqlconnection.getResultSet().next()) {
                             new JavaMailUtil().MailStudentWhoExtendTime(sqlconnection.getResultSet().getString("Student.Name"),
                                     sqlconnection.getResultSet().getString("Student.Surname"),
@@ -504,7 +504,7 @@ public class ActionTimeFine implements ActionListener, FocusListener {
                         }
                     } catch (SQLException ex) {
                         Logger.getLogger(ActionTimeFine.class.getName()).log(Level.SEVERE, null, ex);
-                    }
+                    }*/
                 }
 
             });
@@ -685,7 +685,7 @@ public class ActionTimeFine implements ActionListener, FocusListener {
             fdp.getTxtDebt().setText("0.0");
             fdp.getTxtDebt().setBackground(new Color(206, 214, 224));
         }
-        Thread sendMail = new Thread(new Runnable() {
+        /*Thread sendMail = new Thread(new Runnable() {
             @Override
             public void run() {
                 new JavaMailUtil().MaidStudentWhoPayDebt(NameSurname,
@@ -693,7 +693,7 @@ public class ActionTimeFine implements ActionListener, FocusListener {
                 );
             }
         });
-        sendMail.start();
+        sendMail.start();*/
         fdp.getTxtDebt().setBackground(Color.orange);
     }
 

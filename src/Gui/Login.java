@@ -1,7 +1,7 @@
 package Gui;
 
 import Logic.ActionsLogin;
-import Logic.JavaMailUtil;
+//import Logic.JavaMailUtil;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
@@ -74,7 +74,7 @@ public class Login extends JPanel {
         CreateTable();
 
         getJf().setCursor(null);
-        JavaMailUtil jmu = new JavaMailUtil();
+/*        JavaMailUtil jmu = new JavaMailUtil();
         Thread t1 = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -89,7 +89,7 @@ public class Login extends JPanel {
 
         } catch (InterruptedException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }*/
     }
 
     public JFrame getJf() {
@@ -338,8 +338,8 @@ public class Login extends JPanel {
 
                 if (over30Days > 0 || inLast3Days > 0) {
 
-                    JOptionPane.showMessageDialog(null, "30 günü aşmış ödünç verilen kitapların sayısı : " + over30Days
-                            + "\n\n Son üç gün  içinde iade edilmesi gereken kitap sayısı : " + inLast3Days);
+//                    JOptionPane.showMessageDialog(null, "30 günü aşmış ödünç verilen kitapların sayısı : " + over30Days
+//                            + "\n\n Son üç gün  içinde iade edilmesi gereken kitap sayısı : " + inLast3Days);
 
                 }
 

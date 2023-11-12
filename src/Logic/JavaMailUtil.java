@@ -1,3 +1,4 @@
+/*
 //      ahmeteminsaglik@gmail.com
 package Logic;
 
@@ -147,12 +148,16 @@ public class JavaMailUtil {
 
             Query = "SELECT * FROM book LEFT JOIN student ON book.StudentNo=student.No"
                     + " WHERE NOW() >  BorrowedDate + INTERVAL  27 DAY  AND book.Condition < "
-                    + LAST3DAYS/* + " or 'Condition' IS NULL )"*/;
+                    + LAST3DAYS*/
+/* + " or 'Condition' IS NULL )"*//*
+;
         } else if (Degree == 2) {
 
             Query = "SELECT * FROM book LEFT JOIN student ON book.StudentNo=student.No"
                     + " WHERE NOW() >  BorrowedDate + INTERVAL  30 DAY  AND book.Condition < "
-                    + STARTEDFINE /*+ " or book.Condition IS  NULL )"*/;
+                    + STARTEDFINE */
+/*+ " or book.Condition IS  NULL )"*//*
+;
         } else {
             if (CounterOfMail > 0) {
                 if (MessageWillSend == true) {
@@ -437,3 +442,4 @@ public class JavaMailUtil {
         return borrowedDateOfBook.plusDays(29);
     }
 }
+*/

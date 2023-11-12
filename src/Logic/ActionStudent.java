@@ -205,7 +205,7 @@ public class ActionStudent implements ActionListener, FocusListener {
             if (answer == JOptionPane.YES_OPTION) {
                 SuccessVoice();
 
-                Thread SendEmail = new Thread(new Runnable() {
+/*                Thread SendEmail = new Thread(new Runnable() {
                     @Override
                     public void run() {
                         new JavaMailUtil().MailStudentWhoDeleted(sug.getTxtno().getText().trim(),
@@ -214,7 +214,7 @@ public class ActionStudent implements ActionListener, FocusListener {
                     }
                 }
                 );
-                SendEmail.start();
+                SendEmail.start();*/
                 sug.getTxtNewNo().setText("");
                 sug.getTxtNewName().setText("");
                 sug.getTxtNewSurname().setText("");
@@ -412,7 +412,7 @@ public class ActionStudent implements ActionListener, FocusListener {
 
             sag.getTxtResult().setBackground(Color.GREEN);
             sag.getTxtResult().setText("Öğrenci Kayıt edilmiştir");
-            Thread SendEmail = new Thread(new Runnable() {
+            /*Thread SendEmail = new Thread(new Runnable() {
                 @Override
                 public void run() {
                     new JavaMailUtil().MailStudentWhoRegister(sag.getTxtNo().getText().trim(), sag.getTxtName().getText().trim(), sag.getTxtSurname().getText().trim().toUpperCase(),
@@ -421,7 +421,7 @@ public class ActionStudent implements ActionListener, FocusListener {
             }
             );
             SendEmail.start();
-            SuccessVoice();
+            SuccessVoice();*/
 
         } catch (ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(null, ex);
