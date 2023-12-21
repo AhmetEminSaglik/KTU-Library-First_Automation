@@ -1,3 +1,8 @@
+## Video Links: 
+Youtube Link : [https://www.youtube.com/watch?v=CuqyXDdQcRA&list=PLkpzlWtSe0YKpE9jLdEJUy0__5WA8HskE&index=3](https://www.youtube.com/watch?v=j3VNEXwUeqE&t=3s)
+<br>
+Linkedin Link : [https://www.linkedin.com/posts/ahmeteminsaglik_java-javafx-algorithm-activity-7086650246633521154-jvPQ?utm_source=share&utm_medium=member_desktop](https://www.linkedin.com/posts/ahmeteminsaglik_java-swing-mysql-activity-7066338118940991488-p1bJ?utm_source=share&utm_medium=member_desktop)
+
 #  Library Automation of KTU ( Of Technology Faculty )
 - The application was built and donated in 2020 to library managers in Of Technology Faculty of KTU. 
 - The project was built with Java Swing by coding. (not drag and drop)
